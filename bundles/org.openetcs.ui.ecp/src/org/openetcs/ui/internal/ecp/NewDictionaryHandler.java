@@ -32,7 +32,7 @@ public class NewDictionaryHandler extends AbstractHandler {
 					}
 				});
 				
-				HandlerHelper.openModelElement(dictionary, NewDictionaryHandler.class.getName(), project);
+				HandlerHelper.openModelElement(dictionary, project);
 			}
 		}
 		return null;

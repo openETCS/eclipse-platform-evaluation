@@ -19,13 +19,12 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecp.core.ECPProjectManager;
-import org.eclipse.emf.ecp.edit.EditModelElementContext;
+import org.eclipse.emf.ecp.edit.ECPControlContext;
 import org.eclipse.emf.ecp.edit.internal.swt.util.SWTControl;
 import org.eclipse.emf.ecp.emfstore.core.internal.EMFStoreProvider;
 import org.eclipse.emf.ecp.spi.core.InternalProject;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.emfstore.client.ESLocalProject;
-import org.eclipse.emf.emfstore.internal.client.model.ProjectSpace;
 import org.eclipse.jface.databinding.swt.SWTObservables;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.SWT;
@@ -44,7 +43,7 @@ public class ExpressionControl extends SWTControl {
 	public ExpressionControl(boolean showLabel,
 			IItemPropertyDescriptor itemPropertyDescriptor,
 			EStructuralFeature feature,
-			EditModelElementContext modelElementContext, boolean embedded) {
+			ECPControlContext modelElementContext, boolean embedded) {
 		super(showLabel, itemPropertyDescriptor, feature, modelElementContext, embedded);
 		project=(InternalProject) ECPProjectManager.INSTANCE.getProject(getModelElementContext().getModelElement());
 	}
