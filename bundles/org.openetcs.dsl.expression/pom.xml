@@ -9,7 +9,7 @@
     <relativePath>../../releng/org.openetcs.releng/</relativePath>
   </parent>
   <groupId>org.openetcs</groupId>
-  <artifactId>openetcs</artifactId>
+  <artifactId>org.openetcs.dsl.expression</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>eclipse-target-definition</packaging>
+  <packaging>eclipse-plugin</packaging>
 </project>

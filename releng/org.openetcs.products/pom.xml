@@ -6,11 +6,11 @@
     <groupId>org.openetcs</groupId>
     <artifactId>openetcs-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../org.openetcs.releng/</relativePath>
+    <relativePath>../../releng/org.openetcs.releng/</relativePath>
   </parent>
   <groupId>org.openetcs</groupId>
   <artifactId>org.openetcs.products</artifactId>
-  <version>2.0.0</version>
+  <version>1.0.0</version>
   <packaging>eclipse-repository</packaging>
   
   <build>
@@ -36,7 +36,7 @@
         <configuration>
           <products>
             <product>
-              <id>org.openetcs.client</id>
+              <id>org.openetcs.eclipse.client</id>
             </product>
           </products>
         </configuration>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="OpenETCS Client" uid="org.openetcs.client" id="org.eclipse.emf.ecp.application3x.product" application="org.eclipse.emf.ecp.application3x.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="OpenETCS Client" uid="org.openetcs.eclipse.client" id="org.eclipse.emf.ecp.application3x.product" application="org.eclipse.emf.ecp.application3x.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>

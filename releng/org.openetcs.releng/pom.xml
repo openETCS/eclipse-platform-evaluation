@@ -12,19 +12,31 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tycho-version>0.16.0</tycho-version>
 		<javadoc-version>2.9</javadoc-version>
-		<ecp-version-release>1.0.0.M4</ecp-version-release>
-		<ecp-version>1.0.0-SNAPSHOT</ecp-version>
+		<product-version>1.0.0-SNAPSHOT</product-version>
 	</properties>
 
 	<modules>
-		<module>../org.openetcs.core-feature</module>
-		<module>../org.openetcs.model</module>
-		<module>../org.openetcs.model.edit</module>
-		<module>../org.openetcs.products</module>
-		<module>../org.openetcs.target</module>
-		<module>../org.openetcs.target-feature</module>
+		<module>../../bundles/org.openetcs.dsl.expression</module>
+		<module>../../bundles/org.openetcs.dsl.expression.evaluator</module>
+		<module>../../bundles/org.openetcs.dsl.expression.ui</module>
+		<module>../../bundles/org.openetcs.es3f</module>
+		<module>../../bundles/org.openetcs.model</module>
+		<module>../../bundles/org.openetcs.model.edit</module>
+		<module>../../bundles/org.openetcs.ui.ecp</module>
+		<module>../../bundles/org.openetcs.ui.expression</module>
+		<module>../../bundles/org.openetcs.ui.statechart</module>
+		<module>../../features/org.openetcs.core-feature</module>
+		<module>../../features/org.openetcs.target-feature</module>
+		<module>../../releng/org.openetcs.products</module>
+		<module>../../releng/org.openetcs.target</module>
 	</modules>
-
+	<repositories>
+		<repository>
+			<id>eclipse-kepler</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/kepler</url>
+		</repository>
+	</repositories>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<outputDirectory>bin</outputDirectory>
@@ -80,11 +92,12 @@
 						<artifact>
 							<groupId>org.openetcs</groupId>
 							<artifactId>openetcs</artifactId>
-							<version>${ecp-version}</version>
+							<version>${product-version}</version>
 						</artifact>
 					</target>
 				</configuration>
 			</plugin>
+			<!--
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-versions-plugin</artifactId>
@@ -93,7 +106,7 @@
 					<newVersion>${ecp-version}</newVersion>
 				</configuration>
 			</plugin>
-			<!--
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
