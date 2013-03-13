@@ -8,6 +8,7 @@ var grammarURI = "classpath:/org/openetcs/dsl/Expression.xtext"
 var file.extensions = "expression"
 var projectName = "org.openetcs.dsl.expression"
 var runtimeProject = "../${projectName}"
+var modelProject = "../org.openetcs.model/"
 
 Workflow {
     bean = StandaloneSetup {
@@ -19,7 +20,7 @@ Workflow {
         }
     
         component = DirectoryCleaner {
-            directory = "${runtimeProject}/src-gen"
+            directory = "${modelProject}/src-gen"
         }
     
         component = DirectoryCleaner {
@@ -27,7 +28,7 @@ Workflow {
         }
     
         component = Generator {
-            pathRtProject = runtimeProject
+            pathRtProject = modelProject
             pathUiProject = "${runtimeProject}.ui"
 //            pathTestProject = "${runtimeProject}.tests"
             projectNameRt = projectName
