@@ -14,9 +14,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.openetcs.model.ertmsformalspecs.CommentedElement;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.openetcs.model.ertmsformalspecs.ModelPackage;
-import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
 import org.openetcs.model.ertmsformalspecs.ReqRef;
 

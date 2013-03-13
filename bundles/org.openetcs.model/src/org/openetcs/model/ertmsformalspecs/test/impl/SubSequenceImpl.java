@@ -19,7 +19,6 @@ import org.openetcs.model.ertmsformalspecs.ModelPackage;
 import org.openetcs.model.ertmsformalspecs.test.Frame;
 import org.openetcs.model.ertmsformalspecs.test.SingleTestCase;
 import org.openetcs.model.ertmsformalspecs.test.SubSequence;
-import org.openetcs.model.ertmsformalspecs.test.TestCase;
 import org.openetcs.model.ertmsformalspecs.test.TestPackage;
 
 /**

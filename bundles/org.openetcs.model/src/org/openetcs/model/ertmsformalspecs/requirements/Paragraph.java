@@ -5,7 +5,6 @@ package org.openetcs.model.ertmsformalspecs.requirements;
 import org.eclipse.emf.common.util.EList;
 import org.openetcs.model.ertmsformalspecs.BaseLine;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
-import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.requirements.messages.Message;
 import org.openetcs.model.ertmsformalspecs.requirements.messages.TypeSpec;
 

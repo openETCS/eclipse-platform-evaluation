@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.openetcs.model.ertmsformalspecs.CommentedElement;
 import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
-import org.openetcs.model.ertmsformalspecs.requirements.*;
 import org.openetcs.model.ertmsformalspecs.requirements.BaseLinedElement;
 import org.openetcs.model.ertmsformalspecs.requirements.FunctionalBlock;
 import org.openetcs.model.ertmsformalspecs.requirements.Paragraph;

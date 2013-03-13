@@ -21,15 +21,10 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.openetcs.dsl,
- org.openetcs.dsl.services,
- org.openetcs.dsl.expression,
+Export-Package: org.openetcs.dsl.expression,
  org.openetcs.dsl.expression.impl,
  org.openetcs.dsl.expression.util,
- org.openetcs.dsl.serializer,
  org.openetcs.dsl.parser.antlr,
  org.openetcs.dsl.parser.antlr.internal,
- org.openetcs.dsl.validation,
- org.openetcs.dsl.scoping,
- org.openetcs.dsl.generator,
- org.openetcs.dsl.formatting
+ org.openetcs.dsl.serializer,
+ org.openetcs.dsl.services

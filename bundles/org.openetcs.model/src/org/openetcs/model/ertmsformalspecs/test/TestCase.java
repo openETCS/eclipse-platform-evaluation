@@ -4,8 +4,6 @@ package org.openetcs.model.ertmsformalspecs.test;
 
 import org.eclipse.emf.common.util.EList;
 import org.openetcs.model.ertmsformalspecs.ReqRelated;
-import org.openetcs.model.ertmsformalspecs.CommentedElement;
-import org.openetcs.model.ertmsformalspecs.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

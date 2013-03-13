@@ -5,12 +5,12 @@ package org.openetcs.model.ertmsformalspecs.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.openetcs.model.ertmsformalspecs.*;
-import org.openetcs.model.ertmsformalspecs.types.Type;
 import org.openetcs.model.ertmsformalspecs.BaseLine;
+import org.openetcs.model.ertmsformalspecs.Baselines;
 import org.openetcs.model.ertmsformalspecs.CommentedElement;
 import org.openetcs.model.ertmsformalspecs.DefaultValueElement;
 import org.openetcs.model.ertmsformalspecs.Dictionary;
+import org.openetcs.model.ertmsformalspecs.FunctionalBlocks;
 import org.openetcs.model.ertmsformalspecs.ModelPackage;
 import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.Namespace;
@@ -23,6 +23,7 @@ import org.openetcs.model.ertmsformalspecs.State;
 import org.openetcs.model.ertmsformalspecs.StateMachine;
 import org.openetcs.model.ertmsformalspecs.Variable;
 import org.openetcs.model.ertmsformalspecs.VariableModeElement;
+import org.openetcs.model.ertmsformalspecs.types.Type;
 import org.openetcs.model.ertmsformalspecs.types.TypedElement;
 
 /**

@@ -2,7 +2,6 @@
  */
 package org.openetcs.model.ertmsformalspecs.requirements.messages;
 
-import org.eclipse.emf.common.util.EList;
 import org.openetcs.model.ertmsformalspecs.BaseLine;
 import org.openetcs.model.ertmsformalspecs.requirements.BaseLinedElement;
 import org.openetcs.model.ertmsformalspecs.requirements.Paragraph;

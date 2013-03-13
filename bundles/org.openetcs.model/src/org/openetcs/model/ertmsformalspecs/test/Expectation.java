@@ -3,7 +3,6 @@
 package org.openetcs.model.ertmsformalspecs.test;
 
 import org.openetcs.model.ertmsformalspecs.NamedElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

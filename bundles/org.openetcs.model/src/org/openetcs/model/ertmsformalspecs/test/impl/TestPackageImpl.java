@@ -30,7 +30,6 @@ import org.openetcs.model.ertmsformalspecs.test.StepLevel;
 import org.openetcs.model.ertmsformalspecs.test.StepMode;
 import org.openetcs.model.ertmsformalspecs.test.SubSequence;
 import org.openetcs.model.ertmsformalspecs.test.SubStep;
-import org.openetcs.model.ertmsformalspecs.test.TestCase;
 import org.openetcs.model.ertmsformalspecs.test.TestFactory;
 import org.openetcs.model.ertmsformalspecs.test.TestField;
 import org.openetcs.model.ertmsformalspecs.test.TestMessage;

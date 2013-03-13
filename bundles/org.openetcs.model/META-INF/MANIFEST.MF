@@ -7,7 +7,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.openetcs.model.ertmsformalspecs,
+Export-Package: org.openetcs.dsl,
+ org.openetcs.dsl.formatting,
+ org.openetcs.dsl.generator,
+ org.openetcs.dsl.scoping,
+ org.openetcs.dsl.validation,
+ org.openetcs.model.ertmsformalspecs,
  org.openetcs.model.ertmsformalspecs.behaviour,
  org.openetcs.model.ertmsformalspecs.behaviour.util,
  org.openetcs.model.ertmsformalspecs.customization,
@@ -25,8 +30,28 @@ Export-Package: org.openetcs.model.ertmsformalspecs,
  org.openetcs.model.ertmsformalspecs.translation.util,
  org.openetcs.model.ertmsformalspecs.types,
  org.openetcs.model.ertmsformalspecs.types.util,
- org.openetcs.model.ertmsformalspecs.util
+ org.openetcs.model.ertmsformalspecs.util,
+ org.openetcs.dsl.services,
+ org.openetcs.dsl.expression,
+ org.openetcs.dsl.expression.impl,
+ org.openetcs.dsl.expression.util,
+ org.openetcs.dsl.serializer,
+ org.openetcs.dsl.parser.antlr,
+ org.openetcs.dsl.parser.antlr.internal
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.emf.ecp.core
+Import-Package: org.apache.log4j;version="1.2.15",
+ org.eclipse.emf.ecp.core,
+ org.eclipse.xtext.xbase.lib

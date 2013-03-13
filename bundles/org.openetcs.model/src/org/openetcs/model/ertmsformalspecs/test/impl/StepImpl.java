@@ -23,7 +23,6 @@ import org.openetcs.model.ertmsformalspecs.test.StepInterface;
 import org.openetcs.model.ertmsformalspecs.test.StepLevel;
 import org.openetcs.model.ertmsformalspecs.test.StepMode;
 import org.openetcs.model.ertmsformalspecs.test.SubStep;
-import org.openetcs.model.ertmsformalspecs.test.TestCase;
 import org.openetcs.model.ertmsformalspecs.test.TestMessage;
 import org.openetcs.model.ertmsformalspecs.test.TestPackage;
 
