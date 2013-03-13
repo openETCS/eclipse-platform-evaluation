@@ -10,26 +10,26 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.openetcs.dsl.expression.DashOperation;
 import org.openetcs.dsl.expression.Expression;
 import org.openetcs.dsl.expression.ExpressionPackage;
+import org.openetcs.dsl.expression.PointExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Dash Operation</b></em>'.
+ * An implementation of the model object '<em><b>Point Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openetcs.dsl.expression.impl.DashOperationImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.impl.DashOperationImpl#getOp <em>Op</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.impl.DashOperationImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.PointExpressionImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.PointExpressionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.PointExpressionImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DashOperationImpl extends ExpressionImpl implements DashOperation
+public class PointExpressionImpl extends ExpressionImpl implements PointExpression
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -76,7 +76,7 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DashOperationImpl()
+  protected PointExpressionImpl()
   {
     super();
   }
@@ -89,7 +89,7 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionPackage.Literals.DASH_OPERATION;
+    return ExpressionPackage.Literals.POINT_EXPRESSION;
   }
 
   /**
@@ -113,7 +113,7 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
     left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.DASH_OPERATION__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.POINT_EXPRESSION__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -130,14 +130,14 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
     {
       NotificationChain msgs = null;
       if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.DASH_OPERATION__LEFT, null, msgs);
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POINT_EXPRESSION__LEFT, null, msgs);
       if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.DASH_OPERATION__LEFT, null, msgs);
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POINT_EXPRESSION__LEFT, null, msgs);
       msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.DASH_OPERATION__LEFT, newLeft, newLeft));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.POINT_EXPRESSION__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -160,7 +160,7 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
     String oldOp = op;
     op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.DASH_OPERATION__OP, oldOp, op));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.POINT_EXPRESSION__OP, oldOp, op));
   }
 
   /**
@@ -184,7 +184,7 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
     right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.DASH_OPERATION__RIGHT, oldRight, newRight);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.POINT_EXPRESSION__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -201,14 +201,14 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
     {
       NotificationChain msgs = null;
       if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.DASH_OPERATION__RIGHT, null, msgs);
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POINT_EXPRESSION__RIGHT, null, msgs);
       if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.DASH_OPERATION__RIGHT, null, msgs);
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POINT_EXPRESSION__RIGHT, null, msgs);
       msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.DASH_OPERATION__RIGHT, newRight, newRight));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.POINT_EXPRESSION__RIGHT, newRight, newRight));
   }
 
   /**
@@ -221,9 +221,9 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.DASH_OPERATION__LEFT:
+      case ExpressionPackage.POINT_EXPRESSION__LEFT:
         return basicSetLeft(null, msgs);
-      case ExpressionPackage.DASH_OPERATION__RIGHT:
+      case ExpressionPackage.POINT_EXPRESSION__RIGHT:
         return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -239,11 +239,11 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.DASH_OPERATION__LEFT:
+      case ExpressionPackage.POINT_EXPRESSION__LEFT:
         return getLeft();
-      case ExpressionPackage.DASH_OPERATION__OP:
+      case ExpressionPackage.POINT_EXPRESSION__OP:
         return getOp();
-      case ExpressionPackage.DASH_OPERATION__RIGHT:
+      case ExpressionPackage.POINT_EXPRESSION__RIGHT:
         return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -259,13 +259,13 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.DASH_OPERATION__LEFT:
+      case ExpressionPackage.POINT_EXPRESSION__LEFT:
         setLeft((Expression)newValue);
         return;
-      case ExpressionPackage.DASH_OPERATION__OP:
+      case ExpressionPackage.POINT_EXPRESSION__OP:
         setOp((String)newValue);
         return;
-      case ExpressionPackage.DASH_OPERATION__RIGHT:
+      case ExpressionPackage.POINT_EXPRESSION__RIGHT:
         setRight((Expression)newValue);
         return;
     }
@@ -282,13 +282,13 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.DASH_OPERATION__LEFT:
+      case ExpressionPackage.POINT_EXPRESSION__LEFT:
         setLeft((Expression)null);
         return;
-      case ExpressionPackage.DASH_OPERATION__OP:
+      case ExpressionPackage.POINT_EXPRESSION__OP:
         setOp(OP_EDEFAULT);
         return;
-      case ExpressionPackage.DASH_OPERATION__RIGHT:
+      case ExpressionPackage.POINT_EXPRESSION__RIGHT:
         setRight((Expression)null);
         return;
     }
@@ -305,11 +305,11 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.DASH_OPERATION__LEFT:
+      case ExpressionPackage.POINT_EXPRESSION__LEFT:
         return left != null;
-      case ExpressionPackage.DASH_OPERATION__OP:
+      case ExpressionPackage.POINT_EXPRESSION__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case ExpressionPackage.DASH_OPERATION__RIGHT:
+      case ExpressionPackage.POINT_EXPRESSION__RIGHT:
         return right != null;
     }
     return super.eIsSet(featureID);
@@ -332,4 +332,4 @@ public class DashOperationImpl extends ExpressionImpl implements DashOperation
     return result.toString();
   }
 
-} //DashOperationImpl
+} //PointExpressionImpl

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.openetcs.dsl.expression.Designator#getParams <em>Params</em>}</li>
  *   <li>{@link org.openetcs.dsl.expression.Designator#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -20,8 +21,34 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Designator extends Term
+public interface Designator extends FunctionCall, Term
 {
+  /**
+   * Returns the value of the '<em><b>Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Params</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Params</em>' containment reference.
+   * @see #setParams(ExpressionList)
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getDesignator_Params()
+   * @model containment="true"
+   * @generated
+   */
+  ExpressionList getParams();
+
+  /**
+   * Sets the value of the '{@link org.openetcs.dsl.expression.Designator#getParams <em>Params</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Params</em>' containment reference.
+   * @see #getParams()
+   * @generated
+   */
+  void setParams(ExpressionList value);
+
   /**
    * Returns the value of the '<em><b>Value</b></em>' reference.
    * <!-- begin-user-doc -->

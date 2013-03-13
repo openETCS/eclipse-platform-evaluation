@@ -11,22 +11,41 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Model/phrase"/>
     </genClasses>
     <genClasses ecoreClass="Expression.ecore#//Phrase"/>
-    <genClasses ecoreClass="Expression.ecore#//Expression"/>
+    <genClasses ecoreClass="Expression.ecore#//StatementList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//StatementList/head"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//StatementList/tail"/>
+    </genClasses>
     <genClasses ecoreClass="Expression.ecore#//Statement"/>
-    <genClasses ecoreClass="Expression.ecore#//SingleStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//SingleStatement/desgnator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//SingleStatement/expression"/>
+    <genClasses ecoreClass="Expression.ecore#//AssignmentStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//AssignmentStatement/expression"/>
     </genClasses>
-    <genClasses ecoreClass="Expression.ecore#//SelfStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//SelfStatement/expression"/>
+    <genClasses ecoreClass="Expression.ecore#//VariableAssignmentStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//VariableAssignmentStatement/designator"/>
     </genClasses>
-    <genClasses ecoreClass="Expression.ecore#//MultiStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//MultiStatement/desgnator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//MultiStatement/expressions"/>
+    <genClasses ecoreClass="Expression.ecore#//SelfAssignmentStatement"/>
+    <genClasses ecoreClass="Expression.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Expression/condition"/>
     </genClasses>
-    <genClasses ecoreClass="Expression.ecore#//UnaryExpression"/>
-    <genClasses ecoreClass="Expression.ecore#//Term"/>
+    <genClasses ecoreClass="Expression.ecore#//FunctionCall"/>
+    <genClasses ecoreClass="Expression.ecore#//ExpressionList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//ExpressionList/head"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//ExpressionList/tail"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//ExpressionRest"/>
+    <genClasses ecoreClass="Expression.ecore#//KeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//KeyValuePair/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//KeyValuePair/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//KeyValuePair/rest"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//KeyValuePairRest"/>
+    <genClasses ecoreClass="Expression.ecore#//Term">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Term/structuredExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//List/terms"/>
+    </genClasses>
     <genClasses ecoreClass="Expression.ecore#//Designator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Designator/params"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Expression.ecore#//Designator/value"/>
     </genClasses>
     <genClasses ecoreClass="Expression.ecore#//OrExpression">
@@ -44,20 +63,65 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//EqualityExpression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//EqualityExpression/right"/>
     </genClasses>
-    <genClasses ecoreClass="Expression.ecore#//DashOperation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//DashOperation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//DashOperation/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//DashOperation/right"/>
+    <genClasses ecoreClass="Expression.ecore#//DashExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//DashExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//DashExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//DashExpression/right"/>
     </genClasses>
-    <genClasses ecoreClass="Expression.ecore#//PointOperation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PointOperation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//PointOperation/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PointOperation/right"/>
+    <genClasses ecoreClass="Expression.ecore#//PointExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PointExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//PointExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PointExpression/right"/>
     </genClasses>
-    <genClasses ecoreClass="Expression.ecore#//PowOperation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PowOperation/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//PowOperation/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PowOperation/right"/>
+    <genClasses ecoreClass="Expression.ecore#//PowExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PowExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//PowExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//PowExpression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//QualifierExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//QualifierExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//QualifierExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//QualifierExpression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//ThereIsIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//ThereIsIn/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//ForallIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//ForallIn/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//FirstIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//FirstIn/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//LastIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//LastIn/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//Count">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Count/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//Reduce">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Reduce/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Reduce/usingExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Reduce/initValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//Sum">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Sum/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Sum/usingExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//Map">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Map/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Map/usingExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//Apply">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Apply/applyExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//Apply/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//UnaryExpression/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//UnaryExpression/structuredExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Expression.ecore#//StructureExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//StructureExpression/keyValuePair"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expression.ecore#//StructureExpression/structuredExpressions"/>
     </genClasses>
     <genClasses ecoreClass="Expression.ecore#//StringValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expression.ecore#//StringValue/value"/>

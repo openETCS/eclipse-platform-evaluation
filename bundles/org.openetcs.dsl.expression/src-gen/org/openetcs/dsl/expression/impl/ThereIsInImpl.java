@@ -12,39 +12,39 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.openetcs.dsl.expression.Expression;
 import org.openetcs.dsl.expression.ExpressionPackage;
-import org.openetcs.dsl.expression.SelfStatement;
+import org.openetcs.dsl.expression.ThereIsIn;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Self Statement</b></em>'.
+ * An implementation of the model object '<em><b>There Is In</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openetcs.dsl.expression.impl.SelfStatementImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.ThereIsInImpl#getExpr <em>Expr</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SelfStatementImpl extends StatementImpl implements SelfStatement
+public class ThereIsInImpl extends ExpressionImpl implements ThereIsIn
 {
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getExpr()
    * @generated
    * @ordered
    */
-  protected Expression expression;
+  protected Expression expr;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SelfStatementImpl()
+  protected ThereIsInImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionPackage.Literals.SELF_STATEMENT;
+    return ExpressionPackage.Literals.THERE_IS_IN;
   }
 
   /**
@@ -65,9 +65,9 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExpression()
+  public Expression getExpr()
   {
-    return expression;
+    return expr;
   }
 
   /**
@@ -75,13 +75,13 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpr(Expression newExpr, NotificationChain msgs)
   {
-    Expression oldExpression = expression;
-    expression = newExpression;
+    Expression oldExpr = expr;
+    expr = newExpr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.SELF_STATEMENT__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.THERE_IS_IN__EXPR, oldExpr, newExpr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(Expression newExpression)
+  public void setExpr(Expression newExpr)
   {
-    if (newExpression != expression)
+    if (newExpr != expr)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.SELF_STATEMENT__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.SELF_STATEMENT__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (expr != null)
+        msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.THERE_IS_IN__EXPR, null, msgs);
+      if (newExpr != null)
+        msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.THERE_IS_IN__EXPR, null, msgs);
+      msgs = basicSetExpr(newExpr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.SELF_STATEMENT__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.THERE_IS_IN__EXPR, newExpr, newExpr));
   }
 
   /**
@@ -118,8 +118,8 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
   {
     switch (featureID)
     {
-      case ExpressionPackage.SELF_STATEMENT__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case ExpressionPackage.THERE_IS_IN__EXPR:
+        return basicSetExpr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
   {
     switch (featureID)
     {
-      case ExpressionPackage.SELF_STATEMENT__EXPRESSION:
-        return getExpression();
+      case ExpressionPackage.THERE_IS_IN__EXPR:
+        return getExpr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
   {
     switch (featureID)
     {
-      case ExpressionPackage.SELF_STATEMENT__EXPRESSION:
-        setExpression((Expression)newValue);
+      case ExpressionPackage.THERE_IS_IN__EXPR:
+        setExpr((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
   {
     switch (featureID)
     {
-      case ExpressionPackage.SELF_STATEMENT__EXPRESSION:
-        setExpression((Expression)null);
+      case ExpressionPackage.THERE_IS_IN__EXPR:
+        setExpr((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class SelfStatementImpl extends StatementImpl implements SelfStatement
   {
     switch (featureID)
     {
-      case ExpressionPackage.SELF_STATEMENT__EXPRESSION:
-        return expression != null;
+      case ExpressionPackage.THERE_IS_IN__EXPR:
+        return expr != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //SelfStatementImpl
+} //ThereIsInImpl

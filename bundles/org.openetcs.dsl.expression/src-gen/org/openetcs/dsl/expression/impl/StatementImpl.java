@@ -4,6 +4,8 @@ package org.openetcs.dsl.expression.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.openetcs.dsl.expression.ExpressionPackage;
 import org.openetcs.dsl.expression.Statement;
 
@@ -16,7 +18,7 @@ import org.openetcs.dsl.expression.Statement;
  *
  * @generated
  */
-public class StatementImpl extends PhraseImpl implements Statement
+public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
 {
   /**
    * <!-- begin-user-doc -->

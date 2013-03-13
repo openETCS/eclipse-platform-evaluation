@@ -41,13 +41,13 @@ public interface ExpressionFactory extends EFactory
   Phrase createPhrase();
 
   /**
-   * Returns a new object of class '<em>Expression</em>'.
+   * Returns a new object of class '<em>Statement List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
+   * @return a new object of class '<em>Statement List</em>'.
    * @generated
    */
-  Expression createExpression();
+  StatementList createStatementList();
 
   /**
    * Returns a new object of class '<em>Statement</em>'.
@@ -59,40 +59,85 @@ public interface ExpressionFactory extends EFactory
   Statement createStatement();
 
   /**
-   * Returns a new object of class '<em>Single Statement</em>'.
+   * Returns a new object of class '<em>Assignment Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Single Statement</em>'.
+   * @return a new object of class '<em>Assignment Statement</em>'.
    * @generated
    */
-  SingleStatement createSingleStatement();
+  AssignmentStatement createAssignmentStatement();
 
   /**
-   * Returns a new object of class '<em>Self Statement</em>'.
+   * Returns a new object of class '<em>Variable Assignment Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Self Statement</em>'.
+   * @return a new object of class '<em>Variable Assignment Statement</em>'.
    * @generated
    */
-  SelfStatement createSelfStatement();
+  VariableAssignmentStatement createVariableAssignmentStatement();
 
   /**
-   * Returns a new object of class '<em>Multi Statement</em>'.
+   * Returns a new object of class '<em>Self Assignment Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi Statement</em>'.
+   * @return a new object of class '<em>Self Assignment Statement</em>'.
    * @generated
    */
-  MultiStatement createMultiStatement();
+  SelfAssignmentStatement createSelfAssignmentStatement();
 
   /**
-   * Returns a new object of class '<em>Unary Expression</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unary Expression</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  UnaryExpression createUnaryExpression();
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Call</em>'.
+   * @generated
+   */
+  FunctionCall createFunctionCall();
+
+  /**
+   * Returns a new object of class '<em>List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List</em>'.
+   * @generated
+   */
+  ExpressionList createExpressionList();
+
+  /**
+   * Returns a new object of class '<em>Rest</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rest</em>'.
+   * @generated
+   */
+  ExpressionRest createExpressionRest();
+
+  /**
+   * Returns a new object of class '<em>Key Value Pair</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Key Value Pair</em>'.
+   * @generated
+   */
+  KeyValuePair createKeyValuePair();
+
+  /**
+   * Returns a new object of class '<em>Key Value Pair Rest</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Key Value Pair Rest</em>'.
+   * @generated
+   */
+  KeyValuePairRest createKeyValuePairRest();
 
   /**
    * Returns a new object of class '<em>Term</em>'.
@@ -102,6 +147,15 @@ public interface ExpressionFactory extends EFactory
    * @generated
    */
   Term createTerm();
+
+  /**
+   * Returns a new object of class '<em>List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List</em>'.
+   * @generated
+   */
+  List createList();
 
   /**
    * Returns a new object of class '<em>Designator</em>'.
@@ -140,31 +194,139 @@ public interface ExpressionFactory extends EFactory
   EqualityExpression createEqualityExpression();
 
   /**
-   * Returns a new object of class '<em>Dash Operation</em>'.
+   * Returns a new object of class '<em>Dash Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Dash Operation</em>'.
+   * @return a new object of class '<em>Dash Expression</em>'.
    * @generated
    */
-  DashOperation createDashOperation();
+  DashExpression createDashExpression();
 
   /**
-   * Returns a new object of class '<em>Point Operation</em>'.
+   * Returns a new object of class '<em>Point Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Point Operation</em>'.
+   * @return a new object of class '<em>Point Expression</em>'.
    * @generated
    */
-  PointOperation createPointOperation();
+  PointExpression createPointExpression();
 
   /**
-   * Returns a new object of class '<em>Pow Operation</em>'.
+   * Returns a new object of class '<em>Pow Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Pow Operation</em>'.
+   * @return a new object of class '<em>Pow Expression</em>'.
    * @generated
    */
-  PowOperation createPowOperation();
+  PowExpression createPowExpression();
+
+  /**
+   * Returns a new object of class '<em>Qualifier Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualifier Expression</em>'.
+   * @generated
+   */
+  QualifierExpression createQualifierExpression();
+
+  /**
+   * Returns a new object of class '<em>There Is In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>There Is In</em>'.
+   * @generated
+   */
+  ThereIsIn createThereIsIn();
+
+  /**
+   * Returns a new object of class '<em>Forall In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Forall In</em>'.
+   * @generated
+   */
+  ForallIn createForallIn();
+
+  /**
+   * Returns a new object of class '<em>First In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>First In</em>'.
+   * @generated
+   */
+  FirstIn createFirstIn();
+
+  /**
+   * Returns a new object of class '<em>Last In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Last In</em>'.
+   * @generated
+   */
+  LastIn createLastIn();
+
+  /**
+   * Returns a new object of class '<em>Count</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Count</em>'.
+   * @generated
+   */
+  Count createCount();
+
+  /**
+   * Returns a new object of class '<em>Reduce</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reduce</em>'.
+   * @generated
+   */
+  Reduce createReduce();
+
+  /**
+   * Returns a new object of class '<em>Sum</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sum</em>'.
+   * @generated
+   */
+  Sum createSum();
+
+  /**
+   * Returns a new object of class '<em>Map</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Map</em>'.
+   * @generated
+   */
+  Map createMap();
+
+  /**
+   * Returns a new object of class '<em>Apply</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Apply</em>'.
+   * @generated
+   */
+  Apply createApply();
+
+  /**
+   * Returns a new object of class '<em>Unary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unary Expression</em>'.
+   * @generated
+   */
+  UnaryExpression createUnaryExpression();
+
+  /**
+   * Returns a new object of class '<em>Structure Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Structure Expression</em>'.
+   * @generated
+   */
+  StructureExpression createStructureExpression();
 
   /**
    * Returns a new object of class '<em>String Value</em>'.

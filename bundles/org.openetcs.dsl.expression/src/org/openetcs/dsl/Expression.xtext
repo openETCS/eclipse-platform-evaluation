@@ -4,62 +4,147 @@ generate expression "http://www.openetcs.org/dsl/Expression"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model:
-	phrase=Phrase;
+	phrase = Phrase
+;	
 
-terminal DOUBLE returns ecore::EDouble:
-	INT '.' INT;
-FQN: ID ("." ID)*;
 Phrase:
-	Expression|Statement;
+	Expression 
+	| StatementList
+;
+	
+StatementList:
+	head=Statement ';' tail=StatementList?
+;
+	
+Statement:
+	AssignmentStatement
+;	
+
+AssignmentStatement:
+	VariableAssignmentStatement
+	| SelfAssignmentStatement
+;
+
+VariableAssignmentStatement:
+	designator=Designator "<-" expression=Expression
+;
+
+SelfAssignmentStatement:
+	"CurrentState" "<-" expression=Expression
+;
 
 Expression:
-	EvaluationExpression;
-
-EvaluationExpression returns Expression:
 	OrExpression
 ;
 
-Statement:
-	SingleStatement | SelfStatement | MultiStatement;
-
-SingleStatement:
-	desgnator=Designator "<-" expression=Expression;
-
-SelfStatement:
-	"CurrentState" "<-" expression=Expression;
-
-MultiStatement:
-	desgnator=Designator "(" (expressions+=Expression)* ")";
-
-
 OrExpression returns Expression:
-	AndExpression ({OrExpression.left=current} op='OR' right=AndExpression)*;
+	AndExpression {OrExpression.left=current} 
+		(=> op='OR' right=OrExpression)?
+;
+	
 AndExpression returns Expression:
-	EqualityExpression ({AndExpression.left=current} op='AND' right=EqualityExpression)*;
+	EqualityExpression {AndExpression.left=current} 
+		(=> op='AND' right=AndExpression)?
+;
 
 EqualityExpression returns Expression:
-	DashOperation ({EqualityExpression.left=current} op=( '=='|'!='|'<='|'>='|'in'|'not in') right=DashOperation)*;
+	DashExpression {EqualityExpression.left=current} 
+		(=> op=( '=='|'!='|'<='|'>='|'in'|'not in') right=EqualityExpression)?
+;
 
+DashExpression returns Expression:
+	PointExpression {DashExpression.left=current} 
+		(=> op=('+'|'-') right=DashExpression)?
+;
+	
+PointExpression returns Expression:
+	PowExpression {PointExpression.left=current} 
+		(=> op=('*'|'/') right=PointExpression)?;
+	
+PowExpression returns Expression:
+	QualifierExpression {PowExpression.left=current} 
+		(=> op=('^') right=PowExpression)?;
 
-DashOperation returns Expression:
-	PointOperation ({DashOperation.left=current} op=('+'|'-') right=PointOperation)*;
-PointOperation returns Expression:
-	PowOperation ({PointOperation.left=current} op=('*'|'/') right=PowOperation)*;
-PowOperation returns Expression:
-	PrimaryExpression ({PowOperation.left=current} op=('^') right=PrimaryExpression)*;
+QualifierExpression returns Expression:
+	PrimaryExpression {QualifierExpression.left=current} 
+		(=> op=('.') right=QualifierExpression)?
+;	
 
-//|'('EvaluationExpression')'|'NOT ('EvaluationExpression')'
 PrimaryExpression returns Expression:
-	UnaryExpression|'('EvaluationExpression')'|'NOT ('EvaluationExpression')';
+	UnaryExpression
+	| FunctionCall
+	| ListExpression
+;
 
-UnaryExpression:
-	Term;
+FunctionCall:
+	Designator '(' params=ExpressionList? ')'
+;
+
+ExpressionList:
+	head=Expression (tail+=ExpressionRest)*
+;
+
+ExpressionRest:
+	',' Expression
+;
+
+ListExpression returns Expression:
+	  {ThereIsIn} (=> 'THERE_IS_IN' expr=ListValue)
+	| {ForallIn} (=> 'FORALL_IN' expr=ListValue)
+	| {FirstIn} (=> 'FIRST_IN' expr=ListValue)
+	| {LastIn} (=> 'LAST_IN' expr=ListValue)
+	| {Count}  (=> 'COUNT'  expr=ListValue)
+	| {Reduce} (=> 'REDUCE' expr=ListValue 'USING' usingExpr=Expression 'INITIAL_VALUE' initValue=Expression)
+	| {Sum}    (=> 'SUM'    expr=ListValue 'USING' usingExpr=Expression)
+	| {Map}    (=> 'MAP'    expr=ListValue 'USING' usingExpr=Expression)
+	| {Apply}  (=> 'APPLY' applyExpr=Expression 'ON' expr=ListValue)
+;
+
+ListValue returns Expression:
+	Expression (=> '|' condition=Condition)?
+;
+
+// TODO
+Condition returns Expression:
+	Expression
+;
+	
+UnaryExpression returns Expression:
+	Term structuredExpression=StructureExpression
+	| '('Expression')' {UnaryExpression.expr=current} structuredExpression=StructureExpression
+	| 'NOT ('Expression')' {UnaryExpression.expr=current} structuredExpression=StructureExpression
+;	
+
+StructureExpression returns Expression:
+//	Designator
+	{StructureExpression} ('{' keyValuePair=KeyValuePair '}' structuredExpressions+=StructureExpression)?
+;
+
+KeyValuePair:
+	key=ID '=>' value=Expression (rest+=KeyValuePairRest)?
+;
+
+KeyValuePairRest:
+	',' KeyValuePair
+;
 
 Term:
 	Designator |
 	{StringValue} value=STRING |
 	{IntegerValue} value=INT |
-	{DoubleValue} value=DOUBLE;
+	{DoubleValue} value=DOUBLE | 
+	List;
+	
+List:
+	{List} '[' (terms+=Term)* ']'
+;
 
+terminal DOUBLE returns ecore::EDouble:
+	INT '.' INT
+;
+
+FQN: ID ("." ID)*;
+	
 Designator:
-	(value=[ecore::EObject|FQN]);
+	(value=[ecore::EObject])	
+;

@@ -5,23 +5,23 @@ package org.openetcs.dsl.expression;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Dash Operation</b></em>'.
+ * A representation of the model object '<em><b>Dash Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openetcs.dsl.expression.DashOperation#getLeft <em>Left</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.DashOperation#getOp <em>Op</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.DashOperation#getRight <em>Right</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.DashExpression#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.DashExpression#getOp <em>Op</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.DashExpression#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.openetcs.dsl.expression.ExpressionPackage#getDashOperation()
+ * @see org.openetcs.dsl.expression.ExpressionPackage#getDashExpression()
  * @model
  * @generated
  */
-public interface DashOperation extends Expression
+public interface DashExpression extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -33,14 +33,14 @@ public interface DashOperation extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
    * @see #setLeft(Expression)
-   * @see org.openetcs.dsl.expression.ExpressionPackage#getDashOperation_Left()
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getDashExpression_Left()
    * @model containment="true"
    * @generated
    */
   Expression getLeft();
 
   /**
-   * Sets the value of the '{@link org.openetcs.dsl.expression.DashOperation#getLeft <em>Left</em>}' containment reference.
+   * Sets the value of the '{@link org.openetcs.dsl.expression.DashExpression#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Left</em>' containment reference.
@@ -59,14 +59,14 @@ public interface DashOperation extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Op</em>' attribute.
    * @see #setOp(String)
-   * @see org.openetcs.dsl.expression.ExpressionPackage#getDashOperation_Op()
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getDashExpression_Op()
    * @model
    * @generated
    */
   String getOp();
 
   /**
-   * Sets the value of the '{@link org.openetcs.dsl.expression.DashOperation#getOp <em>Op</em>}' attribute.
+   * Sets the value of the '{@link org.openetcs.dsl.expression.DashExpression#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Op</em>' attribute.
@@ -85,14 +85,14 @@ public interface DashOperation extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
    * @see #setRight(Expression)
-   * @see org.openetcs.dsl.expression.ExpressionPackage#getDashOperation_Right()
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getDashExpression_Right()
    * @model containment="true"
    * @generated
    */
   Expression getRight();
 
   /**
-   * Sets the value of the '{@link org.openetcs.dsl.expression.DashOperation#getRight <em>Right</em>}' containment reference.
+   * Sets the value of the '{@link org.openetcs.dsl.expression.DashExpression#getRight <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Right</em>' containment reference.
@@ -101,4 +101,4 @@ public interface DashOperation extends Expression
    */
   void setRight(Expression value);
 
-} // DashOperation
+} // DashExpression

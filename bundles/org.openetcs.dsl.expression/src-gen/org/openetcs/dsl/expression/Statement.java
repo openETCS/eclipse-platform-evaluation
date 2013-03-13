@@ -2,6 +2,7 @@
  */
 package org.openetcs.dsl.expression;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package org.openetcs.dsl.expression;
  * @model
  * @generated
  */
-public interface Statement extends Phrase
+public interface Statement extends EObject
 {
 } // Statement

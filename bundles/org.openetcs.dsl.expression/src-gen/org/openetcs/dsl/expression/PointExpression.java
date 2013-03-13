@@ -5,23 +5,23 @@ package org.openetcs.dsl.expression;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Pow Operation</b></em>'.
+ * A representation of the model object '<em><b>Point Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.openetcs.dsl.expression.PowOperation#getLeft <em>Left</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.PowOperation#getOp <em>Op</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.PowOperation#getRight <em>Right</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.PointExpression#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.PointExpression#getOp <em>Op</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.PointExpression#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.openetcs.dsl.expression.ExpressionPackage#getPowOperation()
+ * @see org.openetcs.dsl.expression.ExpressionPackage#getPointExpression()
  * @model
  * @generated
  */
-public interface PowOperation extends Expression
+public interface PointExpression extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -33,14 +33,14 @@ public interface PowOperation extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
    * @see #setLeft(Expression)
-   * @see org.openetcs.dsl.expression.ExpressionPackage#getPowOperation_Left()
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getPointExpression_Left()
    * @model containment="true"
    * @generated
    */
   Expression getLeft();
 
   /**
-   * Sets the value of the '{@link org.openetcs.dsl.expression.PowOperation#getLeft <em>Left</em>}' containment reference.
+   * Sets the value of the '{@link org.openetcs.dsl.expression.PointExpression#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Left</em>' containment reference.
@@ -59,14 +59,14 @@ public interface PowOperation extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Op</em>' attribute.
    * @see #setOp(String)
-   * @see org.openetcs.dsl.expression.ExpressionPackage#getPowOperation_Op()
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getPointExpression_Op()
    * @model
    * @generated
    */
   String getOp();
 
   /**
-   * Sets the value of the '{@link org.openetcs.dsl.expression.PowOperation#getOp <em>Op</em>}' attribute.
+   * Sets the value of the '{@link org.openetcs.dsl.expression.PointExpression#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Op</em>' attribute.
@@ -85,14 +85,14 @@ public interface PowOperation extends Expression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
    * @see #setRight(Expression)
-   * @see org.openetcs.dsl.expression.ExpressionPackage#getPowOperation_Right()
+   * @see org.openetcs.dsl.expression.ExpressionPackage#getPointExpression_Right()
    * @model containment="true"
    * @generated
    */
   Expression getRight();
 
   /**
-   * Sets the value of the '{@link org.openetcs.dsl.expression.PowOperation#getRight <em>Right</em>}' containment reference.
+   * Sets the value of the '{@link org.openetcs.dsl.expression.PointExpression#getRight <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Right</em>' containment reference.
@@ -101,4 +101,4 @@ public interface PowOperation extends Expression
    */
   void setRight(Expression value);
 
-} // PowOperation
+} // PointExpression

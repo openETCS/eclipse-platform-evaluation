@@ -12,24 +12,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.openetcs.dsl.expression.Expression;
 import org.openetcs.dsl.expression.ExpressionPackage;
-import org.openetcs.dsl.expression.PowOperation;
+import org.openetcs.dsl.expression.QualifierExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Pow Operation</b></em>'.
+ * An implementation of the model object '<em><b>Qualifier Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openetcs.dsl.expression.impl.PowOperationImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.impl.PowOperationImpl#getOp <em>Op</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.impl.PowOperationImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.QualifierExpressionImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.QualifierExpressionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.QualifierExpressionImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PowOperationImpl extends ExpressionImpl implements PowOperation
+public class QualifierExpressionImpl extends ExpressionImpl implements QualifierExpression
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -76,7 +76,7 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PowOperationImpl()
+  protected QualifierExpressionImpl()
   {
     super();
   }
@@ -89,7 +89,7 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionPackage.Literals.POW_OPERATION;
+    return ExpressionPackage.Literals.QUALIFIER_EXPRESSION;
   }
 
   /**
@@ -113,7 +113,7 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
     left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.POW_OPERATION__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.QUALIFIER_EXPRESSION__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -130,14 +130,14 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
     {
       NotificationChain msgs = null;
       if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POW_OPERATION__LEFT, null, msgs);
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.QUALIFIER_EXPRESSION__LEFT, null, msgs);
       if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POW_OPERATION__LEFT, null, msgs);
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.QUALIFIER_EXPRESSION__LEFT, null, msgs);
       msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.POW_OPERATION__LEFT, newLeft, newLeft));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.QUALIFIER_EXPRESSION__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -160,7 +160,7 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
     String oldOp = op;
     op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.POW_OPERATION__OP, oldOp, op));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.QUALIFIER_EXPRESSION__OP, oldOp, op));
   }
 
   /**
@@ -184,7 +184,7 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
     right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.POW_OPERATION__RIGHT, oldRight, newRight);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -201,14 +201,14 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
     {
       NotificationChain msgs = null;
       if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POW_OPERATION__RIGHT, null, msgs);
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT, null, msgs);
       if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.POW_OPERATION__RIGHT, null, msgs);
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT, null, msgs);
       msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.POW_OPERATION__RIGHT, newRight, newRight));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT, newRight, newRight));
   }
 
   /**
@@ -221,9 +221,9 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.POW_OPERATION__LEFT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__LEFT:
         return basicSetLeft(null, msgs);
-      case ExpressionPackage.POW_OPERATION__RIGHT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT:
         return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -239,11 +239,11 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.POW_OPERATION__LEFT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__LEFT:
         return getLeft();
-      case ExpressionPackage.POW_OPERATION__OP:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__OP:
         return getOp();
-      case ExpressionPackage.POW_OPERATION__RIGHT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT:
         return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -259,13 +259,13 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.POW_OPERATION__LEFT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__LEFT:
         setLeft((Expression)newValue);
         return;
-      case ExpressionPackage.POW_OPERATION__OP:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__OP:
         setOp((String)newValue);
         return;
-      case ExpressionPackage.POW_OPERATION__RIGHT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT:
         setRight((Expression)newValue);
         return;
     }
@@ -282,13 +282,13 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.POW_OPERATION__LEFT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__LEFT:
         setLeft((Expression)null);
         return;
-      case ExpressionPackage.POW_OPERATION__OP:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__OP:
         setOp(OP_EDEFAULT);
         return;
-      case ExpressionPackage.POW_OPERATION__RIGHT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT:
         setRight((Expression)null);
         return;
     }
@@ -305,11 +305,11 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
   {
     switch (featureID)
     {
-      case ExpressionPackage.POW_OPERATION__LEFT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__LEFT:
         return left != null;
-      case ExpressionPackage.POW_OPERATION__OP:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case ExpressionPackage.POW_OPERATION__RIGHT:
+      case ExpressionPackage.QUALIFIER_EXPRESSION__RIGHT:
         return right != null;
     }
     return super.eIsSet(featureID);
@@ -332,4 +332,4 @@ public class PowOperationImpl extends ExpressionImpl implements PowOperation
     return result.toString();
   }
 
-} //PowOperationImpl
+} //QualifierExpressionImpl
