@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Controls
+Bundle-SymbolicName: org.openetcs.ui.controls;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.openetcs.ui.internal.controls.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecp.edit.swt;bundle-version="1.0.0",
+ org.eclipse.emf.ecp.edit;bundle-version="1.0.0",
+ org.openetcs.model;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

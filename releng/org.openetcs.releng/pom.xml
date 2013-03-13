@@ -36,7 +36,18 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/kepler</url>
 		</repository>
+		<repository>
+			<id>ecp-latest</id>
+			<layout>p2</layout>
+			<url>org.eclipse.emf.ecp.site - https://hudson.eclipse.org/hudson/job/emf-emfclient-maintenance/lastSuccessfulBuild/artifact/git/ECP2/org.eclipse.emf.ecp.site-feature/target/repository/</url>
+		</repository>
+		<repository>
+			<id>emfstore-latest</id>
+			<layout>p2</layout>
+			<url>org.eclipse.emf.emfstore.p2repository - https://hudson.eclipse.org/hudson/job/emf-emfstore-integration-tycho/lastSuccessfulBuild/artifact/git/releng/org.eclipse.emf.emfstore.p2repository/target/repository/</url>
+		</repository>
 	</repositories>
+	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<outputDirectory>bin</outputDirectory>

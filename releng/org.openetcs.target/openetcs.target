@@ -29,18 +29,18 @@
 <repository location="http://download.eclipse.org/emfclient/graphiti/ecp_extension/"/>
 </location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.ecp.ui3x.feature.group" version="1.0.0.201303111151"/>
-<unit id="org.eclipse.emf.ecp.feature.group" version="1.0.0.201303111151"/>
-<unit id="org.eclipse.emf.ecp.emfstore.feature.group" version="1.0.0.201303111151"/>
+<unit id="org.eclipse.emf.ecp.ui3x.feature.group" version="1.0.0.201303120403"/>
+<unit id="org.eclipse.emf.ecp.feature.group" version="1.0.0.201303120403"/>
+<unit id="org.eclipse.emf.ecp.emfstore.feature.group" version="1.0.0.201303120403"/>
 <repository location="https://hudson.eclipse.org/hudson/job/emf-emfclient-maintenance/lastSuccessfulBuild/artifact/git/ECP2/org.eclipse.emf.ecp.site-feature/target/repository/"/>
 </location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.emfstore.client.transaction.feature.feature.group" version="1.0.0.v20130311-1135"/>
-<unit id="org.eclipse.emf.emfstore.client.feature.feature.group" version="1.0.0.v20130311-1135"/>
-<unit id="org.eclipse.emf.emfstore.server.feature.feature.group" version="1.0.0.v20130311-1135"/>
-<unit id="org.eclipse.emf.emfstore.client.ui.feature.feature.group" version="1.0.0.v20130311-1135"/>
-<unit id="org.eclipse.emf.emfstore.example.feature.feature.group" version="1.0.0.v20130311-1135"/>
-<unit id="org.eclipse.emf.emfstore.common.feature.feature.group" version="1.0.0.v20130311-1135"/>
+<unit id="org.eclipse.emf.emfstore.client.transaction.feature.feature.group" version="1.0.0.v20130312-0842"/>
+<unit id="org.eclipse.emf.emfstore.client.feature.feature.group" version="1.0.0.v20130312-0842"/>
+<unit id="org.eclipse.emf.emfstore.server.feature.feature.group" version="1.0.0.v20130312-0842"/>
+<unit id="org.eclipse.emf.emfstore.client.ui.feature.feature.group" version="1.0.0.v20130312-0842"/>
+<unit id="org.eclipse.emf.emfstore.example.feature.feature.group" version="1.0.0.v20130312-0842"/>
+<unit id="org.eclipse.emf.emfstore.common.feature.feature.group" version="1.0.0.v20130312-0842"/>
 <repository location="https://hudson.eclipse.org/hudson/job/emf-emfstore-integration-tycho/lastSuccessfulBuild/artifact/git/releng/org.eclipse.emf.emfstore.p2repository/target/repository/"/>
 </location>
 </locations>

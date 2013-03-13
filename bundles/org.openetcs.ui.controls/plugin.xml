@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecp.edit.controls">
+      <control
+            class="org.openetcs.ui.controls.ReqRefContainerControl"
+            id="org.openetcs.ui.controls.reqref.container"
+            showLabel="true"
+            supportedCompositeClass="org.eclipse.swt.widgets.Composite">
+         <staticTest
+               priority="5"
+               singleValue="true"
+               supportedClassType="org.eclipse.emf.ecore.EObject"
+               supportedEObject="org.openetcs.model.ertmsformalspecs.requirements.Paragraph"
+               supportedFeature="implementations">
+         </staticTest>
+      </control>
+   </extension>
+
+</plugin>
