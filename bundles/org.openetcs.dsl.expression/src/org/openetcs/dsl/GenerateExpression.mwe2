@@ -42,6 +42,9 @@ Workflow {
     
                 // generates Java API for the generated EPackages
                 fragment = ecore.EcoreGeneratorFragment {
+//                	javaModelDirectory="${modelProject}/model"
+//                	genModel="Expression.genmodel"
+                	xmiModelDirectory="${modelProject}/model"
                 // referencedGenModels = "
                 //  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
                 //  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
