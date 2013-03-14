@@ -24,6 +24,7 @@ import org.openetcs.dsl.expression.ExpressionList;
 import org.openetcs.dsl.expression.ExpressionPackage;
 import org.openetcs.dsl.expression.FirstIn;
 import org.openetcs.dsl.expression.ForallIn;
+import org.openetcs.dsl.expression.FunctionCall;
 import org.openetcs.dsl.expression.IntegerValue;
 import org.openetcs.dsl.expression.KeyValuePair;
 import org.openetcs.dsl.expression.LastIn;
@@ -33,6 +34,7 @@ import org.openetcs.dsl.expression.Model;
 import org.openetcs.dsl.expression.OrExpression;
 import org.openetcs.dsl.expression.PointExpression;
 import org.openetcs.dsl.expression.PowExpression;
+import org.openetcs.dsl.expression.ProcedureCall;
 import org.openetcs.dsl.expression.QualifierExpression;
 import org.openetcs.dsl.expression.Reduce;
 import org.openetcs.dsl.expression.SelfAssignmentStatement;
@@ -89,10 +91,6 @@ public class ExpressionSemanticSequencer extends AbstractDelegatingSemanticSeque
 					sequence_Designator(context, (Designator) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getFunctionCallRule()) {
-					sequence_Designator_FunctionCall(context, (Designator) semanticObject); 
-					return; 
-				}
 				else if(context == grammarAccess.getPrimaryExpressionRule() ||
 				   context == grammarAccess.getQualifierExpressionAccess().getQualifierExpressionLeftAction_1() ||
 				   context == grammarAccess.getUnaryExpressionRule()) {
@@ -138,6 +136,14 @@ public class ExpressionSemanticSequencer extends AbstractDelegatingSemanticSeque
 				   context == grammarAccess.getPrimaryExpressionRule() ||
 				   context == grammarAccess.getQualifierExpressionAccess().getQualifierExpressionLeftAction_1()) {
 					sequence_ListExpression(context, (ForallIn) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExpressionPackage.FUNCTION_CALL:
+				if(context == grammarAccess.getFunctionCallRule() ||
+				   context == grammarAccess.getPrimaryExpressionRule() ||
+				   context == grammarAccess.getQualifierExpressionAccess().getQualifierExpressionLeftAction_1()) {
+					sequence_FunctionCall(context, (FunctionCall) semanticObject); 
 					return; 
 				}
 				else break;
@@ -222,6 +228,12 @@ public class ExpressionSemanticSequencer extends AbstractDelegatingSemanticSeque
 				if(context == grammarAccess.getPointExpressionAccess().getPointExpressionLeftAction_1() ||
 				   context == grammarAccess.getPowExpressionRule()) {
 					sequence_PowExpression(context, (PowExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExpressionPackage.PROCEDURE_CALL:
+				if(context == grammarAccess.getProcedureCallRule()) {
+					sequence_ProcedureCall(context, (ProcedureCall) semanticObject); 
 					return; 
 				}
 				else break;
@@ -338,15 +350,6 @@ public class ExpressionSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (value=[EObject|ID] params=ExpressionList?)
-	 */
-	protected void sequence_Designator_FunctionCall(EObject context, Designator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (value=[EObject|ID] structuredExpression=StructureExpression)
 	 */
 	protected void sequence_Designator_UnaryExpression(EObject context, Designator semanticObject) {
@@ -384,6 +387,15 @@ public class ExpressionSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     (head=Expression tail+=ExpressionRest*)
 	 */
 	protected void sequence_ExpressionList(EObject context, ExpressionList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (function=[Function|ID] params=ExpressionList?)
+	 */
+	protected void sequence_FunctionCall(EObject context, FunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -544,6 +556,15 @@ public class ExpressionSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     ((left=PowExpression_PowExpression_1 (op='^' right=PowExpression)?) | left=PowExpression_PowExpression_1)
 	 */
 	protected void sequence_PowExpression(EObject context, PowExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (procedure=[Procedure|ID] params=ExpressionList?)
+	 */
+	protected void sequence_ProcedureCall(EObject context, ProcedureCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

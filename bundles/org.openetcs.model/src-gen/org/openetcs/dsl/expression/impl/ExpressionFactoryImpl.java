@@ -30,7 +30,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
   {
     try
     {
-      ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openetcs.org/dsl/Expression"); 
+      ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory(ExpressionPackage.eNS_URI);
       if (theExpressionFactory != null)
       {
         return theExpressionFactory;
@@ -73,6 +73,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
       case ExpressionPackage.SELF_ASSIGNMENT_STATEMENT: return createSelfAssignmentStatement();
       case ExpressionPackage.EXPRESSION: return createExpression();
       case ExpressionPackage.FUNCTION_CALL: return createFunctionCall();
+      case ExpressionPackage.PROCEDURE_CALL: return createProcedureCall();
       case ExpressionPackage.EXPRESSION_LIST: return createExpressionList();
       case ExpressionPackage.EXPRESSION_REST: return createExpressionRest();
       case ExpressionPackage.KEY_VALUE_PAIR: return createKeyValuePair();
@@ -203,6 +204,17 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
   {
     FunctionCallImpl functionCall = new FunctionCallImpl();
     return functionCall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ProcedureCall createProcedureCall()
+  {
+    ProcedureCallImpl procedureCall = new ProcedureCallImpl();
+    return procedureCall;
   }
 
   /**

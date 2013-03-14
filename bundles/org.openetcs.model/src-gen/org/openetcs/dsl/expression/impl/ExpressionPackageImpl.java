@@ -36,6 +36,7 @@ import org.openetcs.dsl.expression.OrExpression;
 import org.openetcs.dsl.expression.Phrase;
 import org.openetcs.dsl.expression.PointExpression;
 import org.openetcs.dsl.expression.PowExpression;
+import org.openetcs.dsl.expression.ProcedureCall;
 import org.openetcs.dsl.expression.QualifierExpression;
 import org.openetcs.dsl.expression.Reduce;
 import org.openetcs.dsl.expression.SelfAssignmentStatement;
@@ -48,6 +49,10 @@ import org.openetcs.dsl.expression.Term;
 import org.openetcs.dsl.expression.ThereIsIn;
 import org.openetcs.dsl.expression.UnaryExpression;
 import org.openetcs.dsl.expression.VariableAssignmentStatement;
+
+import org.openetcs.model.ertmsformalspecs.ModelPackage;
+
+import org.openetcs.model.ertmsformalspecs.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +124,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
    * @generated
    */
   private EClass functionCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass procedureCallEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -364,6 +376,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
     isInited = true;
 
+    // Initialize simple dependencies
+    ModelPackage.eINSTANCE.eClass();
+    TypesPackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theExpressionPackage.createPackageContents();
 
@@ -534,6 +550,56 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getFunctionCall_Function()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionCall_Params()
+  {
+    return (EReference)functionCallEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProcedureCall()
+  {
+    return procedureCallEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcedureCall_Procedure()
+  {
+    return (EReference)procedureCallEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcedureCall_Params()
+  {
+    return (EReference)procedureCallEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getExpressionList()
   {
     return expressionListEClass;
@@ -674,19 +740,9 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDesignator_Params()
-  {
-    return (EReference)designatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getDesignator_Value()
   {
-    return (EReference)designatorEClass.getEStructuralFeatures().get(1);
+    return (EReference)designatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1372,6 +1428,12 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
     createEReference(expressionEClass, EXPRESSION__CONDITION);
 
     functionCallEClass = createEClass(FUNCTION_CALL);
+    createEReference(functionCallEClass, FUNCTION_CALL__FUNCTION);
+    createEReference(functionCallEClass, FUNCTION_CALL__PARAMS);
+
+    procedureCallEClass = createEClass(PROCEDURE_CALL);
+    createEReference(procedureCallEClass, PROCEDURE_CALL__PROCEDURE);
+    createEReference(procedureCallEClass, PROCEDURE_CALL__PARAMS);
 
     expressionListEClass = createEClass(EXPRESSION_LIST);
     createEReference(expressionListEClass, EXPRESSION_LIST__HEAD);
@@ -1393,7 +1455,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
     createEReference(listEClass, LIST__TERMS);
 
     designatorEClass = createEClass(DESIGNATOR);
-    createEReference(designatorEClass, DESIGNATOR__PARAMS);
     createEReference(designatorEClass, DESIGNATOR__VALUE);
 
     orExpressionEClass = createEClass(OR_EXPRESSION);
@@ -1505,6 +1566,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+    ModelPackage theModelPackage = (ModelPackage)EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
@@ -1520,7 +1585,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
     keyValuePairEClass.getESuperTypes().add(this.getKeyValuePairRest());
     termEClass.getESuperTypes().add(this.getExpression());
     listEClass.getESuperTypes().add(this.getTerm());
-    designatorEClass.getESuperTypes().add(this.getFunctionCall());
     designatorEClass.getESuperTypes().add(this.getTerm());
     orExpressionEClass.getESuperTypes().add(this.getExpression());
     andExpressionEClass.getESuperTypes().add(this.getExpression());
@@ -1568,6 +1632,12 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
     initEReference(getExpression_Condition(), this.getExpression(), null, "condition", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionCallEClass, FunctionCall.class, "FunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionCall_Function(), theTypesPackage.getFunction(), null, "function", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionCall_Params(), this.getExpressionList(), null, "params", null, 0, 1, FunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(procedureCallEClass, ProcedureCall.class, "ProcedureCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProcedureCall_Procedure(), theModelPackage.getProcedure(), null, "procedure", null, 0, 1, ProcedureCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcedureCall_Params(), this.getExpressionList(), null, "params", null, 0, 1, ProcedureCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionListEClass, ExpressionList.class, "ExpressionList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpressionList_Head(), this.getExpression(), null, "head", null, 0, 1, ExpressionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1589,7 +1659,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
     initEReference(getList_Terms(), this.getTerm(), null, "terms", null, 0, -1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(designatorEClass, Designator.class, "Designator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDesignator_Params(), this.getExpressionList(), null, "params", null, 0, 1, Designator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDesignator_Value(), ecorePackage.getEObject(), null, "value", null, 0, 1, Designator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orExpressionEClass, OrExpression.class, "OrExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

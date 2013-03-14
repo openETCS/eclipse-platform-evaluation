@@ -9,38 +9,39 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.openetcs.dsl.expression.ExpressionList;
 import org.openetcs.dsl.expression.ExpressionPackage;
-import org.openetcs.dsl.expression.FunctionCall;
+import org.openetcs.dsl.expression.ProcedureCall;
 
-import org.openetcs.model.ertmsformalspecs.types.Function;
+import org.openetcs.model.ertmsformalspecs.Procedure;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function Call</b></em>'.
+ * An implementation of the model object '<em><b>Procedure Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.openetcs.dsl.expression.impl.FunctionCallImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link org.openetcs.dsl.expression.impl.FunctionCallImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.ProcedureCallImpl#getProcedure <em>Procedure</em>}</li>
+ *   <li>{@link org.openetcs.dsl.expression.impl.ProcedureCallImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
+public class ProcedureCallImpl extends MinimalEObjectImpl.Container implements ProcedureCall
 {
   /**
-   * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
+   * The cached value of the '{@link #getProcedure() <em>Procedure</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction()
+   * @see #getProcedure()
    * @generated
    * @ordered
    */
-  protected Function function;
+  protected Procedure procedure;
 
   /**
    * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference.
@@ -57,7 +58,7 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FunctionCallImpl()
+  protected ProcedureCallImpl()
   {
     super();
   }
@@ -70,7 +71,7 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
   @Override
   protected EClass eStaticClass()
   {
-    return ExpressionPackage.Literals.FUNCTION_CALL;
+    return ExpressionPackage.Literals.PROCEDURE_CALL;
   }
 
   /**
@@ -78,19 +79,19 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public Function getFunction()
+  public Procedure getProcedure()
   {
-    if (function != null && function.eIsProxy())
+    if (procedure != null && procedure.eIsProxy())
     {
-      InternalEObject oldFunction = (InternalEObject)function;
-      function = (Function)eResolveProxy(oldFunction);
-      if (function != oldFunction)
+      InternalEObject oldProcedure = (InternalEObject)procedure;
+      procedure = (Procedure)eResolveProxy(oldProcedure);
+      if (procedure != oldProcedure)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionPackage.FUNCTION_CALL__FUNCTION, oldFunction, function));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionPackage.PROCEDURE_CALL__PROCEDURE, oldProcedure, procedure));
       }
     }
-    return function;
+    return procedure;
   }
 
   /**
@@ -98,9 +99,9 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public Function basicGetFunction()
+  public Procedure basicGetProcedure()
   {
-    return function;
+    return procedure;
   }
 
   /**
@@ -108,12 +109,12 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFunction(Function newFunction)
+  public void setProcedure(Procedure newProcedure)
   {
-    Function oldFunction = function;
-    function = newFunction;
+    Procedure oldProcedure = procedure;
+    procedure = newProcedure;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.FUNCTION_CALL__FUNCTION, oldFunction, function));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.PROCEDURE_CALL__PROCEDURE, oldProcedure, procedure));
   }
 
   /**
@@ -137,7 +138,7 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
     params = newParams;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.FUNCTION_CALL__PARAMS, oldParams, newParams);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.PROCEDURE_CALL__PARAMS, oldParams, newParams);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,14 +155,14 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
     {
       NotificationChain msgs = null;
       if (params != null)
-        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.FUNCTION_CALL__PARAMS, null, msgs);
+        msgs = ((InternalEObject)params).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.PROCEDURE_CALL__PARAMS, null, msgs);
       if (newParams != null)
-        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.FUNCTION_CALL__PARAMS, null, msgs);
+        msgs = ((InternalEObject)newParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.PROCEDURE_CALL__PARAMS, null, msgs);
       msgs = basicSetParams(newParams, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.FUNCTION_CALL__PARAMS, newParams, newParams));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.PROCEDURE_CALL__PARAMS, newParams, newParams));
   }
 
   /**
@@ -174,7 +175,7 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case ExpressionPackage.FUNCTION_CALL__PARAMS:
+      case ExpressionPackage.PROCEDURE_CALL__PARAMS:
         return basicSetParams(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -190,10 +191,10 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case ExpressionPackage.FUNCTION_CALL__FUNCTION:
-        if (resolve) return getFunction();
-        return basicGetFunction();
-      case ExpressionPackage.FUNCTION_CALL__PARAMS:
+      case ExpressionPackage.PROCEDURE_CALL__PROCEDURE:
+        if (resolve) return getProcedure();
+        return basicGetProcedure();
+      case ExpressionPackage.PROCEDURE_CALL__PARAMS:
         return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -209,10 +210,10 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case ExpressionPackage.FUNCTION_CALL__FUNCTION:
-        setFunction((Function)newValue);
+      case ExpressionPackage.PROCEDURE_CALL__PROCEDURE:
+        setProcedure((Procedure)newValue);
         return;
-      case ExpressionPackage.FUNCTION_CALL__PARAMS:
+      case ExpressionPackage.PROCEDURE_CALL__PARAMS:
         setParams((ExpressionList)newValue);
         return;
     }
@@ -229,10 +230,10 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case ExpressionPackage.FUNCTION_CALL__FUNCTION:
-        setFunction((Function)null);
+      case ExpressionPackage.PROCEDURE_CALL__PROCEDURE:
+        setProcedure((Procedure)null);
         return;
-      case ExpressionPackage.FUNCTION_CALL__PARAMS:
+      case ExpressionPackage.PROCEDURE_CALL__PARAMS:
         setParams((ExpressionList)null);
         return;
     }
@@ -249,12 +250,12 @@ public class FunctionCallImpl extends ExpressionImpl implements FunctionCall
   {
     switch (featureID)
     {
-      case ExpressionPackage.FUNCTION_CALL__FUNCTION:
-        return function != null;
-      case ExpressionPackage.FUNCTION_CALL__PARAMS:
+      case ExpressionPackage.PROCEDURE_CALL__PROCEDURE:
+        return procedure != null;
+      case ExpressionPackage.PROCEDURE_CALL__PARAMS:
         return params != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //FunctionCallImpl
+} //ProcedureCallImpl

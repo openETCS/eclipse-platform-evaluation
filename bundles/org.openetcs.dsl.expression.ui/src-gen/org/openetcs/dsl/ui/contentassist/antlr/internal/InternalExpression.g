@@ -533,6 +533,8 @@ finally {
 
 
 
+
+
 // Entry rule entryRuleExpressionList
 entryRuleExpressionList 
 :
@@ -2575,9 +2577,9 @@ rule__FunctionCall__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getFunctionCallAccess().getDesignatorParserRuleCall_0()); }
-	ruleDesignator
-{ after(grammarAccess.getFunctionCallAccess().getDesignatorParserRuleCall_0()); }
+{ before(grammarAccess.getFunctionCallAccess().getFunctionAssignment_0()); }
+(rule__FunctionCall__FunctionAssignment_0)
+{ after(grammarAccess.getFunctionCallAccess().getFunctionAssignment_0()); }
 )
 
 ;
@@ -2674,6 +2676,7 @@ rule__FunctionCall__Group__3__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
 
 
 
@@ -5801,6 +5804,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__FunctionCall__FunctionAssignment_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFunctionCallAccess().getFunctionFunctionCrossReference_0_0()); }
+(
+{ before(grammarAccess.getFunctionCallAccess().getFunctionFunctionIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getFunctionCallAccess().getFunctionFunctionIDTerminalRuleCall_0_0_1()); }
+)
+{ after(grammarAccess.getFunctionCallAccess().getFunctionFunctionCrossReference_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__FunctionCall__ParamsAssignment_2
     @init {
 		int stackSize = keepStackSize();
@@ -5815,6 +5837,8 @@ rule__FunctionCall__ParamsAssignment_2
 finally {
 	restoreStackSize(stackSize);
 }
+
+
 
 rule__ExpressionList__HeadAssignment_0
     @init {

@@ -1123,16 +1123,20 @@ ruleFunctionCall returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
-    { 
-        newCompositeNode(grammarAccess.getFunctionCallAccess().getDesignatorParserRuleCall_0()); 
-    }
-    this_Designator_0=ruleDesignator
-    { 
-        $current = $this_Designator_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-	otherlv_1='(' 
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getFunctionCallRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getFunctionCallAccess().getFunctionFunctionCrossReference_0_0()); 
+	}
+
+)
+)	otherlv_1='(' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1());
     }
@@ -1160,6 +1164,8 @@ ruleFunctionCall returns [EObject current=null]
     }
 )
 ;
+
+
 
 
 

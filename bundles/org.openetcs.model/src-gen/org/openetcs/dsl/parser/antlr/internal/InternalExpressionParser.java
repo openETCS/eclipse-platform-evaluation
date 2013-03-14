@@ -282,11 +282,11 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                 {
                 int LA1_1 = input.LA(2);
 
-                if ( (LA1_1==EOF||(LA1_1>=15 && LA1_1<=29)||LA1_1==46) ) {
-                    alt1=1;
-                }
-                else if ( (LA1_1==13) ) {
+                if ( (LA1_1==13) ) {
                     alt1=2;
+                }
+                else if ( (LA1_1==EOF||(LA1_1>=15 && LA1_1<=29)||LA1_1==46) ) {
+                    alt1=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -2899,11 +2899,11 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                 {
                 int LA14_1 = input.LA(2);
 
-                if ( (LA14_1==EOF||LA14_1==12||(LA14_1>=15 && LA14_1<=28)||(LA14_1>=30 && LA14_1<=31)||(LA14_1>=38 && LA14_1<=39)||(LA14_1>=43 && LA14_1<=44)||(LA14_1>=46 && LA14_1<=47)) ) {
-                    alt14=1;
-                }
-                else if ( (LA14_1==29) ) {
+                if ( (LA14_1==29) ) {
                     alt14=2;
+                }
+                else if ( (LA14_1==EOF||LA14_1==12||(LA14_1>=15 && LA14_1<=28)||(LA14_1>=30 && LA14_1<=31)||(LA14_1>=38 && LA14_1<=39)||(LA14_1>=43 && LA14_1<=44)||(LA14_1>=46 && LA14_1<=47)) ) {
+                    alt14=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -3075,49 +3075,57 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1122:1: ruleFunctionCall returns [EObject current=null] : (this_Designator_0= ruleDesignator otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1122:1: ruleFunctionCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
+        Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
-        EObject this_Designator_0 = null;
-
         EObject lv_params_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1125:28: ( (this_Designator_0= ruleDesignator otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1126:1: (this_Designator_0= ruleDesignator otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1125:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1126:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1126:1: (this_Designator_0= ruleDesignator otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1127:5: this_Designator_0= ruleDesignator otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')'
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1126:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')' )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1126:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpressionList ) )? otherlv_3= ')'
+            {
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1126:2: ( (otherlv_0= RULE_ID ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1127:1: (otherlv_0= RULE_ID )
+            {
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1127:1: (otherlv_0= RULE_ID )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1128:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getFunctionCallAccess().getDesignatorParserRuleCall_0()); 
-                  
-            }
-            pushFollow(FOLLOW_ruleDesignator_in_ruleFunctionCall2681);
-            this_Designator_0=ruleDesignator();
 
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               
-                      current = this_Designator_0; 
-                      afterParserOrEnumRuleCall();
-                  
+              			if (current==null) {
+              	            current = createModelElement(grammarAccess.getFunctionCallRule());
+              	        }
+                      
             }
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleFunctionCall2692); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFunctionCall2679); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              		newLeafNode(otherlv_0, grammarAccess.getFunctionCallAccess().getFunctionFunctionCrossReference_0_0()); 
+              	
+            }
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleFunctionCall2691); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1139:1: ( (lv_params_2_0= ruleExpressionList ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1143:1: ( (lv_params_2_0= ruleExpressionList ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -3126,17 +3134,17 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1140:1: (lv_params_2_0= ruleExpressionList )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1144:1: (lv_params_2_0= ruleExpressionList )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1140:1: (lv_params_2_0= ruleExpressionList )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1141:3: lv_params_2_0= ruleExpressionList
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1144:1: (lv_params_2_0= ruleExpressionList )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1145:3: lv_params_2_0= ruleExpressionList
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getFunctionCallAccess().getParamsExpressionListParserRuleCall_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpressionList_in_ruleFunctionCall2713);
+                    pushFollow(FOLLOW_ruleExpressionList_in_ruleFunctionCall2712);
                     lv_params_2_0=ruleExpressionList();
 
                     state._fsp--;
@@ -3163,7 +3171,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleFunctionCall2726); if (state.failed) return current;
+            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleFunctionCall2725); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_3());
@@ -3192,7 +3200,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpressionList"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1169:1: entryRuleExpressionList returns [EObject current=null] : iv_ruleExpressionList= ruleExpressionList EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1175:1: entryRuleExpressionList returns [EObject current=null] : iv_ruleExpressionList= ruleExpressionList EOF ;
     public final EObject entryRuleExpressionList() throws RecognitionException {
         EObject current = null;
 
@@ -3200,13 +3208,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1170:2: (iv_ruleExpressionList= ruleExpressionList EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1171:2: iv_ruleExpressionList= ruleExpressionList EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1176:2: (iv_ruleExpressionList= ruleExpressionList EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1177:2: iv_ruleExpressionList= ruleExpressionList EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionListRule()); 
             }
-            pushFollow(FOLLOW_ruleExpressionList_in_entryRuleExpressionList2762);
+            pushFollow(FOLLOW_ruleExpressionList_in_entryRuleExpressionList2763);
             iv_ruleExpressionList=ruleExpressionList();
 
             state._fsp--;
@@ -3214,7 +3222,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExpressionList; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionList2772); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionList2773); if (state.failed) return current;
 
             }
 
@@ -3232,7 +3240,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpressionList"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1178:1: ruleExpressionList returns [EObject current=null] : ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1184:1: ruleExpressionList returns [EObject current=null] : ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* ) ;
     public final EObject ruleExpressionList() throws RecognitionException {
         EObject current = null;
 
@@ -3244,24 +3252,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1181:28: ( ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1182:1: ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1187:28: ( ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1188:1: ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1182:1: ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1182:2: ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )*
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1188:1: ( ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )* )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1188:2: ( (lv_head_0_0= ruleExpression ) ) ( (lv_tail_1_0= ruleExpressionRest ) )*
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1182:2: ( (lv_head_0_0= ruleExpression ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1183:1: (lv_head_0_0= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1188:2: ( (lv_head_0_0= ruleExpression ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1189:1: (lv_head_0_0= ruleExpression )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1183:1: (lv_head_0_0= ruleExpression )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1184:3: lv_head_0_0= ruleExpression
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1189:1: (lv_head_0_0= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1190:3: lv_head_0_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getExpressionListAccess().getHeadExpressionParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleExpression_in_ruleExpressionList2818);
+            pushFollow(FOLLOW_ruleExpression_in_ruleExpressionList2819);
             lv_head_0_0=ruleExpression();
 
             state._fsp--;
@@ -3285,7 +3293,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1200:2: ( (lv_tail_1_0= ruleExpressionRest ) )*
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1206:2: ( (lv_tail_1_0= ruleExpressionRest ) )*
             loop16:
             do {
                 int alt16=2;
@@ -3298,17 +3306,17 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1201:1: (lv_tail_1_0= ruleExpressionRest )
+            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1207:1: (lv_tail_1_0= ruleExpressionRest )
             	    {
-            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1201:1: (lv_tail_1_0= ruleExpressionRest )
-            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1202:3: lv_tail_1_0= ruleExpressionRest
+            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1207:1: (lv_tail_1_0= ruleExpressionRest )
+            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1208:3: lv_tail_1_0= ruleExpressionRest
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getExpressionListAccess().getTailExpressionRestParserRuleCall_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleExpressionRest_in_ruleExpressionList2839);
+            	    pushFollow(FOLLOW_ruleExpressionRest_in_ruleExpressionList2840);
             	    lv_tail_1_0=ruleExpressionRest();
 
             	    state._fsp--;
@@ -3361,7 +3369,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpressionRest"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1226:1: entryRuleExpressionRest returns [EObject current=null] : iv_ruleExpressionRest= ruleExpressionRest EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1232:1: entryRuleExpressionRest returns [EObject current=null] : iv_ruleExpressionRest= ruleExpressionRest EOF ;
     public final EObject entryRuleExpressionRest() throws RecognitionException {
         EObject current = null;
 
@@ -3369,13 +3377,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1227:2: (iv_ruleExpressionRest= ruleExpressionRest EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1228:2: iv_ruleExpressionRest= ruleExpressionRest EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1233:2: (iv_ruleExpressionRest= ruleExpressionRest EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1234:2: iv_ruleExpressionRest= ruleExpressionRest EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionRestRule()); 
             }
-            pushFollow(FOLLOW_ruleExpressionRest_in_entryRuleExpressionRest2876);
+            pushFollow(FOLLOW_ruleExpressionRest_in_entryRuleExpressionRest2877);
             iv_ruleExpressionRest=ruleExpressionRest();
 
             state._fsp--;
@@ -3383,7 +3391,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExpressionRest; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionRest2886); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionRest2887); if (state.failed) return current;
 
             }
 
@@ -3401,7 +3409,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpressionRest"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1235:1: ruleExpressionRest returns [EObject current=null] : (otherlv_0= ',' this_Expression_1= ruleExpression ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1241:1: ruleExpressionRest returns [EObject current=null] : (otherlv_0= ',' this_Expression_1= ruleExpression ) ;
     public final EObject ruleExpressionRest() throws RecognitionException {
         EObject current = null;
 
@@ -3412,13 +3420,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1238:28: ( (otherlv_0= ',' this_Expression_1= ruleExpression ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1239:1: (otherlv_0= ',' this_Expression_1= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1244:28: ( (otherlv_0= ',' this_Expression_1= ruleExpression ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1245:1: (otherlv_0= ',' this_Expression_1= ruleExpression )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1239:1: (otherlv_0= ',' this_Expression_1= ruleExpression )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1239:3: otherlv_0= ',' this_Expression_1= ruleExpression
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1245:1: (otherlv_0= ',' this_Expression_1= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1245:3: otherlv_0= ',' this_Expression_1= ruleExpression
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleExpressionRest2923); if (state.failed) return current;
+            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleExpressionRest2924); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getExpressionRestAccess().getCommaKeyword_0());
@@ -3429,7 +3437,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getExpressionRestAccess().getExpressionParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleExpression_in_ruleExpressionRest2945);
+            pushFollow(FOLLOW_ruleExpression_in_ruleExpressionRest2946);
             this_Expression_1=ruleExpression();
 
             state._fsp--;
@@ -3463,7 +3471,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleListExpression"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1260:1: entryRuleListExpression returns [EObject current=null] : iv_ruleListExpression= ruleListExpression EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1266:1: entryRuleListExpression returns [EObject current=null] : iv_ruleListExpression= ruleListExpression EOF ;
     public final EObject entryRuleListExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3471,13 +3479,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1261:2: (iv_ruleListExpression= ruleListExpression EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1262:2: iv_ruleListExpression= ruleListExpression EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1267:2: (iv_ruleListExpression= ruleListExpression EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1268:2: iv_ruleListExpression= ruleListExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getListExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleListExpression_in_entryRuleListExpression2980);
+            pushFollow(FOLLOW_ruleListExpression_in_entryRuleListExpression2981);
             iv_ruleListExpression=ruleListExpression();
 
             state._fsp--;
@@ -3485,7 +3493,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleListExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleListExpression2990); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleListExpression2991); if (state.failed) return current;
 
             }
 
@@ -3503,7 +3511,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListExpression"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1269:1: ruleListExpression returns [EObject current=null] : ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1275:1: ruleListExpression returns [EObject current=null] : ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) ) ;
     public final EObject ruleListExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3553,21 +3561,21 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1272:28: ( ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1273:1: ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1278:28: ( ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:1: ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1273:1: ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:1: ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) )
             int alt17=9;
             alt17 = dfa17.predict(input);
             switch (alt17) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1273:2: ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:2: ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1273:2: ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1273:3: () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:2: ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:3: () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1273:3: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1274:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:3: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1280:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3579,13 +3587,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:2: ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:3: ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1285:2: ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1285:3: ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:3: ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1279:4: ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1285:3: ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1285:4: ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN'
                     {
-                    otherlv_1=(Token)match(input,32,FOLLOW_32_in_ruleListExpression3046); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,32,FOLLOW_32_in_ruleListExpression3047); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getListExpressionAccess().getTHERE_IS_INKeyword_0_1_0());
@@ -3594,18 +3602,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1284:2: ( (lv_expr_2_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1285:1: (lv_expr_2_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1290:2: ( (lv_expr_2_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1291:1: (lv_expr_2_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1285:1: (lv_expr_2_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1286:3: lv_expr_2_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1291:1: (lv_expr_2_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1292:3: lv_expr_2_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_0_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3068);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3069);
                     lv_expr_2_0=ruleListValue();
 
                     state._fsp--;
@@ -3639,13 +3647,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1303:6: ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:6: ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1303:6: ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1303:7: () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:6: ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:7: () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1303:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1304:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1310:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3657,13 +3665,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:2: ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:3: ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1315:2: ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1315:3: ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:3: ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1309:4: ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1315:3: ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1315:4: ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN'
                     {
-                    otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleListExpression3107); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,33,FOLLOW_33_in_ruleListExpression3108); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getListExpressionAccess().getFORALL_INKeyword_1_1_0());
@@ -3672,18 +3680,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1314:2: ( (lv_expr_5_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1315:1: (lv_expr_5_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1320:2: ( (lv_expr_5_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1321:1: (lv_expr_5_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1315:1: (lv_expr_5_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1316:3: lv_expr_5_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1321:1: (lv_expr_5_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1322:3: lv_expr_5_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_1_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3129);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3130);
                     lv_expr_5_0=ruleListValue();
 
                     state._fsp--;
@@ -3717,13 +3725,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1333:6: ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:6: ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1333:6: ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1333:7: () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:6: ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:7: () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1333:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1334:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1340:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3735,13 +3743,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:2: ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:3: ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1345:2: ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1345:3: ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:3: ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1339:4: ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1345:3: ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1345:4: ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN'
                     {
-                    otherlv_7=(Token)match(input,34,FOLLOW_34_in_ruleListExpression3168); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,34,FOLLOW_34_in_ruleListExpression3169); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getListExpressionAccess().getFIRST_INKeyword_2_1_0());
@@ -3750,18 +3758,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1344:2: ( (lv_expr_8_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1345:1: (lv_expr_8_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1350:2: ( (lv_expr_8_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1351:1: (lv_expr_8_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1345:1: (lv_expr_8_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1346:3: lv_expr_8_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1351:1: (lv_expr_8_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1352:3: lv_expr_8_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_2_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3190);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3191);
                     lv_expr_8_0=ruleListValue();
 
                     state._fsp--;
@@ -3795,13 +3803,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1363:6: ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:6: ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1363:6: ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1363:7: () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:6: ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:7: () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1363:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1364:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1370:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3813,13 +3821,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:2: ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:3: ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1375:2: ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1375:3: ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:3: ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1369:4: ( 'LAST_IN' )=>otherlv_10= 'LAST_IN'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1375:3: ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1375:4: ( 'LAST_IN' )=>otherlv_10= 'LAST_IN'
                     {
-                    otherlv_10=(Token)match(input,35,FOLLOW_35_in_ruleListExpression3229); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,35,FOLLOW_35_in_ruleListExpression3230); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_10, grammarAccess.getListExpressionAccess().getLAST_INKeyword_3_1_0());
@@ -3828,18 +3836,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1374:2: ( (lv_expr_11_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1375:1: (lv_expr_11_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1380:2: ( (lv_expr_11_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1381:1: (lv_expr_11_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1375:1: (lv_expr_11_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1376:3: lv_expr_11_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1381:1: (lv_expr_11_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1382:3: lv_expr_11_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_3_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3251);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3252);
                     lv_expr_11_0=ruleListValue();
 
                     state._fsp--;
@@ -3873,13 +3881,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1393:6: ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:6: ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1393:6: ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1393:7: () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:6: ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:7: () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1393:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1394:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1400:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3891,13 +3899,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:2: ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:3: ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1405:2: ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1405:3: ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:3: ( ( 'COUNT' )=>otherlv_13= 'COUNT' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1399:4: ( 'COUNT' )=>otherlv_13= 'COUNT'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1405:3: ( ( 'COUNT' )=>otherlv_13= 'COUNT' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1405:4: ( 'COUNT' )=>otherlv_13= 'COUNT'
                     {
-                    otherlv_13=(Token)match(input,36,FOLLOW_36_in_ruleListExpression3290); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,36,FOLLOW_36_in_ruleListExpression3291); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getListExpressionAccess().getCOUNTKeyword_4_1_0());
@@ -3906,18 +3914,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1404:2: ( (lv_expr_14_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1405:1: (lv_expr_14_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1410:2: ( (lv_expr_14_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1411:1: (lv_expr_14_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1405:1: (lv_expr_14_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1406:3: lv_expr_14_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1411:1: (lv_expr_14_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1412:3: lv_expr_14_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_4_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3312);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3313);
                     lv_expr_14_0=ruleListValue();
 
                     state._fsp--;
@@ -3951,13 +3959,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1423:6: ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:6: ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1423:6: ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1423:7: () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:6: ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:7: () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1423:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1424:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1430:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -3969,13 +3977,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:2: ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:3: ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1435:2: ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1435:3: ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:3: ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1429:4: ( 'REDUCE' )=>otherlv_16= 'REDUCE'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1435:3: ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1435:4: ( 'REDUCE' )=>otherlv_16= 'REDUCE'
                     {
-                    otherlv_16=(Token)match(input,37,FOLLOW_37_in_ruleListExpression3351); if (state.failed) return current;
+                    otherlv_16=(Token)match(input,37,FOLLOW_37_in_ruleListExpression3352); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_16, grammarAccess.getListExpressionAccess().getREDUCEKeyword_5_1_0());
@@ -3984,18 +3992,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1434:2: ( (lv_expr_17_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1435:1: (lv_expr_17_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1440:2: ( (lv_expr_17_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1441:1: (lv_expr_17_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1435:1: (lv_expr_17_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1436:3: lv_expr_17_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1441:1: (lv_expr_17_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1442:3: lv_expr_17_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_5_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3373);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3374);
                     lv_expr_17_0=ruleListValue();
 
                     state._fsp--;
@@ -4019,24 +4027,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_18=(Token)match(input,38,FOLLOW_38_in_ruleListExpression3385); if (state.failed) return current;
+                    otherlv_18=(Token)match(input,38,FOLLOW_38_in_ruleListExpression3386); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_18, grammarAccess.getListExpressionAccess().getUSINGKeyword_5_1_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1456:1: ( (lv_usingExpr_19_0= ruleExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1457:1: (lv_usingExpr_19_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1462:1: ( (lv_usingExpr_19_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1463:1: (lv_usingExpr_19_0= ruleExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1457:1: (lv_usingExpr_19_0= ruleExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1458:3: lv_usingExpr_19_0= ruleExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1463:1: (lv_usingExpr_19_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1464:3: lv_usingExpr_19_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getUsingExprExpressionParserRuleCall_5_1_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3406);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3407);
                     lv_usingExpr_19_0=ruleExpression();
 
                     state._fsp--;
@@ -4060,24 +4068,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_20=(Token)match(input,39,FOLLOW_39_in_ruleListExpression3418); if (state.failed) return current;
+                    otherlv_20=(Token)match(input,39,FOLLOW_39_in_ruleListExpression3419); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_20, grammarAccess.getListExpressionAccess().getINITIAL_VALUEKeyword_5_1_4());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1478:1: ( (lv_initValue_21_0= ruleExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1479:1: (lv_initValue_21_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1484:1: ( (lv_initValue_21_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1485:1: (lv_initValue_21_0= ruleExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1479:1: (lv_initValue_21_0= ruleExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1480:3: lv_initValue_21_0= ruleExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1485:1: (lv_initValue_21_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1486:3: lv_initValue_21_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getInitValueExpressionParserRuleCall_5_1_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3439);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3440);
                     lv_initValue_21_0=ruleExpression();
 
                     state._fsp--;
@@ -4111,13 +4119,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1497:6: ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:6: ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1497:6: ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1497:7: () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:6: ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:7: () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1497:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1498:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1504:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -4129,13 +4137,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:2: ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:3: ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1509:2: ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1509:3: ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:3: ( ( 'SUM' )=>otherlv_23= 'SUM' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1503:4: ( 'SUM' )=>otherlv_23= 'SUM'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1509:3: ( ( 'SUM' )=>otherlv_23= 'SUM' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1509:4: ( 'SUM' )=>otherlv_23= 'SUM'
                     {
-                    otherlv_23=(Token)match(input,40,FOLLOW_40_in_ruleListExpression3478); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,40,FOLLOW_40_in_ruleListExpression3479); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_23, grammarAccess.getListExpressionAccess().getSUMKeyword_6_1_0());
@@ -4144,18 +4152,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1508:2: ( (lv_expr_24_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1509:1: (lv_expr_24_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1514:2: ( (lv_expr_24_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1515:1: (lv_expr_24_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1509:1: (lv_expr_24_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1510:3: lv_expr_24_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1515:1: (lv_expr_24_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1516:3: lv_expr_24_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_6_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3500);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3501);
                     lv_expr_24_0=ruleListValue();
 
                     state._fsp--;
@@ -4179,24 +4187,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_25=(Token)match(input,38,FOLLOW_38_in_ruleListExpression3512); if (state.failed) return current;
+                    otherlv_25=(Token)match(input,38,FOLLOW_38_in_ruleListExpression3513); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_25, grammarAccess.getListExpressionAccess().getUSINGKeyword_6_1_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1530:1: ( (lv_usingExpr_26_0= ruleExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1531:1: (lv_usingExpr_26_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1536:1: ( (lv_usingExpr_26_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1537:1: (lv_usingExpr_26_0= ruleExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1531:1: (lv_usingExpr_26_0= ruleExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1532:3: lv_usingExpr_26_0= ruleExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1537:1: (lv_usingExpr_26_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1538:3: lv_usingExpr_26_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getUsingExprExpressionParserRuleCall_6_1_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3533);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3534);
                     lv_usingExpr_26_0=ruleExpression();
 
                     state._fsp--;
@@ -4230,13 +4238,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1549:6: ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:6: ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1549:6: ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1549:7: () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:6: ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:7: () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1549:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1550:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1556:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -4248,13 +4256,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:2: ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:3: ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1561:2: ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1561:3: ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:3: ( ( 'MAP' )=>otherlv_28= 'MAP' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1555:4: ( 'MAP' )=>otherlv_28= 'MAP'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1561:3: ( ( 'MAP' )=>otherlv_28= 'MAP' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1561:4: ( 'MAP' )=>otherlv_28= 'MAP'
                     {
-                    otherlv_28=(Token)match(input,41,FOLLOW_41_in_ruleListExpression3572); if (state.failed) return current;
+                    otherlv_28=(Token)match(input,41,FOLLOW_41_in_ruleListExpression3573); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_28, grammarAccess.getListExpressionAccess().getMAPKeyword_7_1_0());
@@ -4263,18 +4271,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1560:2: ( (lv_expr_29_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1561:1: (lv_expr_29_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1566:2: ( (lv_expr_29_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1567:1: (lv_expr_29_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1561:1: (lv_expr_29_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1562:3: lv_expr_29_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1567:1: (lv_expr_29_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1568:3: lv_expr_29_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_7_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3594);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3595);
                     lv_expr_29_0=ruleListValue();
 
                     state._fsp--;
@@ -4298,24 +4306,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_30=(Token)match(input,38,FOLLOW_38_in_ruleListExpression3606); if (state.failed) return current;
+                    otherlv_30=(Token)match(input,38,FOLLOW_38_in_ruleListExpression3607); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_30, grammarAccess.getListExpressionAccess().getUSINGKeyword_7_1_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1582:1: ( (lv_usingExpr_31_0= ruleExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1583:1: (lv_usingExpr_31_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1588:1: ( (lv_usingExpr_31_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1589:1: (lv_usingExpr_31_0= ruleExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1583:1: (lv_usingExpr_31_0= ruleExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1584:3: lv_usingExpr_31_0= ruleExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1589:1: (lv_usingExpr_31_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1590:3: lv_usingExpr_31_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getUsingExprExpressionParserRuleCall_7_1_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3627);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3628);
                     lv_usingExpr_31_0=ruleExpression();
 
                     state._fsp--;
@@ -4349,13 +4357,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1601:6: ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:6: ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1601:6: ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1601:7: () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:6: ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:7: () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1601:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1602:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1608:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -4367,13 +4375,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:2: ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:3: ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1613:2: ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1613:3: ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:3: ( ( 'APPLY' )=>otherlv_33= 'APPLY' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1607:4: ( 'APPLY' )=>otherlv_33= 'APPLY'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1613:3: ( ( 'APPLY' )=>otherlv_33= 'APPLY' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1613:4: ( 'APPLY' )=>otherlv_33= 'APPLY'
                     {
-                    otherlv_33=(Token)match(input,42,FOLLOW_42_in_ruleListExpression3666); if (state.failed) return current;
+                    otherlv_33=(Token)match(input,42,FOLLOW_42_in_ruleListExpression3667); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_33, grammarAccess.getListExpressionAccess().getAPPLYKeyword_8_1_0());
@@ -4382,18 +4390,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1612:2: ( (lv_applyExpr_34_0= ruleExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1613:1: (lv_applyExpr_34_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1618:2: ( (lv_applyExpr_34_0= ruleExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1619:1: (lv_applyExpr_34_0= ruleExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1613:1: (lv_applyExpr_34_0= ruleExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1614:3: lv_applyExpr_34_0= ruleExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1619:1: (lv_applyExpr_34_0= ruleExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1620:3: lv_applyExpr_34_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getApplyExprExpressionParserRuleCall_8_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3688);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleListExpression3689);
                     lv_applyExpr_34_0=ruleExpression();
 
                     state._fsp--;
@@ -4417,24 +4425,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_35=(Token)match(input,43,FOLLOW_43_in_ruleListExpression3700); if (state.failed) return current;
+                    otherlv_35=(Token)match(input,43,FOLLOW_43_in_ruleListExpression3701); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_35, grammarAccess.getListExpressionAccess().getONKeyword_8_1_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1634:1: ( (lv_expr_36_0= ruleListValue ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1635:1: (lv_expr_36_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1640:1: ( (lv_expr_36_0= ruleListValue ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1641:1: (lv_expr_36_0= ruleListValue )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1635:1: (lv_expr_36_0= ruleListValue )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1636:3: lv_expr_36_0= ruleListValue
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1641:1: (lv_expr_36_0= ruleListValue )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1642:3: lv_expr_36_0= ruleListValue
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListExpressionAccess().getExprListValueParserRuleCall_8_1_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3721);
+                    pushFollow(FOLLOW_ruleListValue_in_ruleListExpression3722);
                     lv_expr_36_0=ruleListValue();
 
                     state._fsp--;
@@ -4490,7 +4498,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleListValue"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1660:1: entryRuleListValue returns [EObject current=null] : iv_ruleListValue= ruleListValue EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1666:1: entryRuleListValue returns [EObject current=null] : iv_ruleListValue= ruleListValue EOF ;
     public final EObject entryRuleListValue() throws RecognitionException {
         EObject current = null;
 
@@ -4498,13 +4506,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1661:2: (iv_ruleListValue= ruleListValue EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1662:2: iv_ruleListValue= ruleListValue EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1667:2: (iv_ruleListValue= ruleListValue EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1668:2: iv_ruleListValue= ruleListValue EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getListValueRule()); 
             }
-            pushFollow(FOLLOW_ruleListValue_in_entryRuleListValue3759);
+            pushFollow(FOLLOW_ruleListValue_in_entryRuleListValue3760);
             iv_ruleListValue=ruleListValue();
 
             state._fsp--;
@@ -4512,7 +4520,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleListValue; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleListValue3769); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleListValue3770); if (state.failed) return current;
 
             }
 
@@ -4530,7 +4538,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListValue"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1669:1: ruleListValue returns [EObject current=null] : (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1675:1: ruleListValue returns [EObject current=null] : (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? ) ;
     public final EObject ruleListValue() throws RecognitionException {
         EObject current = null;
 
@@ -4543,18 +4551,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1672:28: ( (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1673:1: (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1678:28: ( (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1679:1: (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1673:1: (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1674:5: this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1679:1: (this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )? )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1680:5: this_Expression_0= ruleExpression ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )?
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getListValueAccess().getExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleExpression_in_ruleListValue3816);
+            pushFollow(FOLLOW_ruleExpression_in_ruleListValue3817);
             this_Expression_0=ruleExpression();
 
             state._fsp--;
@@ -4565,7 +4573,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1682:1: ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:1: ( ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) ) )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -4578,12 +4586,12 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1682:2: ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:2: ( ( '|' )=>otherlv_1= '|' ) ( (lv_condition_2_0= ruleCondition ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1682:2: ( ( '|' )=>otherlv_1= '|' )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1682:3: ( '|' )=>otherlv_1= '|'
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:2: ( ( '|' )=>otherlv_1= '|' )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:3: ( '|' )=>otherlv_1= '|'
                     {
-                    otherlv_1=(Token)match(input,44,FOLLOW_44_in_ruleListValue3836); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,44,FOLLOW_44_in_ruleListValue3837); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getListValueAccess().getVerticalLineKeyword_1_0());
@@ -4592,18 +4600,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1687:2: ( (lv_condition_2_0= ruleCondition ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:1: (lv_condition_2_0= ruleCondition )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1693:2: ( (lv_condition_2_0= ruleCondition ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1694:1: (lv_condition_2_0= ruleCondition )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:1: (lv_condition_2_0= ruleCondition )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1689:3: lv_condition_2_0= ruleCondition
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1694:1: (lv_condition_2_0= ruleCondition )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1695:3: lv_condition_2_0= ruleCondition
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getListValueAccess().getConditionConditionParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCondition_in_ruleListValue3858);
+                    pushFollow(FOLLOW_ruleCondition_in_ruleListValue3859);
                     lv_condition_2_0=ruleCondition();
 
                     state._fsp--;
@@ -4656,7 +4664,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCondition"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1713:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1719:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -4664,13 +4672,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1714:2: (iv_ruleCondition= ruleCondition EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1715:2: iv_ruleCondition= ruleCondition EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1720:2: (iv_ruleCondition= ruleCondition EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1721:2: iv_ruleCondition= ruleCondition EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConditionRule()); 
             }
-            pushFollow(FOLLOW_ruleCondition_in_entryRuleCondition3896);
+            pushFollow(FOLLOW_ruleCondition_in_entryRuleCondition3897);
             iv_ruleCondition=ruleCondition();
 
             state._fsp--;
@@ -4678,7 +4686,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCondition; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCondition3906); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCondition3907); if (state.failed) return current;
 
             }
 
@@ -4696,7 +4704,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1722:1: ruleCondition returns [EObject current=null] : this_Expression_0= ruleExpression ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1728:1: ruleCondition returns [EObject current=null] : this_Expression_0= ruleExpression ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -4706,15 +4714,15 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1725:28: (this_Expression_0= ruleExpression )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1727:5: this_Expression_0= ruleExpression
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1731:28: (this_Expression_0= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1733:5: this_Expression_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getConditionAccess().getExpressionParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleExpression_in_ruleCondition3952);
+            pushFollow(FOLLOW_ruleExpression_in_ruleCondition3953);
             this_Expression_0=ruleExpression();
 
             state._fsp--;
@@ -4745,7 +4753,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnaryExpression"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1743:1: entryRuleUnaryExpression returns [EObject current=null] : iv_ruleUnaryExpression= ruleUnaryExpression EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1749:1: entryRuleUnaryExpression returns [EObject current=null] : iv_ruleUnaryExpression= ruleUnaryExpression EOF ;
     public final EObject entryRuleUnaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4753,13 +4761,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1744:2: (iv_ruleUnaryExpression= ruleUnaryExpression EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1745:2: iv_ruleUnaryExpression= ruleUnaryExpression EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1750:2: (iv_ruleUnaryExpression= ruleUnaryExpression EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1751:2: iv_ruleUnaryExpression= ruleUnaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnaryExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleUnaryExpression_in_entryRuleUnaryExpression3986);
+            pushFollow(FOLLOW_ruleUnaryExpression_in_entryRuleUnaryExpression3987);
             iv_ruleUnaryExpression=ruleUnaryExpression();
 
             state._fsp--;
@@ -4767,7 +4775,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnaryExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnaryExpression3996); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnaryExpression3997); if (state.failed) return current;
 
             }
 
@@ -4785,7 +4793,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryExpression"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1752:1: ruleUnaryExpression returns [EObject current=null] : ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1758:1: ruleUnaryExpression returns [EObject current=null] : ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) ) ;
     public final EObject ruleUnaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4809,10 +4817,10 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1755:28: ( ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1756:1: ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1761:28: ( ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1762:1: ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1756:1: ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1762:1: ( (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) ) | (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) ) | (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) ) )
             int alt19=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -4844,17 +4852,17 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             switch (alt19) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1756:2: (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1762:2: (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1756:2: (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1757:5: this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1762:2: (this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1763:5: this_Term_0= ruleTerm ( (lv_structuredExpression_1_0= ruleStructureExpression ) )
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getUnaryExpressionAccess().getTermParserRuleCall_0_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleTerm_in_ruleUnaryExpression4044);
+                    pushFollow(FOLLOW_ruleTerm_in_ruleUnaryExpression4045);
                     this_Term_0=ruleTerm();
 
                     state._fsp--;
@@ -4865,18 +4873,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1765:1: ( (lv_structuredExpression_1_0= ruleStructureExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1766:1: (lv_structuredExpression_1_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1771:1: ( (lv_structuredExpression_1_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1772:1: (lv_structuredExpression_1_0= ruleStructureExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1766:1: (lv_structuredExpression_1_0= ruleStructureExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1767:3: lv_structuredExpression_1_0= ruleStructureExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1772:1: (lv_structuredExpression_1_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1773:3: lv_structuredExpression_1_0= ruleStructureExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getStructuredExpressionStructureExpressionParserRuleCall_0_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4064);
+                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4065);
                     lv_structuredExpression_1_0=ruleStructureExpression();
 
                     state._fsp--;
@@ -4907,12 +4915,12 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1784:6: (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1790:6: (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1784:6: (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1784:8: otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1790:6: (otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1790:8: otherlv_2= '(' this_Expression_3= ruleExpression otherlv_4= ')' () ( (lv_structuredExpression_6_0= ruleStructureExpression ) )
                     {
-                    otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleUnaryExpression4084); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleUnaryExpression4085); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getUnaryExpressionAccess().getLeftParenthesisKeyword_1_0());
@@ -4923,7 +4931,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getUnaryExpressionAccess().getExpressionParserRuleCall_1_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleUnaryExpression4106);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleUnaryExpression4107);
                     this_Expression_3=ruleExpression();
 
                     state._fsp--;
@@ -4934,14 +4942,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleUnaryExpression4117); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,30,FOLLOW_30_in_ruleUnaryExpression4118); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getUnaryExpressionAccess().getRightParenthesisKeyword_1_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1801:1: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1802:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1807:1: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1808:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -4953,18 +4961,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1807:2: ( (lv_structuredExpression_6_0= ruleStructureExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1808:1: (lv_structuredExpression_6_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1813:2: ( (lv_structuredExpression_6_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1814:1: (lv_structuredExpression_6_0= ruleStructureExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1808:1: (lv_structuredExpression_6_0= ruleStructureExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1809:3: lv_structuredExpression_6_0= ruleStructureExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1814:1: (lv_structuredExpression_6_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1815:3: lv_structuredExpression_6_0= ruleStructureExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getStructuredExpressionStructureExpressionParserRuleCall_1_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4147);
+                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4148);
                     lv_structuredExpression_6_0=ruleStructureExpression();
 
                     state._fsp--;
@@ -4995,12 +5003,12 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1826:6: (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1832:6: (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1826:6: (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1826:8: otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1832:6: (otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1832:8: otherlv_7= 'NOT (' this_Expression_8= ruleExpression otherlv_9= ')' () ( (lv_structuredExpression_11_0= ruleStructureExpression ) )
                     {
-                    otherlv_7=(Token)match(input,45,FOLLOW_45_in_ruleUnaryExpression4167); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,45,FOLLOW_45_in_ruleUnaryExpression4168); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getUnaryExpressionAccess().getNOTKeyword_2_0());
@@ -5011,7 +5019,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getUnaryExpressionAccess().getExpressionParserRuleCall_2_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleExpression_in_ruleUnaryExpression4189);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleUnaryExpression4190);
                     this_Expression_8=ruleExpression();
 
                     state._fsp--;
@@ -5022,14 +5030,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_9=(Token)match(input,30,FOLLOW_30_in_ruleUnaryExpression4200); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,30,FOLLOW_30_in_ruleUnaryExpression4201); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_9, grammarAccess.getUnaryExpressionAccess().getRightParenthesisKeyword_2_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1843:1: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1844:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1849:1: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1850:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5041,18 +5049,18 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1849:2: ( (lv_structuredExpression_11_0= ruleStructureExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1850:1: (lv_structuredExpression_11_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1855:2: ( (lv_structuredExpression_11_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1856:1: (lv_structuredExpression_11_0= ruleStructureExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1850:1: (lv_structuredExpression_11_0= ruleStructureExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1851:3: lv_structuredExpression_11_0= ruleStructureExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1856:1: (lv_structuredExpression_11_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1857:3: lv_structuredExpression_11_0= ruleStructureExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getUnaryExpressionAccess().getStructuredExpressionStructureExpressionParserRuleCall_2_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4230);
+                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4231);
                     lv_structuredExpression_11_0=ruleStructureExpression();
 
                     state._fsp--;
@@ -5105,7 +5113,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStructureExpression"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1875:1: entryRuleStructureExpression returns [EObject current=null] : iv_ruleStructureExpression= ruleStructureExpression EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1881:1: entryRuleStructureExpression returns [EObject current=null] : iv_ruleStructureExpression= ruleStructureExpression EOF ;
     public final EObject entryRuleStructureExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5113,13 +5121,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1876:2: (iv_ruleStructureExpression= ruleStructureExpression EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1877:2: iv_ruleStructureExpression= ruleStructureExpression EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1882:2: (iv_ruleStructureExpression= ruleStructureExpression EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1883:2: iv_ruleStructureExpression= ruleStructureExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStructureExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleStructureExpression_in_entryRuleStructureExpression4267);
+            pushFollow(FOLLOW_ruleStructureExpression_in_entryRuleStructureExpression4268);
             iv_ruleStructureExpression=ruleStructureExpression();
 
             state._fsp--;
@@ -5127,7 +5135,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleStructureExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStructureExpression4277); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStructureExpression4278); if (state.failed) return current;
 
             }
 
@@ -5145,7 +5153,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStructureExpression"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1884:1: ruleStructureExpression returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1890:1: ruleStructureExpression returns [EObject current=null] : ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? ) ;
     public final EObject ruleStructureExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5159,14 +5167,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1887:28: ( ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1888:1: ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1893:28: ( ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1894:1: ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1888:1: ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1888:2: () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1894:1: ( () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )? )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1894:2: () (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )?
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1888:2: ()
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1889:5: 
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1894:2: ()
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1895:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -5178,7 +5186,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1894:2: (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1900:2: (otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -5187,26 +5195,26 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1894:4: otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1900:4: otherlv_1= '{' ( (lv_keyValuePair_2_0= ruleKeyValuePair ) ) otherlv_3= '}' ( (lv_structuredExpressions_4_0= ruleStructureExpression ) )
                     {
-                    otherlv_1=(Token)match(input,46,FOLLOW_46_in_ruleStructureExpression4324); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,46,FOLLOW_46_in_ruleStructureExpression4325); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getStructureExpressionAccess().getLeftCurlyBracketKeyword_1_0());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1898:1: ( (lv_keyValuePair_2_0= ruleKeyValuePair ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1899:1: (lv_keyValuePair_2_0= ruleKeyValuePair )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1904:1: ( (lv_keyValuePair_2_0= ruleKeyValuePair ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1905:1: (lv_keyValuePair_2_0= ruleKeyValuePair )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1899:1: (lv_keyValuePair_2_0= ruleKeyValuePair )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1900:3: lv_keyValuePair_2_0= ruleKeyValuePair
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1905:1: (lv_keyValuePair_2_0= ruleKeyValuePair )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1906:3: lv_keyValuePair_2_0= ruleKeyValuePair
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getStructureExpressionAccess().getKeyValuePairKeyValuePairParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleKeyValuePair_in_ruleStructureExpression4345);
+                    pushFollow(FOLLOW_ruleKeyValuePair_in_ruleStructureExpression4346);
                     lv_keyValuePair_2_0=ruleKeyValuePair();
 
                     state._fsp--;
@@ -5230,24 +5238,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,47,FOLLOW_47_in_ruleStructureExpression4357); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,47,FOLLOW_47_in_ruleStructureExpression4358); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getStructureExpressionAccess().getRightCurlyBracketKeyword_1_2());
                           
                     }
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1920:1: ( (lv_structuredExpressions_4_0= ruleStructureExpression ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1921:1: (lv_structuredExpressions_4_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1926:1: ( (lv_structuredExpressions_4_0= ruleStructureExpression ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1927:1: (lv_structuredExpressions_4_0= ruleStructureExpression )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1921:1: (lv_structuredExpressions_4_0= ruleStructureExpression )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1922:3: lv_structuredExpressions_4_0= ruleStructureExpression
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1927:1: (lv_structuredExpressions_4_0= ruleStructureExpression )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1928:3: lv_structuredExpressions_4_0= ruleStructureExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getStructureExpressionAccess().getStructuredExpressionsStructureExpressionParserRuleCall_1_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleStructureExpression4378);
+                    pushFollow(FOLLOW_ruleStructureExpression_in_ruleStructureExpression4379);
                     lv_structuredExpressions_4_0=ruleStructureExpression();
 
                     state._fsp--;
@@ -5300,7 +5308,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKeyValuePair"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1946:1: entryRuleKeyValuePair returns [EObject current=null] : iv_ruleKeyValuePair= ruleKeyValuePair EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1952:1: entryRuleKeyValuePair returns [EObject current=null] : iv_ruleKeyValuePair= ruleKeyValuePair EOF ;
     public final EObject entryRuleKeyValuePair() throws RecognitionException {
         EObject current = null;
 
@@ -5308,13 +5316,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1947:2: (iv_ruleKeyValuePair= ruleKeyValuePair EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1948:2: iv_ruleKeyValuePair= ruleKeyValuePair EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1953:2: (iv_ruleKeyValuePair= ruleKeyValuePair EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1954:2: iv_ruleKeyValuePair= ruleKeyValuePair EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getKeyValuePairRule()); 
             }
-            pushFollow(FOLLOW_ruleKeyValuePair_in_entryRuleKeyValuePair4416);
+            pushFollow(FOLLOW_ruleKeyValuePair_in_entryRuleKeyValuePair4417);
             iv_ruleKeyValuePair=ruleKeyValuePair();
 
             state._fsp--;
@@ -5322,7 +5330,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleKeyValuePair; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleKeyValuePair4426); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleKeyValuePair4427); if (state.failed) return current;
 
             }
 
@@ -5340,7 +5348,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKeyValuePair"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1955:1: ruleKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1961:1: ruleKeyValuePair returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? ) ;
     public final EObject ruleKeyValuePair() throws RecognitionException {
         EObject current = null;
 
@@ -5354,19 +5362,19 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1958:28: ( ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1959:1: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1964:28: ( ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1965:1: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1959:1: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1959:2: ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1965:1: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )? )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1965:2: ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_value_2_0= ruleExpression ) ) ( (lv_rest_3_0= ruleKeyValuePairRest ) )?
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1959:2: ( (lv_key_0_0= RULE_ID ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1960:1: (lv_key_0_0= RULE_ID )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1965:2: ( (lv_key_0_0= RULE_ID ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1966:1: (lv_key_0_0= RULE_ID )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1960:1: (lv_key_0_0= RULE_ID )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1961:3: lv_key_0_0= RULE_ID
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1966:1: (lv_key_0_0= RULE_ID )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1967:3: lv_key_0_0= RULE_ID
             {
-            lv_key_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleKeyValuePair4468); if (state.failed) return current;
+            lv_key_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleKeyValuePair4469); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_key_0_0, grammarAccess.getKeyValuePairAccess().getKeyIDTerminalRuleCall_0_0()); 
@@ -5390,24 +5398,24 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,48,FOLLOW_48_in_ruleKeyValuePair4485); if (state.failed) return current;
+            otherlv_1=(Token)match(input,48,FOLLOW_48_in_ruleKeyValuePair4486); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getKeyValuePairAccess().getEqualsSignGreaterThanSignKeyword_1());
                   
             }
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1981:1: ( (lv_value_2_0= ruleExpression ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1982:1: (lv_value_2_0= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1987:1: ( (lv_value_2_0= ruleExpression ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1988:1: (lv_value_2_0= ruleExpression )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1982:1: (lv_value_2_0= ruleExpression )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1983:3: lv_value_2_0= ruleExpression
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1988:1: (lv_value_2_0= ruleExpression )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1989:3: lv_value_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getKeyValuePairAccess().getValueExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleExpression_in_ruleKeyValuePair4506);
+            pushFollow(FOLLOW_ruleExpression_in_ruleKeyValuePair4507);
             lv_value_2_0=ruleExpression();
 
             state._fsp--;
@@ -5431,7 +5439,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1999:2: ( (lv_rest_3_0= ruleKeyValuePairRest ) )?
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2005:2: ( (lv_rest_3_0= ruleKeyValuePairRest ) )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -5440,17 +5448,17 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2000:1: (lv_rest_3_0= ruleKeyValuePairRest )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2006:1: (lv_rest_3_0= ruleKeyValuePairRest )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2000:1: (lv_rest_3_0= ruleKeyValuePairRest )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2001:3: lv_rest_3_0= ruleKeyValuePairRest
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2006:1: (lv_rest_3_0= ruleKeyValuePairRest )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2007:3: lv_rest_3_0= ruleKeyValuePairRest
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getKeyValuePairAccess().getRestKeyValuePairRestParserRuleCall_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleKeyValuePairRest_in_ruleKeyValuePair4527);
+                    pushFollow(FOLLOW_ruleKeyValuePairRest_in_ruleKeyValuePair4528);
                     lv_rest_3_0=ruleKeyValuePairRest();
 
                     state._fsp--;
@@ -5500,7 +5508,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKeyValuePairRest"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2025:1: entryRuleKeyValuePairRest returns [EObject current=null] : iv_ruleKeyValuePairRest= ruleKeyValuePairRest EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2031:1: entryRuleKeyValuePairRest returns [EObject current=null] : iv_ruleKeyValuePairRest= ruleKeyValuePairRest EOF ;
     public final EObject entryRuleKeyValuePairRest() throws RecognitionException {
         EObject current = null;
 
@@ -5508,13 +5516,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2026:2: (iv_ruleKeyValuePairRest= ruleKeyValuePairRest EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2027:2: iv_ruleKeyValuePairRest= ruleKeyValuePairRest EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2032:2: (iv_ruleKeyValuePairRest= ruleKeyValuePairRest EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2033:2: iv_ruleKeyValuePairRest= ruleKeyValuePairRest EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getKeyValuePairRestRule()); 
             }
-            pushFollow(FOLLOW_ruleKeyValuePairRest_in_entryRuleKeyValuePairRest4564);
+            pushFollow(FOLLOW_ruleKeyValuePairRest_in_entryRuleKeyValuePairRest4565);
             iv_ruleKeyValuePairRest=ruleKeyValuePairRest();
 
             state._fsp--;
@@ -5522,7 +5530,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleKeyValuePairRest; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleKeyValuePairRest4574); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleKeyValuePairRest4575); if (state.failed) return current;
 
             }
 
@@ -5540,7 +5548,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKeyValuePairRest"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2034:1: ruleKeyValuePairRest returns [EObject current=null] : (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2040:1: ruleKeyValuePairRest returns [EObject current=null] : (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair ) ;
     public final EObject ruleKeyValuePairRest() throws RecognitionException {
         EObject current = null;
 
@@ -5551,13 +5559,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2037:28: ( (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2038:1: (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2043:28: ( (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2044:1: (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2038:1: (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2038:3: otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2044:1: (otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2044:3: otherlv_0= ',' this_KeyValuePair_1= ruleKeyValuePair
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleKeyValuePairRest4611); if (state.failed) return current;
+            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleKeyValuePairRest4612); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getKeyValuePairRestAccess().getCommaKeyword_0());
@@ -5568,7 +5576,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getKeyValuePairRestAccess().getKeyValuePairParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleKeyValuePair_in_ruleKeyValuePairRest4633);
+            pushFollow(FOLLOW_ruleKeyValuePair_in_ruleKeyValuePairRest4634);
             this_KeyValuePair_1=ruleKeyValuePair();
 
             state._fsp--;
@@ -5602,7 +5610,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTerm"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2059:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2065:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
     public final EObject entryRuleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -5610,13 +5618,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2060:2: (iv_ruleTerm= ruleTerm EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2061:2: iv_ruleTerm= ruleTerm EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2066:2: (iv_ruleTerm= ruleTerm EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2067:2: iv_ruleTerm= ruleTerm EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTermRule()); 
             }
-            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm4668);
+            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm4669);
             iv_ruleTerm=ruleTerm();
 
             state._fsp--;
@@ -5624,7 +5632,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleTerm; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm4678); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm4679); if (state.failed) return current;
 
             }
 
@@ -5642,7 +5650,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerm"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2068:1: ruleTerm returns [EObject current=null] : (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2074:1: ruleTerm returns [EObject current=null] : (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList ) ;
     public final EObject ruleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -5657,10 +5665,10 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2071:28: ( (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2072:1: (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2077:28: ( (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2078:1: (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2072:1: (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2078:1: (this_Designator_0= ruleDesignator | ( () ( (lv_value_2_0= RULE_STRING ) ) ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_DOUBLE ) ) ) | this_List_7= ruleList )
             int alt22=5;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -5698,14 +5706,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             switch (alt22) {
                 case 1 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2073:5: this_Designator_0= ruleDesignator
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2079:5: this_Designator_0= ruleDesignator
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getTermAccess().getDesignatorParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleDesignator_in_ruleTerm4725);
+                    pushFollow(FOLLOW_ruleDesignator_in_ruleTerm4726);
                     this_Designator_0=ruleDesignator();
 
                     state._fsp--;
@@ -5720,13 +5728,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2082:6: ( () ( (lv_value_2_0= RULE_STRING ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2088:6: ( () ( (lv_value_2_0= RULE_STRING ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2082:6: ( () ( (lv_value_2_0= RULE_STRING ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2082:7: () ( (lv_value_2_0= RULE_STRING ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2088:6: ( () ( (lv_value_2_0= RULE_STRING ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2088:7: () ( (lv_value_2_0= RULE_STRING ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2082:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2083:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2088:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2089:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5738,13 +5746,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2088:2: ( (lv_value_2_0= RULE_STRING ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2089:1: (lv_value_2_0= RULE_STRING )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2094:2: ( (lv_value_2_0= RULE_STRING ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2095:1: (lv_value_2_0= RULE_STRING )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2089:1: (lv_value_2_0= RULE_STRING )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2090:3: lv_value_2_0= RULE_STRING
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2095:1: (lv_value_2_0= RULE_STRING )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2096:3: lv_value_2_0= RULE_STRING
                     {
-                    lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTerm4757); if (state.failed) return current;
+                    lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTerm4758); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_value_2_0, grammarAccess.getTermAccess().getValueSTRINGTerminalRuleCall_1_1_0()); 
@@ -5775,13 +5783,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2107:6: ( () ( (lv_value_4_0= RULE_INT ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2113:6: ( () ( (lv_value_4_0= RULE_INT ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2107:6: ( () ( (lv_value_4_0= RULE_INT ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2107:7: () ( (lv_value_4_0= RULE_INT ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2113:6: ( () ( (lv_value_4_0= RULE_INT ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2113:7: () ( (lv_value_4_0= RULE_INT ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2107:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2108:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2113:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2114:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5793,13 +5801,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2113:2: ( (lv_value_4_0= RULE_INT ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2114:1: (lv_value_4_0= RULE_INT )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2119:2: ( (lv_value_4_0= RULE_INT ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2120:1: (lv_value_4_0= RULE_INT )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2114:1: (lv_value_4_0= RULE_INT )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2115:3: lv_value_4_0= RULE_INT
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2120:1: (lv_value_4_0= RULE_INT )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2121:3: lv_value_4_0= RULE_INT
                     {
-                    lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTerm4796); if (state.failed) return current;
+                    lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTerm4797); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_value_4_0, grammarAccess.getTermAccess().getValueINTTerminalRuleCall_2_1_0()); 
@@ -5830,13 +5838,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2132:6: ( () ( (lv_value_6_0= RULE_DOUBLE ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2138:6: ( () ( (lv_value_6_0= RULE_DOUBLE ) ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2132:6: ( () ( (lv_value_6_0= RULE_DOUBLE ) ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2132:7: () ( (lv_value_6_0= RULE_DOUBLE ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2138:6: ( () ( (lv_value_6_0= RULE_DOUBLE ) ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2138:7: () ( (lv_value_6_0= RULE_DOUBLE ) )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2132:7: ()
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2133:5: 
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2138:7: ()
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2139:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5848,13 +5856,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2138:2: ( (lv_value_6_0= RULE_DOUBLE ) )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2139:1: (lv_value_6_0= RULE_DOUBLE )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2144:2: ( (lv_value_6_0= RULE_DOUBLE ) )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2145:1: (lv_value_6_0= RULE_DOUBLE )
                     {
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2139:1: (lv_value_6_0= RULE_DOUBLE )
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2140:3: lv_value_6_0= RULE_DOUBLE
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2145:1: (lv_value_6_0= RULE_DOUBLE )
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2146:3: lv_value_6_0= RULE_DOUBLE
                     {
-                    lv_value_6_0=(Token)match(input,RULE_DOUBLE,FOLLOW_RULE_DOUBLE_in_ruleTerm4835); if (state.failed) return current;
+                    lv_value_6_0=(Token)match(input,RULE_DOUBLE,FOLLOW_RULE_DOUBLE_in_ruleTerm4836); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_value_6_0, grammarAccess.getTermAccess().getValueDOUBLETerminalRuleCall_3_1_0()); 
@@ -5885,14 +5893,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2158:5: this_List_7= ruleList
+                    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2164:5: this_List_7= ruleList
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getTermAccess().getListParserRuleCall_4()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleList_in_ruleTerm4869);
+                    pushFollow(FOLLOW_ruleList_in_ruleTerm4870);
                     this_List_7=ruleList();
 
                     state._fsp--;
@@ -5929,7 +5937,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleList"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2174:1: entryRuleList returns [EObject current=null] : iv_ruleList= ruleList EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2180:1: entryRuleList returns [EObject current=null] : iv_ruleList= ruleList EOF ;
     public final EObject entryRuleList() throws RecognitionException {
         EObject current = null;
 
@@ -5937,13 +5945,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2175:2: (iv_ruleList= ruleList EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2176:2: iv_ruleList= ruleList EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2181:2: (iv_ruleList= ruleList EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2182:2: iv_ruleList= ruleList EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getListRule()); 
             }
-            pushFollow(FOLLOW_ruleList_in_entryRuleList4904);
+            pushFollow(FOLLOW_ruleList_in_entryRuleList4905);
             iv_ruleList=ruleList();
 
             state._fsp--;
@@ -5951,7 +5959,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleList; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleList4914); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleList4915); if (state.failed) return current;
 
             }
 
@@ -5969,7 +5977,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleList"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2183:1: ruleList returns [EObject current=null] : ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2189:1: ruleList returns [EObject current=null] : ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' ) ;
     public final EObject ruleList() throws RecognitionException {
         EObject current = null;
 
@@ -5981,14 +5989,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2186:28: ( ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2187:1: ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2192:28: ( ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2193:1: ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2187:1: ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2187:2: () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']'
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2193:1: ( () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']' )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2193:2: () otherlv_1= '[' ( (lv_terms_2_0= ruleTerm ) )* otherlv_3= ']'
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2187:2: ()
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2188:5: 
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2193:2: ()
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2194:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -6000,13 +6008,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,49,FOLLOW_49_in_ruleList4960); if (state.failed) return current;
+            otherlv_1=(Token)match(input,49,FOLLOW_49_in_ruleList4961); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getListAccess().getLeftSquareBracketKeyword_1());
                   
             }
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2197:1: ( (lv_terms_2_0= ruleTerm ) )*
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2203:1: ( (lv_terms_2_0= ruleTerm ) )*
             loop23:
             do {
                 int alt23=2;
@@ -6019,17 +6027,17 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2198:1: (lv_terms_2_0= ruleTerm )
+            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2204:1: (lv_terms_2_0= ruleTerm )
             	    {
-            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2198:1: (lv_terms_2_0= ruleTerm )
-            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2199:3: lv_terms_2_0= ruleTerm
+            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2204:1: (lv_terms_2_0= ruleTerm )
+            	    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2205:3: lv_terms_2_0= ruleTerm
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getListAccess().getTermsTermParserRuleCall_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleTerm_in_ruleList4981);
+            	    pushFollow(FOLLOW_ruleTerm_in_ruleList4982);
             	    lv_terms_2_0=ruleTerm();
 
             	    state._fsp--;
@@ -6059,7 +6067,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,50,FOLLOW_50_in_ruleList4994); if (state.failed) return current;
+            otherlv_3=(Token)match(input,50,FOLLOW_50_in_ruleList4995); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getListAccess().getRightSquareBracketKeyword_3());
@@ -6088,7 +6096,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDesignator"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2229:1: entryRuleDesignator returns [EObject current=null] : iv_ruleDesignator= ruleDesignator EOF ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2235:1: entryRuleDesignator returns [EObject current=null] : iv_ruleDesignator= ruleDesignator EOF ;
     public final EObject entryRuleDesignator() throws RecognitionException {
         EObject current = null;
 
@@ -6096,13 +6104,13 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2230:2: (iv_ruleDesignator= ruleDesignator EOF )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2231:2: iv_ruleDesignator= ruleDesignator EOF
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2236:2: (iv_ruleDesignator= ruleDesignator EOF )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2237:2: iv_ruleDesignator= ruleDesignator EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDesignatorRule()); 
             }
-            pushFollow(FOLLOW_ruleDesignator_in_entryRuleDesignator5032);
+            pushFollow(FOLLOW_ruleDesignator_in_entryRuleDesignator5033);
             iv_ruleDesignator=ruleDesignator();
 
             state._fsp--;
@@ -6110,7 +6118,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDesignator; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDesignator5042); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDesignator5043); if (state.failed) return current;
 
             }
 
@@ -6128,7 +6136,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDesignator"
-    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2238:1: ruleDesignator returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2244:1: ruleDesignator returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleDesignator() throws RecognitionException {
         EObject current = null;
 
@@ -6137,14 +6145,14 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2241:28: ( ( (otherlv_0= RULE_ID ) ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2242:1: ( (otherlv_0= RULE_ID ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2247:28: ( ( (otherlv_0= RULE_ID ) ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2248:1: ( (otherlv_0= RULE_ID ) )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2242:1: ( (otherlv_0= RULE_ID ) )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2243:1: (otherlv_0= RULE_ID )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2248:1: ( (otherlv_0= RULE_ID ) )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2249:1: (otherlv_0= RULE_ID )
             {
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2243:1: (otherlv_0= RULE_ID )
-            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2244:3: otherlv_0= RULE_ID
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2249:1: (otherlv_0= RULE_ID )
+            // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:2250:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
 
@@ -6153,7 +6161,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDesignator5086); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDesignator5087); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getDesignatorAccess().getValueEObjectCrossReference_0()); 
@@ -6331,10 +6339,10 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred17_InternalExpression
     public final void synpred17_InternalExpression_fragment() throws RecognitionException {   
-        // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1682:3: ( '|' )
-        // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1682:5: '|'
+        // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:3: ( '|' )
+        // ../org.openetcs.model/src-gen/org/openetcs/dsl/parser/antlr/internal/InternalExpression.g:1688:5: '|'
         {
-        match(input,44,FOLLOW_44_in_synpred17_InternalExpression3828); if (state.failed) return ;
+        match(input,44,FOLLOW_44_in_synpred17_InternalExpression3829); if (state.failed) return ;
 
         }
     }
@@ -6512,7 +6520,7 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
             this.transition = DFA17_transition;
         }
         public String getDescription() {
-            return "1273:1: ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) )";
+            return "1279:1: ( ( () ( ( ( 'THERE_IS_IN' )=>otherlv_1= 'THERE_IS_IN' ) ( (lv_expr_2_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FORALL_IN' )=>otherlv_4= 'FORALL_IN' ) ( (lv_expr_5_0= ruleListValue ) ) ) ) | ( () ( ( ( 'FIRST_IN' )=>otherlv_7= 'FIRST_IN' ) ( (lv_expr_8_0= ruleListValue ) ) ) ) | ( () ( ( ( 'LAST_IN' )=>otherlv_10= 'LAST_IN' ) ( (lv_expr_11_0= ruleListValue ) ) ) ) | ( () ( ( ( 'COUNT' )=>otherlv_13= 'COUNT' ) ( (lv_expr_14_0= ruleListValue ) ) ) ) | ( () ( ( ( 'REDUCE' )=>otherlv_16= 'REDUCE' ) ( (lv_expr_17_0= ruleListValue ) ) otherlv_18= 'USING' ( (lv_usingExpr_19_0= ruleExpression ) ) otherlv_20= 'INITIAL_VALUE' ( (lv_initValue_21_0= ruleExpression ) ) ) ) | ( () ( ( ( 'SUM' )=>otherlv_23= 'SUM' ) ( (lv_expr_24_0= ruleListValue ) ) otherlv_25= 'USING' ( (lv_usingExpr_26_0= ruleExpression ) ) ) ) | ( () ( ( ( 'MAP' )=>otherlv_28= 'MAP' ) ( (lv_expr_29_0= ruleListValue ) ) otherlv_30= 'USING' ( (lv_usingExpr_31_0= ruleExpression ) ) ) ) | ( () ( ( ( 'APPLY' )=>otherlv_33= 'APPLY' ) ( (lv_applyExpr_34_0= ruleExpression ) ) otherlv_35= 'ON' ( (lv_expr_36_0= ruleListValue ) ) ) ) )";
         }
     }
  
@@ -6598,99 +6606,99 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleListExpression_in_rulePrimaryExpression2589 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFunctionCall_in_entryRuleFunctionCall2624 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCall2634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDesignator_in_ruleFunctionCall2681 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleFunctionCall2692 = new BitSet(new long[]{0x0002273F600000F0L});
-    public static final BitSet FOLLOW_ruleExpressionList_in_ruleFunctionCall2713 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleFunctionCall2726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressionList_in_entryRuleExpressionList2762 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionList2772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionList2818 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_ruleExpressionRest_in_ruleExpressionList2839 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_ruleExpressionRest_in_entryRuleExpressionRest2876 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionRest2886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleExpressionRest2923 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionRest2945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListExpression_in_entryRuleListExpression2980 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleListExpression2990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleListExpression3046 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleListExpression3107 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleListExpression3168 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleListExpression3229 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleListExpression3290 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleListExpression3351 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3373 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleListExpression3385 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3406 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_ruleListExpression3418 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleListExpression3478 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3500 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleListExpression3512 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleListExpression3572 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3594 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleListExpression3606 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleListExpression3666 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3688 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_43_in_ruleListExpression3700 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListValue_in_entryRuleListValue3759 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleListValue3769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleListValue3816 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_44_in_ruleListValue3836 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleCondition_in_ruleListValue3858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition3896 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCondition3906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleCondition3952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnaryExpression_in_entryRuleUnaryExpression3986 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnaryExpression3996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_ruleUnaryExpression4044 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleUnaryExpression4084 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleUnaryExpression4106 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleUnaryExpression4117 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleUnaryExpression4167 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleUnaryExpression4189 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleUnaryExpression4200 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructureExpression_in_entryRuleStructureExpression4267 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStructureExpression4277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleStructureExpression4324 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleKeyValuePair_in_ruleStructureExpression4345 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_ruleStructureExpression4357 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleStructureExpression4378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKeyValuePair_in_entryRuleKeyValuePair4416 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleKeyValuePair4426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleKeyValuePair4468 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_48_in_ruleKeyValuePair4485 = new BitSet(new long[]{0x0002273F200000F0L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleKeyValuePair4506 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_ruleKeyValuePairRest_in_ruleKeyValuePair4527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleKeyValuePairRest_in_entryRuleKeyValuePairRest4564 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleKeyValuePairRest4574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleKeyValuePairRest4611 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleKeyValuePair_in_ruleKeyValuePairRest4633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm4668 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTerm4678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDesignator_in_ruleTerm4725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTerm4757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleTerm4796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOUBLE_in_ruleTerm4835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleList_in_ruleTerm4869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleList_in_entryRuleList4904 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleList4914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleList4960 = new BitSet(new long[]{0x00060000000000F0L});
-    public static final BitSet FOLLOW_ruleTerm_in_ruleList4981 = new BitSet(new long[]{0x00060000000000F0L});
-    public static final BitSet FOLLOW_50_in_ruleList4994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDesignator_in_entryRuleDesignator5032 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDesignator5042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDesignator5086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFunctionCall2679 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleFunctionCall2691 = new BitSet(new long[]{0x0002273F600000F0L});
+    public static final BitSet FOLLOW_ruleExpressionList_in_ruleFunctionCall2712 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleFunctionCall2725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressionList_in_entryRuleExpressionList2763 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionList2773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionList2819 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_ruleExpressionRest_in_ruleExpressionList2840 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_ruleExpressionRest_in_entryRuleExpressionRest2877 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionRest2887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleExpressionRest2924 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionRest2946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListExpression_in_entryRuleListExpression2981 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleListExpression2991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleListExpression3047 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleListExpression3108 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleListExpression3169 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleListExpression3230 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleListExpression3291 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleListExpression3352 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3374 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleListExpression3386 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3407 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_39_in_ruleListExpression3419 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleListExpression3479 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3501 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleListExpression3513 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleListExpression3573 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3595 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleListExpression3607 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleListExpression3667 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListExpression3689 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_43_in_ruleListExpression3701 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleListValue_in_ruleListExpression3722 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListValue_in_entryRuleListValue3760 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleListValue3770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleListValue3817 = new BitSet(new long[]{0x0000100000000002L});
+    public static final BitSet FOLLOW_44_in_ruleListValue3837 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleCondition_in_ruleListValue3859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition3897 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCondition3907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleCondition3953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnaryExpression_in_entryRuleUnaryExpression3987 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnaryExpression3997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_ruleUnaryExpression4045 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleUnaryExpression4085 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleUnaryExpression4107 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleUnaryExpression4118 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleUnaryExpression4168 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleUnaryExpression4190 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleUnaryExpression4201 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleUnaryExpression4231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructureExpression_in_entryRuleStructureExpression4268 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStructureExpression4278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleStructureExpression4325 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleKeyValuePair_in_ruleStructureExpression4346 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_ruleStructureExpression4358 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_ruleStructureExpression_in_ruleStructureExpression4379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKeyValuePair_in_entryRuleKeyValuePair4417 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleKeyValuePair4427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleKeyValuePair4469 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_48_in_ruleKeyValuePair4486 = new BitSet(new long[]{0x0002273F200000F0L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleKeyValuePair4507 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_ruleKeyValuePairRest_in_ruleKeyValuePair4528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleKeyValuePairRest_in_entryRuleKeyValuePairRest4565 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleKeyValuePairRest4575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleKeyValuePairRest4612 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleKeyValuePair_in_ruleKeyValuePairRest4634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm4669 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTerm4679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDesignator_in_ruleTerm4726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTerm4758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTerm4797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOUBLE_in_ruleTerm4836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleList_in_ruleTerm4870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleList_in_entryRuleList4905 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleList4915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleList4961 = new BitSet(new long[]{0x00060000000000F0L});
+    public static final BitSet FOLLOW_ruleTerm_in_ruleList4982 = new BitSet(new long[]{0x00060000000000F0L});
+    public static final BitSet FOLLOW_50_in_ruleList4995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDesignator_in_entryRuleDesignator5033 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDesignator5043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDesignator5087 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_synpred1_InternalExpression1031 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_synpred2_InternalExpression1202 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_synpred3_InternalExpression1372 = new BitSet(new long[]{0x0000000000000002L});
@@ -6698,6 +6706,6 @@ public class InternalExpressionParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_set_in_synpred5_InternalExpression1992 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_synpred6_InternalExpression2217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_synpred7_InternalExpression2388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_synpred17_InternalExpression3828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_synpred17_InternalExpression3829 = new BitSet(new long[]{0x0000000000000002L});
 
 }

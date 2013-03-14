@@ -12,5 +12,11 @@
             class="org.openetcs.model.ertmsformalspecs.ModelPackage"
             genModel="model/model.genmodel"/>
    </extension>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.openetcs.org/dsl/Expression" 
+       class = "org.openetcs.dsl.expression.ExpressionPackage"
+       genModel = "org/openetcs/dsl/Expression.genmodel" /> 
+  </extension>
 
 </plugin>

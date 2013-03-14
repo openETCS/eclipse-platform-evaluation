@@ -7,6 +7,7 @@ import org.eclipse.xtext.ui.generator.*
 var grammarURI = "classpath:/org/openetcs/dsl/Expression.xtext"
 var file.extensions = "expression"
 var projectName = "org.openetcs.model"
+var projectTestName = "../org.openetcs.dsl.tests"
 var runtimeProject = "../${projectName}"
 var uiProjectName = "org.openetcs.dsl.expression.ui"
 var uiProject = "../${uiProjectName}"
@@ -27,13 +28,14 @@ Workflow {
         }
     
         component = DirectoryCleaner {
-            directory = "${runtimeProject}.ui/src-gen"
+            directory = "${uiProject}/src-gen"
         }
     
         component = Generator {
             pathRtProject = runtimeProject
             pathUiProject = "${uiProject}"
-//            pathTestProject = "${runtimeProject}.tests"
+       //     pathTestProject = "${projectTestName}"
+//            projectNameTest = "${projectTestName}"
             projectNameRt = projectName
             projectNameUi = "${uiProjectName}"
             language = {

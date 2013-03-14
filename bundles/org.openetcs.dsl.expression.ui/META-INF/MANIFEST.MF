@@ -20,5 +20,6 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.openetcs.dsl.ui.contentassist,
  org.openetcs.dsl.ui.contentassist.antlr,
- org.openetcs.dsl.ui.internal
+ org.openetcs.dsl.ui.internal,
+ org.openetcs.dsl.ui.quickfix
 Bundle-Activator: org.openetcs.dsl.ui.internal.ExpressionActivator

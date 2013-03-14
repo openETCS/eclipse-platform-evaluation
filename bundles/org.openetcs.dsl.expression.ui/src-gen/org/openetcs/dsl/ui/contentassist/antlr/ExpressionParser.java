@@ -64,6 +64,7 @@ public class ExpressionParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifierExpressionAccess().getGroup(), "rule__QualifierExpression__Group__0");
 					put(grammarAccess.getQualifierExpressionAccess().getGroup_2(), "rule__QualifierExpression__Group_2__0");
 					put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
+					put(grammarAccess.getProcedureCallAccess().getGroup(), "rule__ProcedureCall__Group__0");
 					put(grammarAccess.getExpressionListAccess().getGroup(), "rule__ExpressionList__Group__0");
 					put(grammarAccess.getExpressionRestAccess().getGroup(), "rule__ExpressionRest__Group__0");
 					put(grammarAccess.getListExpressionAccess().getGroup_0(), "rule__ListExpression__Group_0__0");
@@ -119,7 +120,10 @@ public class ExpressionParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPowExpressionAccess().getRightAssignment_2_1(), "rule__PowExpression__RightAssignment_2_1");
 					put(grammarAccess.getQualifierExpressionAccess().getOpAssignment_2_0(), "rule__QualifierExpression__OpAssignment_2_0");
 					put(grammarAccess.getQualifierExpressionAccess().getRightAssignment_2_1(), "rule__QualifierExpression__RightAssignment_2_1");
+					put(grammarAccess.getFunctionCallAccess().getFunctionAssignment_0(), "rule__FunctionCall__FunctionAssignment_0");
 					put(grammarAccess.getFunctionCallAccess().getParamsAssignment_2(), "rule__FunctionCall__ParamsAssignment_2");
+					put(grammarAccess.getProcedureCallAccess().getProcedureAssignment_0(), "rule__ProcedureCall__ProcedureAssignment_0");
+					put(grammarAccess.getProcedureCallAccess().getParamsAssignment_2(), "rule__ProcedureCall__ParamsAssignment_2");
 					put(grammarAccess.getExpressionListAccess().getHeadAssignment_0(), "rule__ExpressionList__HeadAssignment_0");
 					put(grammarAccess.getExpressionListAccess().getTailAssignment_1(), "rule__ExpressionList__TailAssignment_1");
 					put(grammarAccess.getListExpressionAccess().getExprAssignment_0_1_1(), "rule__ListExpression__ExprAssignment_0_1_1");

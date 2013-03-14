@@ -146,6 +146,13 @@ public class ExpressionSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExpressionPackage.PROCEDURE_CALL:
+      {
+        ProcedureCall procedureCall = (ProcedureCall)theEObject;
+        T result = caseProcedureCall(procedureCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExpressionPackage.EXPRESSION_LIST:
       {
         ExpressionList expressionList = (ExpressionList)theEObject;
@@ -200,7 +207,6 @@ public class ExpressionSwitch<T> extends Switch<T>
       {
         Designator designator = (Designator)theEObject;
         T result = caseDesignator(designator);
-        if (result == null) result = caseFunctionCall(designator);
         if (result == null) result = caseTerm(designator);
         if (result == null) result = caseExpression(designator);
         if (result == null) result = casePhrase(designator);
@@ -565,6 +571,22 @@ public class ExpressionSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFunctionCall(FunctionCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Procedure Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Procedure Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProcedureCall(ProcedureCall object)
   {
     return null;
   }

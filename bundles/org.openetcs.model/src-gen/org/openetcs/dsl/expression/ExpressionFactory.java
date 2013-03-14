@@ -104,6 +104,15 @@ public interface ExpressionFactory extends EFactory
   FunctionCall createFunctionCall();
 
   /**
+   * Returns a new object of class '<em>Procedure Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Procedure Call</em>'.
+   * @generated
+   */
+  ProcedureCall createProcedureCall();
+
+  /**
    * Returns a new object of class '<em>List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

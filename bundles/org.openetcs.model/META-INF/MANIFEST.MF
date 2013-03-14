@@ -53,5 +53,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext.common.types
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j;version="1.2.15",
- org.eclipse.emf.ecp.core,
  org.eclipse.xtext.xbase.lib

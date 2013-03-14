@@ -300,13 +300,68 @@ public interface ExpressionPackage extends EPackage
   int FUNCTION_CALL__CONDITION = EXPRESSION__CONDITION;
 
   /**
+   * The feature id for the '<em><b>Function</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__FUNCTION = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__PARAMS = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Function Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+  int FUNCTION_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.openetcs.dsl.expression.impl.ProcedureCallImpl <em>Procedure Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.openetcs.dsl.expression.impl.ProcedureCallImpl
+   * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getProcedureCall()
+   * @generated
+   */
+  int PROCEDURE_CALL = 9;
+
+  /**
+   * The feature id for the '<em><b>Procedure</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL__PROCEDURE = 0;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL__PARAMS = 1;
+
+  /**
+   * The number of structural features of the '<em>Procedure Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE_CALL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.openetcs.dsl.expression.impl.ExpressionListImpl <em>List</em>}' class.
@@ -316,7 +371,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getExpressionList()
    * @generated
    */
-  int EXPRESSION_LIST = 9;
+  int EXPRESSION_LIST = 10;
 
   /**
    * The feature id for the '<em><b>Head</b></em>' containment reference.
@@ -353,7 +408,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getExpressionRest()
    * @generated
    */
-  int EXPRESSION_REST = 10;
+  int EXPRESSION_REST = 11;
 
   /**
    * The number of structural features of the '<em>Rest</em>' class.
@@ -372,7 +427,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getKeyValuePairRest()
    * @generated
    */
-  int KEY_VALUE_PAIR_REST = 12;
+  int KEY_VALUE_PAIR_REST = 13;
 
   /**
    * The number of structural features of the '<em>Key Value Pair Rest</em>' class.
@@ -391,7 +446,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getKeyValuePair()
    * @generated
    */
-  int KEY_VALUE_PAIR = 11;
+  int KEY_VALUE_PAIR = 12;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -437,7 +492,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getTerm()
    * @generated
    */
-  int TERM = 13;
+  int TERM = 14;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -474,7 +529,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getList()
    * @generated
    */
-  int LIST = 14;
+  int LIST = 15;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -520,7 +575,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getDesignator()
    * @generated
    */
-  int DESIGNATOR = 15;
+  int DESIGNATOR = 16;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -529,7 +584,7 @@ public interface ExpressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DESIGNATOR__CONDITION = FUNCTION_CALL__CONDITION;
+  int DESIGNATOR__CONDITION = TERM__CONDITION;
 
   /**
    * The feature id for the '<em><b>Structured Expression</b></em>' containment reference.
@@ -538,16 +593,7 @@ public interface ExpressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DESIGNATOR__STRUCTURED_EXPRESSION = FUNCTION_CALL_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DESIGNATOR__PARAMS = FUNCTION_CALL_FEATURE_COUNT + 1;
+  int DESIGNATOR__STRUCTURED_EXPRESSION = TERM__STRUCTURED_EXPRESSION;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -556,7 +602,7 @@ public interface ExpressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DESIGNATOR__VALUE = FUNCTION_CALL_FEATURE_COUNT + 2;
+  int DESIGNATOR__VALUE = TERM_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Designator</em>' class.
@@ -565,7 +611,7 @@ public interface ExpressionPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DESIGNATOR_FEATURE_COUNT = FUNCTION_CALL_FEATURE_COUNT + 3;
+  int DESIGNATOR_FEATURE_COUNT = TERM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.openetcs.dsl.expression.impl.OrExpressionImpl <em>Or Expression</em>}' class.
@@ -575,7 +621,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getOrExpression()
    * @generated
    */
-  int OR_EXPRESSION = 16;
+  int OR_EXPRESSION = 17;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -630,7 +676,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getAndExpression()
    * @generated
    */
-  int AND_EXPRESSION = 17;
+  int AND_EXPRESSION = 18;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -685,7 +731,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getEqualityExpression()
    * @generated
    */
-  int EQUALITY_EXPRESSION = 18;
+  int EQUALITY_EXPRESSION = 19;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -740,7 +786,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getDashExpression()
    * @generated
    */
-  int DASH_EXPRESSION = 19;
+  int DASH_EXPRESSION = 20;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -795,7 +841,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getPointExpression()
    * @generated
    */
-  int POINT_EXPRESSION = 20;
+  int POINT_EXPRESSION = 21;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -850,7 +896,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getPowExpression()
    * @generated
    */
-  int POW_EXPRESSION = 21;
+  int POW_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -905,7 +951,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getQualifierExpression()
    * @generated
    */
-  int QUALIFIER_EXPRESSION = 22;
+  int QUALIFIER_EXPRESSION = 23;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -960,7 +1006,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getThereIsIn()
    * @generated
    */
-  int THERE_IS_IN = 23;
+  int THERE_IS_IN = 24;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -997,7 +1043,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getForallIn()
    * @generated
    */
-  int FORALL_IN = 24;
+  int FORALL_IN = 25;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1034,7 +1080,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getFirstIn()
    * @generated
    */
-  int FIRST_IN = 25;
+  int FIRST_IN = 26;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1071,7 +1117,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getLastIn()
    * @generated
    */
-  int LAST_IN = 26;
+  int LAST_IN = 27;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1108,7 +1154,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getCount()
    * @generated
    */
-  int COUNT = 27;
+  int COUNT = 28;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1145,7 +1191,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getReduce()
    * @generated
    */
-  int REDUCE = 28;
+  int REDUCE = 29;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1200,7 +1246,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getSum()
    * @generated
    */
-  int SUM = 29;
+  int SUM = 30;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1246,7 +1292,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getMap()
    * @generated
    */
-  int MAP = 30;
+  int MAP = 31;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1292,7 +1338,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getApply()
    * @generated
    */
-  int APPLY = 31;
+  int APPLY = 32;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1338,7 +1384,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 32;
+  int UNARY_EXPRESSION = 33;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1384,7 +1430,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getStructureExpression()
    * @generated
    */
-  int STRUCTURE_EXPRESSION = 33;
+  int STRUCTURE_EXPRESSION = 34;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1430,7 +1476,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 34;
+  int STRING_VALUE = 35;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1476,7 +1522,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getIntegerValue()
    * @generated
    */
-  int INTEGER_VALUE = 35;
+  int INTEGER_VALUE = 36;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1522,7 +1568,7 @@ public interface ExpressionPackage extends EPackage
    * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getDoubleValue()
    * @generated
    */
-  int DOUBLE_VALUE = 36;
+  int DOUBLE_VALUE = 37;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1718,6 +1764,60 @@ public interface ExpressionPackage extends EPackage
   EClass getFunctionCall();
 
   /**
+   * Returns the meta object for the reference '{@link org.openetcs.dsl.expression.FunctionCall#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Function</em>'.
+   * @see org.openetcs.dsl.expression.FunctionCall#getFunction()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_Function();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.openetcs.dsl.expression.FunctionCall#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Params</em>'.
+   * @see org.openetcs.dsl.expression.FunctionCall#getParams()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_Params();
+
+  /**
+   * Returns the meta object for class '{@link org.openetcs.dsl.expression.ProcedureCall <em>Procedure Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Procedure Call</em>'.
+   * @see org.openetcs.dsl.expression.ProcedureCall
+   * @generated
+   */
+  EClass getProcedureCall();
+
+  /**
+   * Returns the meta object for the reference '{@link org.openetcs.dsl.expression.ProcedureCall#getProcedure <em>Procedure</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Procedure</em>'.
+   * @see org.openetcs.dsl.expression.ProcedureCall#getProcedure()
+   * @see #getProcedureCall()
+   * @generated
+   */
+  EReference getProcedureCall_Procedure();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.openetcs.dsl.expression.ProcedureCall#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Params</em>'.
+   * @see org.openetcs.dsl.expression.ProcedureCall#getParams()
+   * @see #getProcedureCall()
+   * @generated
+   */
+  EReference getProcedureCall_Params();
+
+  /**
    * Returns the meta object for class '{@link org.openetcs.dsl.expression.ExpressionList <em>List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1863,17 +1963,6 @@ public interface ExpressionPackage extends EPackage
    * @generated
    */
   EClass getDesignator();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.openetcs.dsl.expression.Designator#getParams <em>Params</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Params</em>'.
-   * @see org.openetcs.dsl.expression.Designator#getParams()
-   * @see #getDesignator()
-   * @generated
-   */
-  EReference getDesignator_Params();
 
   /**
    * Returns the meta object for the reference '{@link org.openetcs.dsl.expression.Designator#getValue <em>Value</em>}'.
@@ -2720,6 +2809,48 @@ public interface ExpressionPackage extends EPackage
     EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
 
     /**
+     * The meta object literal for the '<em><b>Function</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__FUNCTION = eINSTANCE.getFunctionCall_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__PARAMS = eINSTANCE.getFunctionCall_Params();
+
+    /**
+     * The meta object literal for the '{@link org.openetcs.dsl.expression.impl.ProcedureCallImpl <em>Procedure Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.openetcs.dsl.expression.impl.ProcedureCallImpl
+     * @see org.openetcs.dsl.expression.impl.ExpressionPackageImpl#getProcedureCall()
+     * @generated
+     */
+    EClass PROCEDURE_CALL = eINSTANCE.getProcedureCall();
+
+    /**
+     * The meta object literal for the '<em><b>Procedure</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCEDURE_CALL__PROCEDURE = eINSTANCE.getProcedureCall_Procedure();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCEDURE_CALL__PARAMS = eINSTANCE.getProcedureCall_Params();
+
+    /**
      * The meta object literal for the '{@link org.openetcs.dsl.expression.impl.ExpressionListImpl <em>List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2844,14 +2975,6 @@ public interface ExpressionPackage extends EPackage
      * @generated
      */
     EClass DESIGNATOR = eINSTANCE.getDesignator();
-
-    /**
-     * The meta object literal for the '<em><b>Params</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DESIGNATOR__PARAMS = eINSTANCE.getDesignator_Params();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' reference feature.
