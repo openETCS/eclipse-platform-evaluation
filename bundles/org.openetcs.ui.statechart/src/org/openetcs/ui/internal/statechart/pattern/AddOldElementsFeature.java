@@ -12,8 +12,8 @@ import org.openetcs.dsl.expression.Designator;
 import org.openetcs.dsl.expression.Expression;
 import org.openetcs.dsl.expression.Model;
 import org.openetcs.dsl.expression.Phrase;
-import org.openetcs.dsl.expression.SelfStatement;
-import org.openetcs.dsl.expression.SingleStatement;
+import org.openetcs.dsl.expression.SelfAssignmentStatement;
+import org.openetcs.dsl.expression.VariableAssignmentStatement;
 import org.openetcs.dsl.expression.evaluator.EvaluationException;
 import org.openetcs.dsl.expression.evaluator.EvaluationResult;
 import org.openetcs.dsl.expression.evaluator.OBJECT_TYPE;
@@ -84,13 +84,13 @@ public class AddOldElementsFeature extends AbstractAddFeature {
 						Phrase expression=model.getPhrase();
 						State stateFrom=null;
 						State stateTo=null;
-						if(expression instanceof SingleStatement){
-							SingleStatement statement= (SingleStatement) expression;
-							stateFrom= (State)statement.getDesgnator().getValue();
+						if(expression instanceof VariableAssignmentStatement){
+							VariableAssignmentStatement statement= (VariableAssignmentStatement) expression;
+							stateFrom= (State)statement.getDesignator().getValue();
 							stateTo= (State)((Designator)statement.getExpression()).getValue();
 						}
-						if(expression instanceof SelfStatement){
-							SelfStatement statement= (SelfStatement) expression;
+						if(expression instanceof SelfAssignmentStatement){
+							SelfAssignmentStatement statement= (SelfAssignmentStatement) expression;
 							stateFrom= state;
 							stateTo= (State)((Designator)statement.getExpression()).getValue();
 						}

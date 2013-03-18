@@ -3,13 +3,17 @@ package org.openetcs.dsl.expression.evaluator;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
 import org.openetcs.dsl.expression.AndExpression;
-import org.openetcs.dsl.expression.DashOperation;
+import org.openetcs.dsl.expression.DashExpression;
 import org.openetcs.dsl.expression.Designator;
 import org.openetcs.dsl.expression.DoubleValue;
 import org.openetcs.dsl.expression.EqualityExpression;
@@ -17,8 +21,8 @@ import org.openetcs.dsl.expression.Expression;
 import org.openetcs.dsl.expression.IntegerValue;
 import org.openetcs.dsl.expression.Model;
 import org.openetcs.dsl.expression.OrExpression;
-import org.openetcs.dsl.expression.PointOperation;
-import org.openetcs.dsl.expression.PowOperation;
+import org.openetcs.dsl.expression.PointExpression;
+import org.openetcs.dsl.expression.PowExpression;
 import org.openetcs.dsl.expression.StringValue;
 import org.openetcs.dsl.expression.internal.evaluator.Activator;
 import org.openetcs.dsl.ui.internal.ExpressionActivator;
@@ -29,12 +33,13 @@ public class ParserUtil {
 
 	public static Model text2Model(String text) {
 
-		XtextResourceSet resourceSet = getInjector().getInstance(
-				XtextResourceSet.class);
-		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL,
-				Boolean.TRUE);
+		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = resourceSet.createResource(URI
 				.createURI("VIRTUAL_URI"));
+		Map<Object, Object> loadOptions = new HashMap<Object, Object>();
+		loadOptions.put(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		loadOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+
 		InputStream in = new ByteArrayInputStream(text.getBytes());
 		try {
 			resource.load(in, resourceSet.getLoadOptions());
@@ -50,9 +55,10 @@ public class ParserUtil {
 				ExpressionActivator.ORG_OPENETCS_DSL_EXPRESSION);
 	}
 
-	private static final double EPSILON= 0.000000001;
-	
-	public static EvaluationResult evaluate(Expression expression) throws EvaluationException {
+	private static final double EPSILON = 0.000000001;
+
+	public static EvaluationResult evaluate(Expression expression)
+			throws EvaluationException {
 		if (expression instanceof OrExpression) {
 			return doEvaluate((OrExpression) expression);
 		}
@@ -62,14 +68,14 @@ public class ParserUtil {
 		if (expression instanceof EqualityExpression) {
 			return doEvaluate((EqualityExpression) expression);
 		}
-		if (expression instanceof DashOperation) {
-			return doEvaluate((DashOperation) expression);
+		if (expression instanceof DashExpression) {
+			return doEvaluate((DashExpression) expression);
 		}
-		if (expression instanceof PointOperation) {
-			return doEvaluate((PointOperation) expression);
+		if (expression instanceof PointExpression) {
+			return doEvaluate((PointExpression) expression);
 		}
-		if (expression instanceof PowOperation) {
-			return doEvaluate((PowOperation) expression);
+		if (expression instanceof PowExpression) {
+			return doEvaluate((PowExpression) expression);
 		}
 		if (expression instanceof Designator) {
 			return doEvaluate((Designator) expression);
@@ -86,25 +92,30 @@ public class ParserUtil {
 		return null;
 	}
 
-
-	private static EvaluationResult doEvaluate(OrExpression orExpression) throws EvaluationException {
+	private static EvaluationResult doEvaluate(OrExpression orExpression)
+			throws EvaluationException {
 		EvaluationResult left = evaluate(orExpression.getLeft());
 		EvaluationResult right = evaluate(orExpression.getRight());
-		if(OBJECT_TYPE.BOOLEAN==left.getType()&&OBJECT_TYPE.BOOLEAN==right.getType()){
-			Boolean leftValue=(Boolean)left.getValue();
-			Boolean rightValue=(Boolean)right.getValue();
-			return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(leftValue||rightValue));
+		if (OBJECT_TYPE.BOOLEAN == left.getType()
+				&& OBJECT_TYPE.BOOLEAN == right.getType()) {
+			Boolean leftValue = (Boolean) left.getValue();
+			Boolean rightValue = (Boolean) right.getValue();
+			return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(
+					leftValue || rightValue));
 		}
 		throw new EvaluationException("Wrong types", orExpression);
 	}
 
-	private static EvaluationResult doEvaluate(AndExpression andExpression) throws EvaluationException {
+	private static EvaluationResult doEvaluate(AndExpression andExpression)
+			throws EvaluationException {
 		EvaluationResult left = evaluate(andExpression.getLeft());
 		EvaluationResult right = evaluate(andExpression.getRight());
-		if(OBJECT_TYPE.BOOLEAN==left.getType()&&OBJECT_TYPE.BOOLEAN==right.getType()){
-			Boolean leftValue=(Boolean)left.getValue();
-			Boolean rightValue=(Boolean)right.getValue();
-			return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(leftValue&&rightValue));
+		if (OBJECT_TYPE.BOOLEAN == left.getType()
+				&& OBJECT_TYPE.BOOLEAN == right.getType()) {
+			Boolean leftValue = (Boolean) left.getValue();
+			Boolean rightValue = (Boolean) right.getValue();
+			return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(
+					leftValue && rightValue));
 		}
 		throw new EvaluationException("Wrong types", andExpression);
 	}
@@ -115,20 +126,21 @@ public class ParserUtil {
 		EvaluationResult right = evaluate(equalityExpression.getRight());
 		String operation = equalityExpression.getOp();
 		if ("==".equals(operation)) {
-			return doEvaluateEquals(left,right);
+			return doEvaluateEquals(left, right);
 		} else if ("!=".equals(operation)) {
-			return doEvaluateNotEquals(left,right);
+			return doEvaluateNotEquals(left, right);
 		} else if ("<=".equals(operation)) {
-			return doEvaluateLessEquals(left,right);
+			return doEvaluateLessEquals(left, right);
 		} else if (">=".equals(operation)) {
-			return doEvaluateGreaterEquals(left,right);
+			return doEvaluateGreaterEquals(left, right);
 		} else if ("in".equals(operation)) {
-			return doEvaluateIn(left,right);
+			return doEvaluateIn(left, right);
 		} else if ("not in".equals(operation)) {
-			return doEvaluateNotIn(left,right);
+			return doEvaluateNotIn(left, right);
 		}
 		throw new EvaluationException("Unknown operation", equalityExpression);
 	}
+
 	private static EvaluationResult doEvaluateNotIn(EvaluationResult left,
 			EvaluationResult right) {
 		throw new UnsupportedOperationException();
@@ -153,44 +165,55 @@ public class ParserUtil {
 
 	private static EvaluationResult doEvaluateNotEquals(EvaluationResult left,
 			EvaluationResult right) throws EvaluationException {
-		EvaluationResult result=doEvaluateEquals(left, right);
-		Boolean value=(Boolean) result.getValue();
+		EvaluationResult result = doEvaluateEquals(left, right);
+		Boolean value = (Boolean) result.getValue();
 		return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(!value));
 	}
 
 	private static EvaluationResult doEvaluateEquals(EvaluationResult left,
 			EvaluationResult right) throws EvaluationException {
-		//FIXME ask Laureint what about if integer+ float how to diff float from in if 1.1==1 ?
-		if(OBJECT_TYPE.INTEGER==left.getType()&&OBJECT_TYPE.INTEGER==right.getType()){
-			boolean result=((Integer)left.getValue()).intValue()==((Integer)right.getValue()).intValue();
-			return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(result));
-		}
-		else if(OBJECT_TYPE.DOUBLE==left.getType()&&OBJECT_TYPE.DOUBLE==right.getType()){
-			boolean result=Math.abs((Double)left.getValue()-(Double)right.getValue())<EPSILON;
-			return new EvaluationResult(OBJECT_TYPE.BOOLEAN, new Boolean(result));
+		// FIXME ask Laureint what about if integer+ float how to diff float
+		// from in if 1.1==1 ?
+		if (OBJECT_TYPE.INTEGER == left.getType()
+				&& OBJECT_TYPE.INTEGER == right.getType()) {
+			boolean result = ((Integer) left.getValue()).intValue() == ((Integer) right
+					.getValue()).intValue();
+			return new EvaluationResult(OBJECT_TYPE.BOOLEAN,
+					new Boolean(result));
+		} else if (OBJECT_TYPE.DOUBLE == left.getType()
+				&& OBJECT_TYPE.DOUBLE == right.getType()) {
+			boolean result = Math.abs((Double) left.getValue()
+					- (Double) right.getValue()) < EPSILON;
+			return new EvaluationResult(OBJECT_TYPE.BOOLEAN,
+					new Boolean(result));
 		}
 		throw new EvaluationException("Wrong Types", null);
 	}
 
-	private static EvaluationResult doEvaluate(DashOperation dashExpression) throws EvaluationException {
+	private static EvaluationResult doEvaluate(DashExpression dashExpression)
+			throws EvaluationException {
 		EvaluationResult left = evaluate(dashExpression.getLeft());
 		EvaluationResult right = evaluate(dashExpression.getRight());
 		String operation = dashExpression.getOp();
 		if ("+".equals(operation)) {
-			return doEvaluateAdd(left,right);
+			return doEvaluateAdd(left, right);
 		} else if ("-".equals(operation)) {
-			return doEvaluateMinus(left,right);
+			return doEvaluateMinus(left, right);
 		}
 		throw new EvaluationException("Unknown operation", dashExpression);
 	}
+
 	private static EvaluationResult doEvaluateMinus(EvaluationResult left,
 			EvaluationResult right) throws EvaluationException {
-		if(OBJECT_TYPE.INTEGER==left.getType()&&OBJECT_TYPE.INTEGER==right.getType()){
-			int result=(Integer)left.getValue()-(Integer)right.getValue();
-			return new EvaluationResult(OBJECT_TYPE.INTEGER, new Integer(result));
-		}
-		else if(OBJECT_TYPE.DOUBLE==left.getType()&&OBJECT_TYPE.DOUBLE==right.getType()){
-			double result=(Double)left.getValue()-(Double)right.getValue();
+		if (OBJECT_TYPE.INTEGER == left.getType()
+				&& OBJECT_TYPE.INTEGER == right.getType()) {
+			int result = (Integer) left.getValue() - (Integer) right.getValue();
+			return new EvaluationResult(OBJECT_TYPE.INTEGER,
+					new Integer(result));
+		} else if (OBJECT_TYPE.DOUBLE == left.getType()
+				&& OBJECT_TYPE.DOUBLE == right.getType()) {
+			double result = (Double) left.getValue()
+					- (Double) right.getValue();
 			return new EvaluationResult(OBJECT_TYPE.DOUBLE, new Double(result));
 		}
 		throw new EvaluationException("Wrong Types", null);
@@ -198,77 +221,99 @@ public class ParserUtil {
 
 	private static EvaluationResult doEvaluateAdd(EvaluationResult left,
 			EvaluationResult right) throws EvaluationException {
-		if(OBJECT_TYPE.INTEGER==left.getType()&&OBJECT_TYPE.INTEGER==right.getType()){
-			int result=(Integer)left.getValue()+(Integer)right.getValue();
-			return new EvaluationResult(OBJECT_TYPE.INTEGER, new Integer(result));
-		}
-		else if(OBJECT_TYPE.DOUBLE==left.getType()&&OBJECT_TYPE.DOUBLE==right.getType()){
-			double result=(Double)left.getValue()+(Double)right.getValue();
+		if (OBJECT_TYPE.INTEGER == left.getType()
+				&& OBJECT_TYPE.INTEGER == right.getType()) {
+			int result = (Integer) left.getValue() + (Integer) right.getValue();
+			return new EvaluationResult(OBJECT_TYPE.INTEGER,
+					new Integer(result));
+		} else if (OBJECT_TYPE.DOUBLE == left.getType()
+				&& OBJECT_TYPE.DOUBLE == right.getType()) {
+			double result = (Double) left.getValue()
+					+ (Double) right.getValue();
 			return new EvaluationResult(OBJECT_TYPE.DOUBLE, new Double(result));
 		}
 		throw new EvaluationException("Wrong Types", null);
 	}
 
-	private static EvaluationResult doEvaluate(PointOperation pointExpression) throws EvaluationException {
+	private static EvaluationResult doEvaluate(PointExpression pointExpression)
+			throws EvaluationException {
 		EvaluationResult left = evaluate(pointExpression.getLeft());
 		EvaluationResult right = evaluate(pointExpression.getRight());
 		String operation = pointExpression.getOp();
 		if ("*".equals(operation)) {
-			return doEvaluateMultiplication(left,right);
+			return doEvaluateMultiplication(left, right);
 		} else if ("/".equals(operation)) {
-			return doEvaluateDivision(left,right);
+			return doEvaluateDivision(left, right);
 		}
 		throw new EvaluationException("Unknown operation", pointExpression);
 	}
+
 	private static EvaluationResult doEvaluateDivision(EvaluationResult left,
 			EvaluationResult right) throws EvaluationException {
-		if(OBJECT_TYPE.INTEGER==left.getType()&&OBJECT_TYPE.INTEGER==right.getType()&&((Integer)right.getValue()!=0)){
-			int result=(Integer)left.getValue()/(Integer)right.getValue();
-			return new EvaluationResult(OBJECT_TYPE.INTEGER, new Integer(result));
-		}
-		else if(OBJECT_TYPE.DOUBLE==left.getType()&&OBJECT_TYPE.DOUBLE==right.getType()&&((Double)right.getValue()!=0)){
-			double result=(Double)left.getValue()/(Double)right.getValue();
+		if (OBJECT_TYPE.INTEGER == left.getType()
+				&& OBJECT_TYPE.INTEGER == right.getType()
+				&& ((Integer) right.getValue() != 0)) {
+			int result = (Integer) left.getValue() / (Integer) right.getValue();
+			return new EvaluationResult(OBJECT_TYPE.INTEGER,
+					new Integer(result));
+		} else if (OBJECT_TYPE.DOUBLE == left.getType()
+				&& OBJECT_TYPE.DOUBLE == right.getType()
+				&& ((Double) right.getValue() != 0)) {
+			double result = (Double) left.getValue()
+					/ (Double) right.getValue();
 			return new EvaluationResult(OBJECT_TYPE.DOUBLE, new Double(result));
 		}
 		throw new EvaluationException("Wrong Types", null);
 	}
 
 	private static EvaluationResult doEvaluateMultiplication(
-			EvaluationResult left, EvaluationResult right) throws EvaluationException {
-		if(OBJECT_TYPE.INTEGER==left.getType()&&OBJECT_TYPE.INTEGER==right.getType()){
-			int result=(Integer)left.getValue()*(Integer)right.getValue();
-			return new EvaluationResult(OBJECT_TYPE.INTEGER, new Integer(result));
-		}
-		else if(OBJECT_TYPE.DOUBLE==left.getType()&&OBJECT_TYPE.DOUBLE==right.getType()){
-			double result=(Double)left.getValue()*(Double)right.getValue();
+			EvaluationResult left, EvaluationResult right)
+			throws EvaluationException {
+		if (OBJECT_TYPE.INTEGER == left.getType()
+				&& OBJECT_TYPE.INTEGER == right.getType()) {
+			int result = (Integer) left.getValue() * (Integer) right.getValue();
+			return new EvaluationResult(OBJECT_TYPE.INTEGER,
+					new Integer(result));
+		} else if (OBJECT_TYPE.DOUBLE == left.getType()
+				&& OBJECT_TYPE.DOUBLE == right.getType()) {
+			double result = (Double) left.getValue()
+					* (Double) right.getValue();
 			return new EvaluationResult(OBJECT_TYPE.DOUBLE, new Double(result));
 		}
 		throw new EvaluationException("Wrong Types", null);
 	}
 
-	private static EvaluationResult doEvaluate(PowOperation powExpression) throws EvaluationException {
+	private static EvaluationResult doEvaluate(PowExpression powExpression)
+			throws EvaluationException {
 		EvaluationResult left = evaluate(powExpression.getLeft());
 		EvaluationResult right = evaluate(powExpression.getRight());
-		if(OBJECT_TYPE.INTEGER==left.getType()&&OBJECT_TYPE.INTEGER==right.getType()){
-			double result=Math.pow(((Integer)left.getValue()).doubleValue(),((Integer)right.getValue()).doubleValue());
+		if (OBJECT_TYPE.INTEGER == left.getType()
+				&& OBJECT_TYPE.INTEGER == right.getType()) {
+			double result = Math.pow(((Integer) left.getValue()).doubleValue(),
+					((Integer) right.getValue()).doubleValue());
 			return new EvaluationResult(OBJECT_TYPE.DOUBLE, new Double(result));
-		}
-		else if(OBJECT_TYPE.DOUBLE==left.getType()&&OBJECT_TYPE.DOUBLE==right.getType()){
-			double result=Math.pow((Double)left.getValue(),(Double)right.getValue());
+		} else if (OBJECT_TYPE.DOUBLE == left.getType()
+				&& OBJECT_TYPE.DOUBLE == right.getType()) {
+			double result = Math.pow((Double) left.getValue(),
+					(Double) right.getValue());
 			return new EvaluationResult(OBJECT_TYPE.DOUBLE, new Double(result));
 		}
 		throw new EvaluationException("Wrong Types", null);
 	}
+
 	private static EvaluationResult doEvaluate(Designator expression) {
-		return new EvaluationResult(OBJECT_TYPE.EOBJECT,expression.getValue());
+		return new EvaluationResult(OBJECT_TYPE.EOBJECT, expression.getValue());
 	}
+
 	private static EvaluationResult doEvaluate(StringValue expression) {
-		return new EvaluationResult(OBJECT_TYPE.STRING,expression.getValue());
+		return new EvaluationResult(OBJECT_TYPE.STRING, expression.getValue());
 	}
+
 	private static EvaluationResult doEvaluate(DoubleValue expression) {
-		return new EvaluationResult(OBJECT_TYPE.DOUBLE,expression.getValue());
+		return new EvaluationResult(OBJECT_TYPE.DOUBLE, expression.getValue());
 	}
+
 	private static EvaluationResult doEvaluate(IntegerValue expression) {
-		return new EvaluationResult(OBJECT_TYPE.INTEGER,expression.getValue());
+		return new EvaluationResult(OBJECT_TYPE.INTEGER, expression.getValue());
 	}
 }
