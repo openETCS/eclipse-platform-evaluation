@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="openetcs" sequenceNumber="41">
+<?pde version="3.8"?><target name="openetcs" sequenceNumber="42">
 <locations>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.ecp.graphiti.feature.group" version="1.0.0.201301161457"/>
@@ -30,6 +30,8 @@
 </location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.platform.ide" version="4.3.0.I20130314-1330"/>
+<unit id="org.eclipse.rcp.feature.group" version="4.3.0.v20130314-1730"/>
+<unit id="org.eclipse.equinox.sdk.feature.group" version="3.9.0.v20130314-0217"/>
 <repository location="http://download.eclipse.org/eclipse/updates/4.3milestones"/>
 </location>
 </locations>
