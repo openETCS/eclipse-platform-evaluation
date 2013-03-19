@@ -16,7 +16,7 @@
 	</properties>
 
 	<modules>
-		<module>../../bundles/org.openetcs.dsl.expression</module>
+		<!--<module>../../bundles/org.openetcs.dsl.expression</module>-->
 		<module>../../bundles/org.openetcs.dsl.expression.evaluator</module>
 		<module>../../bundles/org.openetcs.dsl.expression.ui</module>
 		<module>../../bundles/org.openetcs.es3f</module>
@@ -31,11 +31,6 @@
 		<module>../../releng/org.openetcs.target</module>
 	</modules>
 	<repositories>
-		<repository>
-			<id>eclipse-kepler</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/kepler</url>
-		</repository>
 		<repository>
 			<id>ecp-latest</id>
 			<layout>p2</layout>
@@ -68,6 +63,7 @@
 					<resolver>p2</resolver>
 					<pomDependencies>consider</pomDependencies>
 					<environments>
+					<!--
 						<environment>
 							<os>linux</os>
 							<ws>gtk</ws>
@@ -78,6 +74,7 @@
 							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
+						-->
 						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
@@ -88,6 +85,7 @@
 							<ws>win32</ws>
 							<arch>x86_64</arch>
 						</environment>
+						<!--
 						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
@@ -98,6 +96,7 @@
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
 						</environment>
+						-->
 					</environments>
 					<target>
 						<artifact>

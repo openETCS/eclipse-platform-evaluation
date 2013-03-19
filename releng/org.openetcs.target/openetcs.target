@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="openetcs" sequenceNumber="38">
+<?pde version="3.8"?><target name="openetcs" sequenceNumber="41">
 <locations>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecp.graphiti.feature.group" version="1.0.0.201301161457"/>
+<unit id="org.eclipse.emf.ecp.graphiti.source.feature.group" version="1.0.0.201301161457"/>
+<repository location="http://download.eclipse.org/emfclient/graphiti/ecp_extension/"/>
+</location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.hamcrest.core" version="1.1.0.v20090501071000"/>
 <unit id="org.junit" version="4.10.0.v4_10_0_v20120426-0900"/>
@@ -22,11 +27,6 @@
 <unit id="org.eclipse.xtext.sdk.feature.group" version="2.4.0.v201302051002"/>
 <unit id="org.eclipse.jdt.feature.group" version="3.9.0.v20121210-132935-8-8uFyYFNOfwKNWSo-XLNBDV3834"/>
 <repository location="http://download.eclipse.org/releases/kepler"/>
-</location>
-<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.ecp.graphiti.feature.group" version="1.0.0.201301161457"/>
-<unit id="org.eclipse.emf.ecp.graphiti.source.feature.group" version="1.0.0.201301161457"/>
-<repository location="http://download.eclipse.org/emfclient/graphiti/ecp_extension/"/>
 </location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.platform.ide" version="4.3.0.I20130314-1330"/>
