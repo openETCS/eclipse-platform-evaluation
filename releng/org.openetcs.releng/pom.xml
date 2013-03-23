@@ -34,7 +34,7 @@
 		<repository>
 			<id>ecp-latest</id>
 			<layout>p2</layout>
-			<url>https://hudson.eclipse.org/hudson/job/emf-emfclient-maintenance/lastSuccessfulBuild/artifact/git/ECP2/org.eclipse.emf.ecp.site-feature/target/repository/</url>
+			<url>https://hudson.eclipse.org/hudson/job/emf-emfclient-maintenance/lastSuccessfulBuild/artifact/git/features/org.eclipse.emf.ecp.site-feature/target/repository/</url>
 		</repository>
 		<repository>
 			<id>emfstore-latest</id>
