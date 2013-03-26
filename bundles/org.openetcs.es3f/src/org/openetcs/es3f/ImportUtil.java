@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecp.core.ECPProject;
 import org.eclipse.emf.edit.command.ChangeCommand;
@@ -113,9 +114,11 @@ public class ImportUtil {
 		}
 	}
 	
-	public static void importModel(File fileToImport, final ECPProject importProject)
+	public static void importModel(File fileToImport, final ECPProject importProject, IProgressMonitor monitor)
 	{
+		monitor.beginTask("Importing project...", 100);
 		xmlBFileContext ctxt = new xmlBFileContext();
+		monitor.subTask("Reading file...");
 		if ( ctxt.readFile(fileToImport.getAbsolutePath()) )
 		{
 			try 
@@ -124,19 +127,28 @@ public class ImportUtil {
 			
 				if ( dictionary != null )
 				{
+					monitor.subTask("Filling context...");
 					ensureProjectContextIsCreated(importProject);
 					fillContext(importProject, dictionary);
+					monitor.worked(10);
 					
 
 					ManualTranslation translation = new ManualTranslation();
+					monitor.subTask("Importing dictionary...");
 					final org.openetcs.model.ertmsformalspecs.Dictionary importedDictionary = Importer.importDictionary(importProject, translation, dictionary);
+					monitor.worked(50);
+					monitor.subTask("Resolving cross references...");
 					translation.crossReference(importProject);
+					monitor.worked(20);
+					monitor.subTask("Adding element to project...");
 					importProject.getEditingDomain().getCommandStack().execute(new ChangeCommand(importedDictionary) {
 						@Override
 						protected void doExecute() {
 							importProject.getElements().add(importedDictionary);
 						}
 					});
+					monitor.worked(20);
+					monitor.done();
 				}
 				else 
 				{
