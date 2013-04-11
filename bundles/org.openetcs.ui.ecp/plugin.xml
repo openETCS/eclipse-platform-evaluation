@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.emf.ecp.ui.workbench.menuContributionEnablement">
+         point="org.eclipse.emf.ecp.ui.e3.menuContributionEnablement">
       <MenuContributionEnablement
             enabled="true">
          <Command
