@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="openetcs" sequenceNumber="42">
+<?pde version="3.8"?><target name="openetcs" sequenceNumber="44">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.ecp.graphiti.feature.group" version="1.0.0.201301161457"/>
@@ -34,6 +34,22 @@
 <unit id="org.eclipse.rcp.feature.group" version="4.3.0.v20130314-1730"/>
 <unit id="org.eclipse.equinox.sdk.feature.group" version="3.9.0.v20130314-0217"/>
 <repository location="http://download.eclipse.org/eclipse/updates/4.3milestones"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecp.e3.feature.group" version="1.0.0.201304140402"/>
+<unit id="org.eclipse.emf.ecp.validation.feature.feature.group" version="1.0.0.201304140402"/>
+<unit id="org.eclipse.emf.ecp.feature.group" version="1.0.0.201304140402"/>
+<unit id="org.eclipse.emf.ecp.emfstore.feature.group" version="1.0.0.201304140402"/>
+<repository location="http://download.eclipse.org/emfclient/nightly/repository"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.emfstore.ecore.feature.feature.group" version="1.0.0.v20130321-1606"/>
+<unit id="org.eclipse.emf.emfstore.client.transaction.feature.feature.group" version="1.0.0.v20130321-1606"/>
+<unit id="org.eclipse.emf.emfstore.client.feature.feature.group" version="1.0.0.v20130321-1606"/>
+<unit id="org.eclipse.emf.emfstore.client.ui.feature.feature.group" version="1.0.0.v20130321-1606"/>
+<unit id="org.eclipse.emf.emfstore.common.feature.feature.group" version="1.0.0.v20130321-1606"/>
+<unit id="org.eclipse.emf.emfstore.server.feature.feature.group" version="1.0.0.v20130321-1606"/>
+<repository location="http://download.eclipse.org/emf-store/milestones/latest"/>
 </location>
 </locations>
 </target>
