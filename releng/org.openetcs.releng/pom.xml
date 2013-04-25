@@ -26,22 +26,10 @@
 		<module>../../bundles/org.openetcs.ui.expression</module>
 		<module>../../bundles/org.openetcs.ui.statechart</module>
 		<module>../../features/org.openetcs.core-feature</module>
-		<module>../../features/org.openetcs.target-feature</module>
+		<!--<module>../../features/org.openetcs.target-feature</module>-->
 		<module>../../releng/org.openetcs.products</module>
 		<module>../../releng/org.openetcs.target</module>
 	</modules>
-	<repositories>
-		<repository>
-			<id>ecp-latest</id>
-			<layout>p2</layout>
-			<url>https://hudson.eclipse.org/hudson/job/emf-emfclient-maintenance/lastSuccessfulBuild/artifact/git/features/org.eclipse.emf.ecp.site-feature/target/repository/</url>
-		</repository>
-		<repository>
-			<id>emfstore-latest</id>
-			<layout>p2</layout>
-			<url>https://hudson.eclipse.org/hudson/job/emf-emfstore-integration-tycho/lastSuccessfulBuild/artifact/git/releng/org.eclipse.emf.emfstore.p2repository/target/repository/</url>
-		</repository>
-	</repositories>
 	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
