@@ -36,7 +36,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OUTGOING(0, "Outgoing", "Outgoing"),
+	OUTGOING(1, "Outgoing", "Outgoing"),
 
 	/**
 	 * The '<em><b>Internal</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTERNAL(0, "Internal", ""),
+	INTERNAL(2, "Internal", "Internal"),
 
 	/**
 	 * The '<em><b>In Out</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IN_OUT(0, "InOut", "InOut"),
+	IN_OUT(3, "InOut", "InOut"),
 
 	/**
 	 * The '<em><b>Constant</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONSTANT(0, "Constant", "Constant");
+	CONSTANT(4, "Constant", "Constant");
 
 	/**
 	 * The '<em><b>Incoming</b></em>' literal value.
@@ -96,7 +96,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OUTGOING_VALUE = 0;
+	public static final int OUTGOING_VALUE = 1;
 
 	/**
 	 * The '<em><b>Internal</b></em>' literal value.
@@ -107,11 +107,11 @@ public enum VariableMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTERNAL
-	 * @model name="Internal" literal=""
+	 * @model name="Internal"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INTERNAL_VALUE = 0;
+	public static final int INTERNAL_VALUE = 2;
 
 	/**
 	 * The '<em><b>In Out</b></em>' literal value.
@@ -126,7 +126,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IN_OUT_VALUE = 0;
+	public static final int IN_OUT_VALUE = 3;
 
 	/**
 	 * The '<em><b>Constant</b></em>' literal value.
@@ -141,7 +141,7 @@ public enum VariableMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CONSTANT_VALUE = 0;
+	public static final int CONSTANT_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Variable Mode</b></em>' enumerators.
@@ -207,6 +207,10 @@ public enum VariableMode implements Enumerator {
 	public static VariableMode get(int value) {
 		switch (value) {
 			case INCOMING_VALUE: return INCOMING;
+			case OUTGOING_VALUE: return OUTGOING;
+			case INTERNAL_VALUE: return INTERNAL;
+			case IN_OUT_VALUE: return IN_OUT;
+			case CONSTANT_VALUE: return CONSTANT;
 		}
 		return null;
 	}

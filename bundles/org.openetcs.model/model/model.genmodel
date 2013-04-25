@@ -93,7 +93,8 @@
     <genClasses ecoreClass="model.ecore#//FunctionalBlocks">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//FunctionalBlocks/availableFunctionalBlocks"/>
     </genClasses>
-    <nestedGenPackages prefix="Requirements" disposableProviderFactory="true" ecorePackage="model.ecore#//requirements">
+    <nestedGenPackages prefix="Requirements" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//requirements">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//requirements/EImplementationStatus">
         <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/EImplementationStatus/NA"/>
         <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/EImplementationStatus/NotImplementable"/>
@@ -144,13 +145,17 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//requirements/Paragraph/message"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference model.ecore#//requirements/Paragraph/version"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference model.ecore#//requirements/Paragraph/implementations"/>
       </genClasses>
-      <nestedGenPackages prefix="Messages" disposableProviderFactory="true" ecorePackage="model.ecore#//requirements/messages">
+      <nestedGenPackages prefix="Messages" basePackage="org.openetcs.model.ertmsformalspecs.requirements"
+          disposableProviderFactory="true" ecorePackage="model.ecore#//requirements/messages">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//requirements/messages/EErtmsType">
+          <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/None"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/distance"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/Gradient"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/Length"/>
-          <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/Miscelaneous"/>
+          <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/Miscellaneous"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/ClassNumber"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/IdentityNumber"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/Qualifier"/>
@@ -159,6 +164,7 @@
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/EErtmsType/Text"/>
         </genEnums>
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//requirements/messages/ResolutionFormulaUnit">
+          <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaUnit/None"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaUnit/Q_scale"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaUnit/Percent"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaUnit/Byte"/>
@@ -172,6 +178,7 @@
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaUnit/Km_h"/>
         </genEnums>
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//requirements/messages/ResolutionFormulaValue">
+          <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaValue/None"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaValue/X0_02"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaValue/X0_05"/>
           <genEnumLiterals ecoreEnumLiteral="model.ecore#//requirements/messages/ResolutionFormulaValue/X1"/>
@@ -261,8 +268,12 @@
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Types" disposableProviderFactory="true" ecorePackage="model.ecore#//types">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//types/Precision"/>
+    <nestedGenPackages prefix="Types" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//types">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//types/Precision">
+        <genEnumLiterals ecoreEnumLiteral="model.ecore#//types/Precision/IntegerPrecision"/>
+        <genEnumLiterals ecoreEnumLiteral="model.ecore#//types/Precision/DoublePrecision"/>
+      </genEnums>
       <genClasses ecoreClass="model.ecore#//types/Type">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//types/Type/parentNamespace"/>
       </genClasses>
@@ -304,14 +315,16 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//types/Case/parentFunction"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Customization" disposableProviderFactory="true" ecorePackage="model.ecore#//customization">
+    <nestedGenPackages prefix="Customization" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//customization">
       <genClasses ecoreClass="model.ecore#//customization/RuleDisabling">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference model.ecore#//customization/RuleDisabling/rule"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//customization/RuleDisabling/parentDictionary"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Behaviour" disposableProviderFactory="true" ecorePackage="model.ecore#//behaviour">
+    <nestedGenPackages prefix="Behaviour" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//behaviour">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//behaviour/Priority">
         <genEnumLiterals ecoreEnumLiteral="model.ecore#//behaviour/Priority/Verification"/>
         <genEnumLiterals ecoreEnumLiteral="model.ecore#//behaviour/Priority/UpdateInternal"/>
@@ -342,7 +355,8 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//behaviour/Action/parentSubStep"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Test" disposableProviderFactory="true" ecorePackage="model.ecore#//test">
+    <nestedGenPackages prefix="Test" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//test">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//test/StepIO">
         <genEnumLiterals ecoreEnumLiteral="model.ecore#//test/StepIO/NA"/>
         <genEnumLiterals ecoreEnumLiteral="model.ecore#//test/StepIO/In"/>
@@ -437,8 +451,7 @@
       </genClasses>
       <genClasses ecoreClass="model.ecore#//test/Expectation">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//test/Expectation/parentSubStep"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//test/Expectation/variable"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//test/Expectation/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//test/Expectation/expression"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//test/Expectation/blocking"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//test/Expectation/deadline"/>
       </genClasses>
@@ -459,7 +472,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//test/TestField/value"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Translation" disposableProviderFactory="true" ecorePackage="model.ecore#//translation">
+    <nestedGenPackages prefix="Translation" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//translation">
       <genClasses ecoreClass="model.ecore#//translation/TranslationFolder">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//translation/TranslationFolder/subFolders"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//translation/TranslationFolder/parentFolder"/>
@@ -476,7 +490,8 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//translation/SourceText/parentTranslation"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Shortcut" disposableProviderFactory="true" ecorePackage="model.ecore#//shortcut">
+    <nestedGenPackages prefix="Shortcut" basePackage="org.openetcs.model.ertmsformalspecs"
+        disposableProviderFactory="true" ecorePackage="model.ecore#//shortcut">
       <genClasses ecoreClass="model.ecore#//shortcut/ShortcutFolder">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//shortcut/ShortcutFolder/subFolders"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference model.ecore#//shortcut/ShortcutFolder/parentFolder"/>
