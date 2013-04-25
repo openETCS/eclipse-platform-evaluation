@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.runtime.IStatus;
@@ -53,9 +54,9 @@ public class ExpressionControl extends SWTControl {
 	private Resource resource;
 	
 	@Override
-	protected void bindValue() {
+	protected Binding bindValue() {
 		IObservableValue value = SWTObservables.observeText(text, SWT.FocusOut);
-		getDataBindingContext().bindValue(value, getModelValue(), new UpdateValueStrategy() {
+		return getDataBindingContext().bindValue(value, getModelValue(), new UpdateValueStrategy() {
 
 			@Override
 			public Object convert(Object value) {
@@ -68,19 +69,6 @@ public class ExpressionControl extends SWTControl {
 				return xmiToXtext((String) value);
 			}
 		});
-	}
-
-	@Override
-	public Composite createControl(Composite composite) {
-		provider = getInjector().getInstance(XtextEmbeddedEditorProvider.class);
-		XtextStuff xtextStuff = provider.getXtextEmbeddedEditor(
-				composite, project);
-
-		final ISourceViewer viewer = xtextStuff.embeddedEditor.getViewer();
-		resource=xtextStuff.resource;
-		text = viewer.getTextWidget();
-		bindValue();
-		return text;
 	}
 
 	@Override
@@ -174,5 +162,32 @@ public class ExpressionControl extends SWTControl {
 			return ExpressionActivator
 					.getInstance().getInjector(
 							ExpressionActivator.ORG_OPENETCS_DSL_EXPRESSION);
+		}
+
+		@Override
+		protected void fillControlComposite(Composite composite) {
+			provider = getInjector().getInstance(XtextEmbeddedEditorProvider.class);
+			XtextStuff xtextStuff = provider.getXtextEmbeddedEditor(
+					composite, project);
+
+			final ISourceViewer viewer = xtextStuff.embeddedEditor.getViewer();
+			resource=xtextStuff.resource;
+			text = viewer.getTextWidget();
+//			bindValue();
+		}
+
+		@Override
+		protected String getHelpText() {
+			return "";
+		}
+
+		@Override
+		protected String getUnsetButtonTooltip() {
+			return "Unset";
+		}
+
+		@Override
+		protected String getUnsetLabelText() {
+			return "Unset";
 		}
 }

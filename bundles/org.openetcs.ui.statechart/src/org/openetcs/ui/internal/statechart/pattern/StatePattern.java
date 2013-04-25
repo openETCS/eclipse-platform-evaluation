@@ -1,7 +1,11 @@
 package org.openetcs.ui.internal.statechart.pattern;
 
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.graphiti.datatypes.IDimension;
 import org.eclipse.graphiti.features.context.IAddContext;
+import org.eclipse.graphiti.features.context.ICreateContext;
 import org.eclipse.graphiti.features.context.ILayoutContext;
 import org.eclipse.graphiti.features.context.IMoveShapeContext;
 import org.eclipse.graphiti.features.context.IResizeShapeContext;
@@ -12,6 +16,7 @@ import org.eclipse.graphiti.mm.algorithms.Text;
 import org.eclipse.graphiti.mm.algorithms.styles.Orientation;
 import org.eclipse.graphiti.mm.algorithms.styles.Point;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
+import org.eclipse.graphiti.mm.pictograms.Diagram;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.pattern.AbstractPattern;
@@ -20,6 +25,8 @@ import org.eclipse.graphiti.services.IGaService;
 import org.eclipse.graphiti.services.IPeCreateService;
 import org.eclipse.graphiti.util.ColorConstant;
 import org.eclipse.graphiti.util.IColorConstant;
+import org.openetcs.model.ertmsformalspecs.ModelFactory;
+import org.openetcs.model.ertmsformalspecs.ModelPackage;
 import org.openetcs.model.ertmsformalspecs.State;
 import org.openetcs.model.ertmsformalspecs.StateMachine;
 
@@ -202,6 +209,33 @@ public class StatePattern extends AbstractPattern {
 			state.setX(context.getX());
 			state.setY(context.getY());
 		}
+
+		@Override
+		public boolean canCreate(ICreateContext context) {
+			return context.getTargetContainer() instanceof Diagram;
+		}
+
+		@Override
+		public Object[] create(ICreateContext context) {
+			StateMachine stateMachine=(StateMachine) getBusinessObjectForPictogramElement(getDiagram());
+			
+			State state=ModelFactory.eINSTANCE.createState();
+			state.setWidth(context.getWidth());
+			state.setHeight(context.getHeight());
+			state.setX(context.getX());
+			state.setY(context.getY());
+			
+			EditingDomain editingDomain=AdapterFactoryEditingDomain.getEditingDomainFor(stateMachine);
+			editingDomain.getCommandStack().execute(AddCommand.create(editingDomain, stateMachine, ModelPackage.eINSTANCE.getStateMachine_States(), state));
+			
+			
+			// do the add
+			addGraphicalRepresentation(context, state);
+
+			// return newly created business object(s)
+			return new Object[] { state };
+		}
 	    
+		
 	    
 }

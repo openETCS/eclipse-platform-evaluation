@@ -10,10 +10,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.graphiti.ui;bundle-version="0.10.0",
  org.eclipse.graphiti;bundle-version="0.10.0",
  org.eclipse.graphiti.pattern;bundle-version="0.10.0",
- org.eclipse.emf.ecp.graphiti;bundle-version="1.0.0",
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.6.0",
  org.eclipse.gef;bundle-version="3.9.0",
- org.openetcs.dsl.expression.evaluator;bundle-version="1.0.0"
+ org.openetcs.dsl.expression.evaluator;bundle-version="1.0.0",
+ org.eclipse.emf.ecp.graphiti.core;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

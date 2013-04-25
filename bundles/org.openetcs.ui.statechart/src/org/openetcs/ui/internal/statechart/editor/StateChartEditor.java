@@ -1,8 +1,9 @@
 package org.openetcs.ui.internal.statechart.editor;
 
-import org.eclipse.emf.ecp.graphiti.GraphitiDiagramEditor;
+import org.eclipse.emf.ecp.graphiti.ECPGraphitiDiagramEditor;
 
-public class StateChartEditor extends GraphitiDiagramEditor {
+
+public class StateChartEditor extends ECPGraphitiDiagramEditor {
 	
 	public static final String EDITOR_ID="org.openetcs.ui.statechart.editor";
 	
