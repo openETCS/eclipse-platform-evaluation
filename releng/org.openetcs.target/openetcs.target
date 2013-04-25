@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target includeMode="feature" name="openetcs" sequenceNumber="51">
+<?pde version="3.8"?><target includeMode="feature" name="openetcs" sequenceNumber="52">
 <locations>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.emfstore.modelmutator.feature.feature.group" version="1.0.0.v20130424-1618"/>
@@ -40,6 +40,15 @@
 <unit id="org.junit.source" version="4.10.0.v4_10_0_v20120426-0900"/>
 <unit id="org.custommonkey.xmlunit" version="1.3.0.v201111161502"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/S20121207152029/repository/"/>
+</location>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecp.e3.feature.group" version="1.0.0.201304241747"/>
+<unit id="org.eclipse.emf.ecp.example.feature.group" version="1.0.0.201304241747"/>
+<unit id="org.eclipse.emf.ecp.graphiti.feature.group" version="1.0.0.201304241747"/>
+<unit id="org.eclipse.emf.ecp.validation.feature.feature.group" version="1.0.0.201304241747"/>
+<unit id="org.eclipse.emf.ecp.feature.group" version="1.0.0.201304241747"/>
+<unit id="org.eclipse.emf.ecp.emfstore.feature.group" version="1.0.0.201304241747"/>
+<repository location="http://download.eclipse.org/emfclient/milestones/100RC2"/>
 </location>
 </locations>
 <includeBundles>
