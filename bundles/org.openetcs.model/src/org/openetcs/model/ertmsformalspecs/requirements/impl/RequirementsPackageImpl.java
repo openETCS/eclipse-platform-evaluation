@@ -442,6 +442,15 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getParagraph_Implementations() {
+		return (EReference)paragraphEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEImplementationStatus() {
 		return eImplementationStatusEEnum;
 	}
@@ -516,6 +525,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		createEReference(paragraphEClass, PARAGRAPH__TYPE_SPECS);
 		createEReference(paragraphEClass, PARAGRAPH__MESSAGE);
 		createEReference(paragraphEClass, PARAGRAPH__VERSION);
+		createEReference(paragraphEClass, PARAGRAPH__IMPLEMENTATIONS);
 
 		// Create enums
 		eImplementationStatusEEnum = createEEnum(EIMPLEMENTATION_STATUS);
@@ -598,6 +608,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		initEReference(getParagraph_TypeSpecs(), theMessagesPackage.getTypeSpec(), null, "typeSpecs", null, 0, -1, Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParagraph_Message(), theMessagesPackage.getMessage(), null, "message", null, 0, 1, Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParagraph_Version(), theModelPackage.getBaseLine(), null, "version", null, 0, 1, Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParagraph_Implementations(), theModelPackage.getReqRef(), theModelPackage.getReqRef_Paragraph(), "implementations", null, 0, -1, Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eImplementationStatusEEnum, EImplementationStatus.class, "EImplementationStatus");

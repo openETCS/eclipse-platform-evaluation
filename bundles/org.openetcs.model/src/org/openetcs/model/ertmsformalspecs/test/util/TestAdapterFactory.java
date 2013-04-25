@@ -10,6 +10,7 @@ import org.openetcs.model.ertmsformalspecs.CommentedElement;
 import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
 import org.openetcs.model.ertmsformalspecs.ReqRelated;
+import org.openetcs.model.ertmsformalspecs.test.*;
 import org.openetcs.model.ertmsformalspecs.test.Expectation;
 import org.openetcs.model.ertmsformalspecs.test.Frame;
 import org.openetcs.model.ertmsformalspecs.test.SingleTestCase;

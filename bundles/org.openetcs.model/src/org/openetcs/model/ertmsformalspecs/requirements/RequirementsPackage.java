@@ -433,13 +433,22 @@ public interface RequirementsPackage extends EPackage {
 	int PARAGRAPH__VERSION = ModelPackage.REFERENCES_PARAGRAPH_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Implementations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAGRAPH__IMPLEMENTATIONS = ModelPackage.REFERENCES_PARAGRAPH_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Paragraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH_FEATURE_COUNT = ModelPackage.REFERENCES_PARAGRAPH_FEATURE_COUNT + 13;
+	int PARAGRAPH_FEATURE_COUNT = ModelPackage.REFERENCES_PARAGRAPH_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link org.openetcs.model.ertmsformalspecs.requirements.EImplementationStatus <em>EImplementation Status</em>}' enum.
@@ -765,6 +774,17 @@ public interface RequirementsPackage extends EPackage {
 	EReference getParagraph_Version();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getImplementations <em>Implementations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Implementations</em>'.
+	 * @see org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getImplementations()
+	 * @see #getParagraph()
+	 * @generated
+	 */
+	EReference getParagraph_Implementations();
+
+	/**
 	 * Returns the meta object for enum '{@link org.openetcs.model.ertmsformalspecs.requirements.EImplementationStatus <em>EImplementation Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1041,6 +1061,14 @@ public interface RequirementsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAGRAPH__VERSION = eINSTANCE.getParagraph_Version();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementations</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAGRAPH__IMPLEMENTATIONS = eINSTANCE.getParagraph_Implementations();
 
 		/**
 		 * The meta object literal for the '{@link org.openetcs.model.ertmsformalspecs.requirements.EImplementationStatus <em>EImplementation Status</em>}' enum.

@@ -4,11 +4,15 @@ import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.graphiti.datatypes.IDimension;
+import org.eclipse.graphiti.features.IReason;
 import org.eclipse.graphiti.features.context.IAddContext;
 import org.eclipse.graphiti.features.context.ICreateContext;
+import org.eclipse.graphiti.features.context.IDirectEditingContext;
 import org.eclipse.graphiti.features.context.ILayoutContext;
 import org.eclipse.graphiti.features.context.IMoveShapeContext;
 import org.eclipse.graphiti.features.context.IResizeShapeContext;
+import org.eclipse.graphiti.features.context.IUpdateContext;
+import org.eclipse.graphiti.features.impl.Reason;
 import org.eclipse.graphiti.mm.algorithms.GraphicsAlgorithm;
 import org.eclipse.graphiti.mm.algorithms.Polyline;
 import org.eclipse.graphiti.mm.algorithms.RoundedRectangle;
@@ -48,6 +52,47 @@ public class StatePattern extends AbstractPattern {
 	protected boolean isPatternControlled(PictogramElement pictogramElement) {
 		Object domainObject = getBusinessObjectForPictogramElement(pictogramElement);
 		return isMainBusinessObjectApplicable(domainObject);
+	}
+	public int getEditingType() {
+        // there are several possible editor-types supported:
+        // text-field, checkbox, color-chooser, combobox, ...
+        return TYPE_TEXT;
+    }
+	@Override
+	public boolean canDirectEdit(IDirectEditingContext context) {
+		PictogramElement pe = context.getPictogramElement();
+        Object bo = getBusinessObjectForPictogramElement(pe);
+        GraphicsAlgorithm ga = context.getGraphicsAlgorithm();
+        // support direct editing, if it is a EClass, and the user clicked
+        // directly on the text and not somewhere else in the rectangle
+        if (bo instanceof State && ga instanceof Text) {
+            return true;
+        }
+        // direct editing not supported in all other cases
+        return false;
+	}
+
+	@Override
+	public String getInitialValue(IDirectEditingContext context) {
+		PictogramElement pe = context.getPictogramElement();
+		State eClass = (State) getBusinessObjectForPictogramElement(pe);
+        return eClass.getName();
+	}
+
+	@Override
+	public void setValue(String value, IDirectEditingContext context) {
+		// set the new name for the EClass
+        PictogramElement pe = context.getPictogramElement();
+        State eClass = (State) getBusinessObjectForPictogramElement(pe);
+        eClass.setName(value);
+ 
+        // Explicitly update the shape to display the new value in the diagram
+        // Note, that this might not be necessary in future versions of Graphiti
+        // (currently in discussion)
+ 
+        // we know, that pe is the Shape of the Text, so its container is the
+        // main shape of the EClass
+        updatePictogramElement(((Shape) pe).getContainer());
 	}
 
 	@Override
@@ -234,6 +279,74 @@ public class StatePattern extends AbstractPattern {
 
 			// return newly created business object(s)
 			return new Object[] { state };
+		}
+
+		@Override
+		public boolean canUpdate(IUpdateContext context) {
+			// return true, if linked business object is a EClass
+	        Object bo =
+	            getBusinessObjectForPictogramElement(context.getPictogramElement());
+	        return (bo instanceof State);
+		}
+
+		@Override
+		public boolean update(IUpdateContext context) {
+			// retrieve name from business model
+	        String businessName = null;
+	        PictogramElement pictogramElement = context.getPictogramElement();
+	        Object bo = getBusinessObjectForPictogramElement(pictogramElement);
+	        if (bo instanceof State) {
+	        	State eClass = (State) bo;
+	            businessName = eClass.getName();
+	        }
+	 
+	        // Set name in pictogram model
+	        if (pictogramElement instanceof ContainerShape) {
+	            ContainerShape cs = (ContainerShape) pictogramElement;
+	            for (Shape shape : cs.getChildren()) {
+	                if (shape.getGraphicsAlgorithm() instanceof Text) {
+	                    Text text = (Text) shape.getGraphicsAlgorithm();
+	                    text.setValue(businessName);
+	                    return true;
+	                }
+	            }
+	        }
+	 
+	        return false;
+		}
+
+		@Override
+		public IReason updateNeeded(IUpdateContext context) {
+			// retrieve name from pictogram model
+	        String pictogramName = null;
+	        PictogramElement pictogramElement = context.getPictogramElement();
+	        if (pictogramElement instanceof ContainerShape) {
+	            ContainerShape cs = (ContainerShape) pictogramElement;
+	            for (Shape shape : cs.getChildren()) {
+	                if (shape.getGraphicsAlgorithm() instanceof Text) {
+	                    Text text = (Text) shape.getGraphicsAlgorithm();
+	                    pictogramName = text.getValue();
+	                }
+	            }
+	        }
+	 
+	        // retrieve name from business model
+	        String businessName = null;
+	        Object bo = getBusinessObjectForPictogramElement(pictogramElement);
+	        if (bo instanceof State) {
+	        	State eClass = (State) bo;
+	            businessName = eClass.getName();
+	        }
+	 
+	        // update needed, if names are different
+	        boolean updateNameNeeded =
+	            ((pictogramName == null && businessName != null) || 
+	                (pictogramName != null && !pictogramName.equals(businessName)));
+	        if (updateNameNeeded) {
+	            return Reason.createTrueReason("Name is out of date");
+	        } else {
+	            return Reason.createFalseReason();
+	        }
 		}
 	    
 		

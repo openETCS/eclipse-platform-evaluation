@@ -16,6 +16,15 @@
                supportedFeature="implementations">
          </staticTest>
       </control>
+      <control
+            class="org.openetcs.ui.internal.controls.ReferenceParagraphControl"
+            id="org.openetcs.ui.controls.referenceParagraph"
+            showLabel="true"
+            supportedCompositeClass="org.eclipse.swt.widgets.Composite">
+         <dynamicTest
+               testClass="org.openetcs.ui.internal.controls.ReferenceParagraphTester">
+         </dynamicTest>
+      </control>
    </extension>
 
 </plugin>

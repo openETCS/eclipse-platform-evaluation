@@ -23,6 +23,7 @@ import org.openetcs.model.ertmsformalspecs.requirements.Paragraph;
 public interface ReqRef extends CommentedElement {
 	/**
 	 * Returns the value of the '<em><b>Paragraph</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getImplementations <em>Implementations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Paragraph</em>' reference isn't clear,
@@ -32,7 +33,8 @@ public interface ReqRef extends CommentedElement {
 	 * @return the value of the '<em>Paragraph</em>' reference.
 	 * @see #setParagraph(Paragraph)
 	 * @see org.openetcs.model.ertmsformalspecs.ModelPackage#getReqRef_Paragraph()
-	 * @model required="true"
+	 * @see org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getImplementations
+	 * @model opposite="implementations" required="true"
 	 * @generated
 	 */
 	Paragraph getParagraph();

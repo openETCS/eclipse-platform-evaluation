@@ -12,6 +12,7 @@ import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
 import org.openetcs.model.ertmsformalspecs.ReqRelated;
 import org.openetcs.model.ertmsformalspecs.VariableModeElement;
+import org.openetcs.model.ertmsformalspecs.types.*;
 import org.openetcs.model.ertmsformalspecs.types.Case;
 import org.openetcs.model.ertmsformalspecs.types.Collection;
 import org.openetcs.model.ertmsformalspecs.types.EnumValue;

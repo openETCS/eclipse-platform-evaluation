@@ -3,12 +3,14 @@
 package org.openetcs.model.ertmsformalspecs.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openetcs.model.ertmsformalspecs.ModelPackage;
 import org.openetcs.model.ertmsformalspecs.ReqRef;
 import org.openetcs.model.ertmsformalspecs.requirements.Paragraph;
+import org.openetcs.model.ertmsformalspecs.requirements.RequirementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,11 +86,63 @@ public class ReqRefImpl extends CommentedElementImpl implements ReqRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParagraph(Paragraph newParagraph) {
+	public NotificationChain basicSetParagraph(Paragraph newParagraph, NotificationChain msgs) {
 		Paragraph oldParagraph = paragraph;
 		paragraph = newParagraph;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.REQ_REF__PARAGRAPH, oldParagraph, paragraph));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.REQ_REF__PARAGRAPH, oldParagraph, newParagraph);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParagraph(Paragraph newParagraph) {
+		if (newParagraph != paragraph) {
+			NotificationChain msgs = null;
+			if (paragraph != null)
+				msgs = ((InternalEObject)paragraph).eInverseRemove(this, RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS, Paragraph.class, msgs);
+			if (newParagraph != null)
+				msgs = ((InternalEObject)newParagraph).eInverseAdd(this, RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS, Paragraph.class, msgs);
+			msgs = basicSetParagraph(newParagraph, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.REQ_REF__PARAGRAPH, newParagraph, newParagraph));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModelPackage.REQ_REF__PARAGRAPH:
+				if (paragraph != null)
+					msgs = ((InternalEObject)paragraph).eInverseRemove(this, RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS, Paragraph.class, msgs);
+				return basicSetParagraph((Paragraph)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModelPackage.REQ_REF__PARAGRAPH:
+				return basicSetParagraph(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

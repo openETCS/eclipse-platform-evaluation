@@ -10,6 +10,7 @@ import org.openetcs.model.ertmsformalspecs.CommentedElement;
 import org.openetcs.model.ertmsformalspecs.NamedElement;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
 import org.openetcs.model.ertmsformalspecs.ReqRelated;
+import org.openetcs.model.ertmsformalspecs.customization.*;
 import org.openetcs.model.ertmsformalspecs.customization.CustomizationPackage;
 import org.openetcs.model.ertmsformalspecs.customization.RuleDisabling;
 

@@ -1063,7 +1063,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getReferencesParagraph_Requirements(), this.getReqRef(), null, "requirements", null, 0, -1, ReferencesParagraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reqRefEClass, ReqRef.class, "ReqRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReqRef_Paragraph(), theRequirementsPackage.getParagraph(), null, "paragraph", null, 1, 1, ReqRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReqRef_Paragraph(), theRequirementsPackage.getParagraph(), theRequirementsPackage.getParagraph_Implementations(), "paragraph", null, 1, 1, ReqRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reqRelatedEClass, ReqRelated.class, "ReqRelated", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReqRelated_Implemented(), ecorePackage.getEBoolean(), "implemented", null, 0, 1, ReqRelated.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

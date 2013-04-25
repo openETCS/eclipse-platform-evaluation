@@ -12,9 +12,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.openetcs.model.ertmsformalspecs.BaseLine;
+import org.openetcs.model.ertmsformalspecs.ModelPackage;
+import org.openetcs.model.ertmsformalspecs.ReqRef;
 import org.openetcs.model.ertmsformalspecs.impl.ReferencesParagraphImpl;
 import org.openetcs.model.ertmsformalspecs.requirements.BaseLinedElement;
 import org.openetcs.model.ertmsformalspecs.requirements.EParagraphType;
@@ -47,6 +50,7 @@ import org.openetcs.model.ertmsformalspecs.requirements.messages.TypeSpec;
  *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.impl.ParagraphImpl#getTypeSpecs <em>Type Specs</em>}</li>
  *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.impl.ParagraphImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.impl.ParagraphImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.impl.ParagraphImpl#getImplementations <em>Implementations</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,6 +196,16 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 	 * @ordered
 	 */
 	protected BaseLine version;
+
+	/**
+	 * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplementations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ReqRef> implementations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -629,6 +643,18 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ReqRef> getImplementations() {
+		if (implementations == null) {
+			implementations = new EObjectWithInverseResolvingEList<ReqRef>(ReqRef.class, this, RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS, ModelPackage.REQ_REF__PARAGRAPH);
+		}
+		return implementations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -643,6 +669,8 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentParagraph((Paragraph)otherEnd, msgs);
+			case RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplementations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -669,6 +697,8 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 				return ((InternalEList<?>)getTypeSpecs()).basicRemove(otherEnd, msgs);
 			case RequirementsPackage.PARAGRAPH__MESSAGE:
 				return basicSetMessage(null, msgs);
+			case RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS:
+				return ((InternalEList<?>)getImplementations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -726,6 +756,8 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 			case RequirementsPackage.PARAGRAPH__VERSION:
 				if (resolve) return getVersion();
 				return basicGetVersion();
+			case RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS:
+				return getImplementations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -780,6 +812,10 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 			case RequirementsPackage.PARAGRAPH__VERSION:
 				setVersion((BaseLine)newValue);
 				return;
+			case RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS:
+				getImplementations().clear();
+				getImplementations().addAll((Collection<? extends ReqRef>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -831,6 +867,9 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 			case RequirementsPackage.PARAGRAPH__VERSION:
 				setVersion((BaseLine)null);
 				return;
+			case RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS:
+				getImplementations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -869,6 +908,8 @@ public class ParagraphImpl extends ReferencesParagraphImpl implements Paragraph 
 				return message != null;
 			case RequirementsPackage.PARAGRAPH__VERSION:
 				return version != null;
+			case RequirementsPackage.PARAGRAPH__IMPLEMENTATIONS:
+				return implementations != null && !implementations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -65,6 +65,7 @@ public class ParagraphItemProvider extends ReferencesParagraphItemProvider imple
 			addFunctionalBlockPropertyDescriptor(object);
 			addMessagePropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
+			addImplementationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -259,6 +260,28 @@ public class ParagraphItemProvider extends ReferencesParagraphItemProvider imple
 				 getString("_UI_Paragraph_version_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Paragraph_version_feature", "_UI_Paragraph_type"),
 				 RequirementsPackage.Literals.PARAGRAPH__VERSION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Implementations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Paragraph_implementations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Paragraph_implementations_feature", "_UI_Paragraph_type"),
+				 RequirementsPackage.Literals.PARAGRAPH__IMPLEMENTATIONS,
 				 true,
 				 false,
 				 true,

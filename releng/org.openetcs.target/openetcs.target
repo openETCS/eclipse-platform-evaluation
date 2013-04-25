@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target includeMode="feature" name="openetcs" sequenceNumber="50">
+<?pde version="3.8"?><target includeMode="feature" name="openetcs" sequenceNumber="51">
 <locations>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.emfstore.modelmutator.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.client.transaction.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.ecore.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.common.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.client.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.client.ui.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.server.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<unit id="org.eclipse.emf.emfstore.example.feature.feature.group" version="1.0.0.v20130424-1618"/>
+<repository location="http://download.eclipse.org/emf-store/milestones/latest"/>
+</location>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.platform.ide" version="4.3.0.I20130314-1330"/>
+<unit id="org.eclipse.rcp.feature.group" version="4.3.0.v20130314-1730"/>
+<unit id="org.eclipse.equinox.sdk.feature.group" version="3.9.0.v20130314-0217"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.3milestones"/>
+</location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.sdk.feature.group" version="2.9.0.v20130204-1146"/>
 <unit id="org.eclipse.emf.transaction.sdk.feature.group" version="1.7.0.201212181754"/>
@@ -23,32 +40,6 @@
 <unit id="org.junit.source" version="4.10.0.v4_10_0_v20120426-0900"/>
 <unit id="org.custommonkey.xmlunit" version="1.3.0.v201111161502"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/S20121207152029/repository/"/>
-</location>
-<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.emfstore.modelmutator.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.client.transaction.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.ecore.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.common.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.client.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.client.ui.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.server.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<unit id="org.eclipse.emf.emfstore.example.feature.feature.group" version="1.0.0.v20130424-1618"/>
-<repository location="http://download.eclipse.org/emf-store/milestones/latest"/>
-</location>
-<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.ecp.e3.feature.group" version="1.0.0.201304241747"/>
-<unit id="org.eclipse.emf.ecp.example.feature.group" version="1.0.0.201304241747"/>
-<unit id="org.eclipse.emf.ecp.graphiti.feature.group" version="1.0.0.201304241747"/>
-<unit id="org.eclipse.emf.ecp.validation.feature.feature.group" version="1.0.0.201304241747"/>
-<unit id="org.eclipse.emf.ecp.feature.group" version="1.0.0.201304241747"/>
-<unit id="org.eclipse.emf.ecp.emfstore.feature.group" version="1.0.0.201304241747"/>
-<repository location="http://download.eclipse.org/emfclient/milestones/100RC2"/>
-</location>
-<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.platform.ide" version="4.3.0.I20130314-1330"/>
-<unit id="org.eclipse.rcp.feature.group" version="4.3.0.v20130314-1730"/>
-<unit id="org.eclipse.equinox.sdk.feature.group" version="3.9.0.v20130314-0217"/>
-<repository location="http://download.eclipse.org/eclipse/updates/4.3milestones"/>
 </location>
 </locations>
 <includeBundles>

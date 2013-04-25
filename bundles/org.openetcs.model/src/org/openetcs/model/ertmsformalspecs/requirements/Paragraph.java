@@ -5,6 +5,7 @@ package org.openetcs.model.ertmsformalspecs.requirements;
 import org.eclipse.emf.common.util.EList;
 import org.openetcs.model.ertmsformalspecs.BaseLine;
 import org.openetcs.model.ertmsformalspecs.ReferencesParagraph;
+import org.openetcs.model.ertmsformalspecs.ReqRef;
 import org.openetcs.model.ertmsformalspecs.requirements.messages.Message;
 import org.openetcs.model.ertmsformalspecs.requirements.messages.TypeSpec;
 
@@ -28,6 +29,7 @@ import org.openetcs.model.ertmsformalspecs.requirements.messages.TypeSpec;
  *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getTypeSpecs <em>Type Specs</em>}</li>
  *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getMessage <em>Message</em>}</li>
  *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.openetcs.model.ertmsformalspecs.requirements.Paragraph#getImplementations <em>Implementations</em>}</li>
  * </ul>
  * </p>
  *
@@ -336,5 +338,23 @@ public interface Paragraph extends ReferencesParagraph, BaseLinedElement {
 	 * @generated
 	 */
 	void setVersion(BaseLine value);
+
+	/**
+	 * Returns the value of the '<em><b>Implementations</b></em>' reference list.
+	 * The list contents are of type {@link org.openetcs.model.ertmsformalspecs.ReqRef}.
+	 * It is bidirectional and its opposite is '{@link org.openetcs.model.ertmsformalspecs.ReqRef#getParagraph <em>Paragraph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implementations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implementations</em>' reference list.
+	 * @see org.openetcs.model.ertmsformalspecs.requirements.RequirementsPackage#getParagraph_Implementations()
+	 * @see org.openetcs.model.ertmsformalspecs.ReqRef#getParagraph
+	 * @model opposite="paragraph"
+	 * @generated
+	 */
+	EList<ReqRef> getImplementations();
 
 } // Paragraph
