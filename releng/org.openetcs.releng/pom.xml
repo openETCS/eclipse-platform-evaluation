@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tycho-version>0.16.0</tycho-version>
+		<tycho-version>0.17.0</tycho-version>
 		<javadoc-version>2.9</javadoc-version>
 		<product-version>1.0.0-SNAPSHOT</product-version>
 	</properties>
