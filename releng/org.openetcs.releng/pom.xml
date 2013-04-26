@@ -26,7 +26,7 @@
 		<module>../../bundles/org.openetcs.ui.expression</module>
 		<module>../../bundles/org.openetcs.ui.statechart</module>
 		<module>../../features/org.openetcs.core-feature</module>
-		<!--<module>../../features/org.openetcs.target-feature</module>-->
+		<module>../../features/org.openetcs.target-feature</module>
 		<module>../../releng/org.openetcs.products</module>
 		<module>../../releng/org.openetcs.target</module>
 	</modules>

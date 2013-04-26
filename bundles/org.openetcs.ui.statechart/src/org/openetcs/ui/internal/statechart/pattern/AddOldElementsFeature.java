@@ -63,21 +63,21 @@ public class AddOldElementsFeature extends AbstractAddFeature {
 			for(Rule rule:stateStateMachine.getRules()){
 				for(RuleCondition condition:rule.getConditions()){
 					boolean preConditionAsserted=true;
-					for(PreCondition preCondition:condition.getPreconditions()){
-						Model model=ParserUtil.text2Model(preCondition.getCondition());
-						Phrase expression=model.getPhrase();
-						if(Expression.class.isInstance(expression)){
-							try {
-								EvaluationResult result=ParserUtil.evaluate((Expression) expression);
-								if(OBJECT_TYPE.BOOLEAN==result.getType()){
-									preConditionAsserted&=(Boolean)result.getValue();
-								}
-							} catch (EvaluationException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-						}
-					}
+//					for(PreCondition preCondition:condition.getPreconditions()){
+//						Model model=ParserUtil.text2Model(preCondition.getCondition());
+//						Phrase expression=model.getPhrase();
+//						if(Expression.class.isInstance(expression)){
+//							try {
+//								EvaluationResult result=ParserUtil.evaluate((Expression) expression);
+//								if(OBJECT_TYPE.BOOLEAN==result.getType()){
+//									preConditionAsserted&=(Boolean)result.getValue();
+//								}
+//							} catch (EvaluationException e) {
+//								// TODO Auto-generated catch block
+//								e.printStackTrace();
+//							}
+//						}
+//					}
 					if(preConditionAsserted)
 					for(Action action: condition.getActions()){
 						Model model=ParserUtil.text2Model(action.getExpression());

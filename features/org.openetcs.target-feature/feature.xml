@@ -1253,31 +1253,10 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.equinox.launcher.cocoa.macosx"
+         id="org.eclipse.equinox.bidi"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         fragment="true"/>
-
-   <plugin
-         id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"/>
-
-   <plugin
-         id="org.eclipse.equinox.launcher.gtk.linux.x86"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"/>
-
-   <plugin
-         id="org.eclipse.equinox.launcher.gtk.linux.x86_64"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"/>
+         unpack="false"/>
 
 </feature>

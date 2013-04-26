@@ -84,7 +84,7 @@ public class OpenStatechartHandler extends AbstractHandler {
 			
 			context.setTargetContainer(createDiagram);
 			
-			editor.executeFeature(new AddOldElementsFeature(dtp.getFeatureProvider()), context);
+			editor.getDiagramBehavior().executeFeature(new AddOldElementsFeature(dtp.getFeatureProvider()), context);
 			
 		} catch (PartInitException e) {
 			System.out.println("Error");
