@@ -22,7 +22,7 @@ import org.openetcs.model.ertmsformalspecs.Namespace;
 public class ExportUtil {
 
 	public static void exportModel(ECPProject projectToExport, File fileToExport){
-		List<Object> elements=projectToExport.getElements();
+		List<Object> elements=projectToExport.getContents();
 		for(Object object:elements)
 		{
 			EObject eObject=(EObject)object;

@@ -144,7 +144,7 @@ public class ImportUtil {
 					importProject.getEditingDomain().getCommandStack().execute(new ChangeCommand(importedDictionary) {
 						@Override
 						protected void doExecute() {
-							importProject.getElements().add(importedDictionary);
+							importProject.getContents().add(importedDictionary);
 						}
 					});
 					monitor.worked(20);
@@ -170,7 +170,7 @@ public class ImportUtil {
 	{
 		org.openetcs.model.ertmsformalspecs.Baselines retVal = null;
 		
-		List<Object> elements=importProject.getElements();
+		List<Object> elements=importProject.getContents();
 		for(Object object:elements)
 		{
 			EObject eObject=(EObject)object;
@@ -188,7 +188,7 @@ public class ImportUtil {
 	{
 		org.openetcs.model.ertmsformalspecs.FunctionalBlocks retVal = null;
 		
-		List<Object> elements=importProject.getElements();
+		List<Object> elements=importProject.getContents();
 		for(Object object:elements)
 		{
 			EObject eObject=(EObject)object;
@@ -210,7 +210,7 @@ public class ImportUtil {
 			importProject.getEditingDomain().getCommandStack().execute(new ChangeCommand(newBaselines) {
 				@Override
 				protected void doExecute() {
-					importProject.getElements().add(newBaselines);
+					importProject.getContents().add(newBaselines);
 				}
 			});
 		}
@@ -221,7 +221,7 @@ public class ImportUtil {
 			importProject.getEditingDomain().getCommandStack().execute(new ChangeCommand(newFunctionalBlocks) {
 				@Override
 				protected void doExecute() {
-					importProject.getElements().add(newFunctionalBlocks);
+					importProject.getContents().add(newFunctionalBlocks);
 				}
 			});
 		}

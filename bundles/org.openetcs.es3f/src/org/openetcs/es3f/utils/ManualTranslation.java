@@ -108,7 +108,7 @@ public class ManualTranslation {
 	 * @param dictionary
 	 */
 	public void setupNames(ECPProject project, Dictionary dictionary) {
-		List<Object> elements=project.getElements();
+		List<Object> elements=project.getContents();
 		for(Object object:elements){			
 			fillNamedElementDictionary((EObject)object, "");
 		}
@@ -171,7 +171,7 @@ public class ManualTranslation {
 	{
 		org.openetcs.model.ertmsformalspecs.Baselines baselines = null;
 		
-		List<Object> elements=project.getElements();
+		List<Object> elements=project.getContents();
 		for(Object object:elements){
 			EObject eObject=(EObject)object;
 			if (ModelPackage.eINSTANCE.getBaselines().equals(eObject.eClass())){
@@ -194,7 +194,7 @@ public class ManualTranslation {
 	{
 		org.openetcs.model.ertmsformalspecs.FunctionalBlocks functionalBlocks = null;
 		
-		List<Object> elements=project.getElements();
+		List<Object> elements=project.getContents();
 		for(Object object:elements){
 			EObject eObject=(EObject)object;
 			if (ModelPackage.eINSTANCE.getFunctionalBlocks().equals(eObject.eClass())){
