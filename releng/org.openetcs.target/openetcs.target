@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?>
 
-<target includeMode="feature" name="openetcs" sequenceNumber="71">
+<target includeMode="feature" name="openetcs" sequenceNumber="73">
 <locations>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.xtext.sdk.feature.group" version="2.4.2.v201306120542"/>
@@ -25,13 +25,6 @@
 <repository location="http://download.eclipse.org/eclipse/updates/4.4milestones"/>
 </location>
 <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.ecp.e3.feature.feature.group" version="1.1.0.20130926-0758"/>
-<unit id="org.eclipse.emf.ecp.validation.feature.feature.group" version="1.1.0.20130926-0758"/>
-<unit id="org.eclipse.emf.ecp.feature.feature.group" version="1.1.0.20130926-0758"/>
-<unit id="org.eclipse.emf.ecp.emfstore.feature.feature.group" version="1.1.0.20130926-0758"/>
-<repository location="https://hudson.eclipse.org/hudson/job/emf-emfclient-integration/653/artifact/features/org.eclipse.emf.ecp.site.feature/target/repository/"/>
-</location>
-<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.custommonkey.xmlunit" version="1.3.0.v201111161502"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
 </location>
@@ -40,6 +33,15 @@
 <unit id="org.eclipse.emf.emfstore.common.feature.feature.group" version="1.0.1.v20130916-0410"/>
 <unit id="org.eclipse.emf.emfstore.server.feature.feature.group" version="1.0.1.v20130916-0410"/>
 <repository location="http://download.eclipse.org/emf-store/releases/"/>
+</location>
+<location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.ecp.e3.feature.feature.group" version="1.1.0.20130926-0758"/>
+<unit id="org.eclipse.emf.ecp.validation.feature.feature.group" version="1.1.0.20130926-0758"/>
+<unit id="org.eclipse.emf.ecp.feature.feature.group" version="1.1.0.20130926-0758"/>
+<unit id="org.eclipse.emf.ecp.emfstore.feature.feature.group" version="1.1.0.20130926-0758"/>
+<unit id="org.eclipse.emf.ecp.sdk.feature.feature.group" version="1.1.0.20130926-0758"/>
+<unit id="org.eclipse.emf.ecp.viewmodel.feature.feature.group" version="1.1.0.20130926-0758"/>
+<repository location="https://hudson.eclipse.org/hudson/job/emf-emfclient-integration/653/artifact/features/org.eclipse.emf.ecp.site.feature/target/repository/"/>
 </location>
 </locations>
 </target>
