@@ -12,7 +12,7 @@ import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecp.core.ECPProject;
-import org.eclipse.emf.ecp.core.ECPProjectManager;
+import org.eclipse.emf.ecp.core.util.ECPUtil;
 import org.eclipse.emf.ecp.emfstore.core.internal.EMFStoreProvider;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -33,7 +33,7 @@ public class TestEs3f {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		project = ECPProjectManager.INSTANCE.createProject(new EMFStoreProvider(), "importedProject");
+		project = ECPUtil.getECPProjectManager().createProject(new EMFStoreProvider(), "importedProject");
 		if (!exportFile.exists())
 			exportFile.createNewFile();
 	}
