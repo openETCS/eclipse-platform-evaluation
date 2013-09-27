@@ -27,7 +27,7 @@ public class ReqRefContainerControl extends LinkControl {
 	}
 	@Override
 	protected void linkClicked(EObject value) {
-		getModelElementContext().openEditor(value.eContainer());
+		getModelElementContext().openInNewContext(value.eContainer());
 	}
 	@Override
 	protected Object getImage(Object value) {

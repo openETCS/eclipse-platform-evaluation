@@ -28,7 +28,7 @@ public class NewDictionaryHandler extends AbstractHandler {
 
 					@Override
 					protected void doExecute() {
-						project.getElements().add(dictionary);
+						project.getContents().add(dictionary);
 					}
 				});
 

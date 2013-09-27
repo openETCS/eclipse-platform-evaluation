@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecp.core.ECPProjectManager;
+import org.eclipse.emf.ecp.core.util.ECPUtil;
 import org.eclipse.emf.ecp.edit.ECPControlContext;
 import org.eclipse.emf.ecp.edit.internal.swt.util.SWTControl;
 import org.eclipse.emf.ecp.emfstore.core.internal.EMFStoreProvider;
@@ -31,6 +32,7 @@ import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.openetcs.dsl.ui.internal.ExpressionActivator;
@@ -46,7 +48,7 @@ public class ExpressionControl extends SWTControl {
 			EStructuralFeature feature,
 			ECPControlContext modelElementContext, boolean embedded) {
 		super(showLabel, itemPropertyDescriptor, feature, modelElementContext, embedded);
-		project=(InternalProject) ECPProjectManager.INSTANCE.getProject(getModelElementContext().getModelElement());
+		project=(InternalProject) ECPUtil.getECPProjectManager().getProject(getModelElementContext().getModelElement());
 	}
 	private InternalProject project;
 	private StyledText text;
@@ -189,5 +191,10 @@ public class ExpressionControl extends SWTControl {
 		@Override
 		protected String getUnsetLabelText() {
 			return "Unset";
+		}
+
+		@Override
+		protected Control[] getControlsForTooltip() {
+			return new Control[0];
 		}
 }
